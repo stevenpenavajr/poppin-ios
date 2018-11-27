@@ -36,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        let destinationNavigationController = segue.destination as! UINavigationController
+        guard let destinationNavigationController = segue.destination as? UINavigationController else { return }
         // Pass the selected object to the new view controller.
         let targetController = destinationNavigationController.topViewController
     }
