@@ -28,6 +28,7 @@
 		AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */; };
 		AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA32216AE94E00E82D17 /* MapViewController.swift */; };
 		BD4E2B8DC7E3293AA10294B6 /* Pods_Poppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */; };
+		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		AF40CA2E216AE92400E82D17 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewController.swift; sourceTree = "<group>"; };
 		AF40CA32216AE94E00E82D17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -149,29 +151,14 @@
 				0A42FD1A21879CA9000F117B /* Images */,
 				0ABD3529217680A200CAD417 /* Fonts */,
 				0ABD352821767D5600CAD417 /* Cells */,
-				AF40CA24216AE81D00E82D17 /* Model */,
-				AF40CA25216AE82800E82D17 /* View */,
 				AF40CA26216AE82E00E82D17 /* Controller */,
 				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */,
 				AF40CA1E216AE69A00E82D17 /* Info.plist */,
 				AF40CA12216AE69800E82D17 /* AppDelegate.swift */,
 				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
 			);
 			path = Poppin;
-			sourceTree = "<group>";
-		};
-		AF40CA24216AE81D00E82D17 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		AF40CA25216AE82800E82D17 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		AF40CA26216AE82E00E82D17 /* Controller */ = {
@@ -259,6 +246,7 @@
 			files = (
 				0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */,
 				0A42FD222187A4EC000F117B /* mug.png in Resources */,
+				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
 				0AF36D41218792B000FCEDEB /* Touche.otf in Resources */,
 				0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */,
 				0A42FD242187A899000F117B /* temp-logo.png in Resources */,

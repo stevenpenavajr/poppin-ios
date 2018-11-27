@@ -57,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase
+  - Firebase/Core
   - Gifu
   - NVActivityIndicatorView
 
@@ -83,6 +84,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
 
-PODFILE CHECKSUM: 458827d99268df7b5148ca93fb50dcbbfcca853e
+PODFILE CHECKSUM: ddf2561f3dc7f132f91570a65cf403963857cdec
 
 COCOAPODS: 1.5.3
