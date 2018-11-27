@@ -15,10 +15,9 @@ class MBLoginController: UIViewController {
     @IBOutlet weak var signUpButtonOutlet: UIButton!
     @IBOutlet weak var loginButtonOutlet: UIButton!
     
-    @IBAction func signUpButton(_ sender: Any) {
-    }
-    @IBAction func loginButton(_ sender: Any) {
-    }
+    @IBAction func signUpButton(_ sender: Any) {}
+    
+    @IBAction func loginButton(_ sender: Any) {}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +37,6 @@ class MBLoginController: UIViewController {
         pulse.keyTimes = [0, 0.5, 1.0]
         pulse.repeatCount = Float.infinity
         beerIcon.layer.add(pulse, forKey: "pulse")
-        
     }
+    
 }
