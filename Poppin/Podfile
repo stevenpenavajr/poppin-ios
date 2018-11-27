@@ -8,4 +8,5 @@ target 'Poppin' do
   # Pods for Poppin
   pod 'NVActivityIndicatorView'
   pod 'Firebase'
+  pod 'Gifu'
 end
