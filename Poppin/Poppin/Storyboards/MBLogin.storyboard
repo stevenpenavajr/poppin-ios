@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gIX-0x-IMf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gIX-0x-IMf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -53,30 +53,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfr-vW-NdV">
-                                <rect key="frame" x="37.5" y="561" width="300" height="56"/>
-                                <color key="backgroundColor" red="0.23700629340000001" green="0.32579210069999998" blue="0.57207573789999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="943-AN-oAF"/>
-                                    <constraint firstAttribute="width" constant="300" id="edy-4C-9YO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Touche-Bold" family="Touche " pointSize="23"/>
-                                <state key="normal" title="Log in">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButton:" destination="gIX-0x-IMf" eventType="touchUpInside" id="b14-o1-Xrc"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyF-8e-bLG">
-                                <rect key="frame" x="37.5" y="489" width="300" height="56"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyF-8e-bLG" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="37.5" y="511" width="300" height="56"/>
                                 <color key="backgroundColor" red="0.2370062933888889" green="0.32579210072499998" blue="0.57207573786944443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="29Q-Dd-2Av"/>
                                     <constraint firstAttribute="width" constant="300" id="3Uf-Qr-bkg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Touche-Bold" family="Touche " pointSize="23"/>
-                                <state key="normal" title="Sign up">
+                                <fontDescription key="fontDescription" name="Touche-Bold" family="Touche " pointSize="18"/>
+                                <state key="normal" title="Sign in with Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -95,20 +80,17 @@
                             <constraint firstItem="aOQ-FH-f0B" firstAttribute="centerY" secondItem="Hqb-mB-ZPX" secondAttribute="centerY" id="Esr-24-6Ia"/>
                             <constraint firstItem="CyF-8e-bLG" firstAttribute="centerX" secondItem="Hqb-mB-ZPX" secondAttribute="centerX" id="ILH-Aq-sPg"/>
                             <constraint firstItem="AY1-09-and" firstAttribute="top" secondItem="XBn-X7-u7X" secondAttribute="bottom" constant="8" id="KDI-mk-ccj"/>
-                            <constraint firstItem="Pfr-vW-NdV" firstAttribute="top" secondItem="CyF-8e-bLG" secondAttribute="bottom" constant="16" id="KQE-uR-E5e"/>
-                            <constraint firstItem="Pfr-vW-NdV" firstAttribute="centerX" secondItem="Hqb-mB-ZPX" secondAttribute="centerX" id="QAw-Ls-BC0"/>
+                            <constraint firstItem="e3R-df-xsZ" firstAttribute="bottom" secondItem="CyF-8e-bLG" secondAttribute="bottom" constant="100" id="Wys-ME-iuC"/>
                             <constraint firstItem="AY1-09-and" firstAttribute="centerX" secondItem="Hqb-mB-ZPX" secondAttribute="centerX" id="Xyl-Iz-Jg1"/>
                             <constraint firstAttribute="bottom" secondItem="Ubu-mO-CXu" secondAttribute="bottom" id="cpC-nM-7kD"/>
                             <constraint firstItem="XBn-X7-u7X" firstAttribute="centerX" secondItem="Hqb-mB-ZPX" secondAttribute="centerX" id="oKK-VP-jfY"/>
                             <constraint firstItem="aOQ-FH-f0B" firstAttribute="centerX" secondItem="Hqb-mB-ZPX" secondAttribute="centerX" id="oV5-Eu-tOw"/>
-                            <constraint firstItem="e3R-df-xsZ" firstAttribute="bottom" secondItem="Pfr-vW-NdV" secondAttribute="bottom" constant="50" id="owj-OP-2Yh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e3R-df-xsZ"/>
                     </view>
                     <connections>
                         <outlet property="backgroundGif" destination="Ubu-mO-CXu" id="gXm-wt-Mzd"/>
                         <outlet property="beerIcon" destination="aOQ-FH-f0B" id="KkI-6V-e0y"/>
-                        <outlet property="loginButtonOutlet" destination="Pfr-vW-NdV" id="NPt-Fi-9fm"/>
                         <outlet property="signUpButtonOutlet" destination="CyF-8e-bLG" id="1fz-rP-5O6"/>
                     </connections>
                 </viewController>

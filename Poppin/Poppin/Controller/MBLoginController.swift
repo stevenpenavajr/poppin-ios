@@ -4,6 +4,8 @@
 // Created By: Steven Penava
 
 import Foundation
+import FBSDKLoginKit
+import FirebaseAuth
 import UIKit
 import Gifu
 
@@ -12,8 +14,7 @@ class MBLoginController: UIViewController {
     @IBOutlet weak var backgroundGif: GIFImageView!
     
     @IBOutlet weak var beerIcon: UIImageView!
-    @IBOutlet weak var signUpButtonOutlet: UIButton!
-    @IBOutlet weak var loginButtonOutlet: UIButton!
+    @IBOutlet weak var signUpButtonOutlet: FBSDKLoginButton!
     
     @IBAction func signUpButton(_ sender: Any) {}
     
@@ -23,10 +24,7 @@ class MBLoginController: UIViewController {
         super.viewDidLoad()
         signUpButtonOutlet.layer.cornerRadius = signUpButtonOutlet.frame.height / 2
         signUpButtonOutlet.clipsToBounds = true
-        
-        loginButtonOutlet.layer.cornerRadius = signUpButtonOutlet.frame.height / 2
-        loginButtonOutlet.clipsToBounds = true
-        
+        signUpButtonOutlet.delegate = self
         backgroundGif.animate(withGIFNamed: "beer-pour-blur-new") {
             print("It's animating!")
         }
@@ -39,4 +37,20 @@ class MBLoginController: UIViewController {
         beerIcon.layer.add(pulse, forKey: "pulse")
     }
     
+}
+
+// MARK: FBSDKLoginButtonDelegate
+
+extension MBLoginController: FBSDKLoginButtonDelegate {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        // ...
+    }
 }
