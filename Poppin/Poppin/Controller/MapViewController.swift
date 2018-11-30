@@ -13,6 +13,9 @@ class MapViewController: UIViewController, MKMapViewDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Map"
@@ -20,6 +23,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         // Set initial location to Lexington, Kentucky
         let initialLocation = CLLocation(latitude: 38.0406, longitude: -84.5037)
         centerMapOnLocation(location: initialLocation)
+        
+        // Sample Annotation
+        let tinroof = MKPointAnnotation()
+        tinroof.title = "Tin Roof: A Life Music Joint"
+        tinroof.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
+        mapView.addAnnotation(tinroof)
+        
+        
         
     } // End of viewDidLoad()
     
