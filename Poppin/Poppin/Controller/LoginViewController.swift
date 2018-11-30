@@ -9,7 +9,7 @@ import FirebaseAuth
 import UIKit
 import Gifu
 
-class MBLoginController: UIViewController {
+class LoginViewController: UIViewController {
     
     @IBOutlet weak var backgroundGif: GIFImageView!
     
@@ -41,7 +41,7 @@ class MBLoginController: UIViewController {
 
 // MARK: FBSDKLoginButtonDelegate
 
-extension MBLoginController: FBSDKLoginButtonDelegate {
+extension LoginViewController: FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         
     }
@@ -50,7 +50,10 @@ extension MBLoginController: FBSDKLoginButtonDelegate {
         if let error = error {
             print(error.localizedDescription)
             return
+        } else {
+            print("======")
+            print("Login success, perform segue here")
+            print("======")
         }
-        // ...
     }
 }

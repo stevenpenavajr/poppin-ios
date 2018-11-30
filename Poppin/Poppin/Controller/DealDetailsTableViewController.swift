@@ -1,19 +1,18 @@
-//
-//  DealsTableViewController.swift
-//  Poppin
-//
-//  Created by Swaidner, Jonathan on 10/7/18.
-//  Copyright © 2018 MoBamba. All rights reserved.
-//
+// File: SpecificDealTableViewController.swift
+// Purpose: <enter purpose>
+// Date Created: 11/30/18
+// Created By: Steven Penava
 
 import UIKit
 
-class DealsTableViewController: UITableViewController {
+class DealDetailsTableViewController: UITableViewController {
+    
+    var rowSelection = 0
 
     override func viewDidLoad() {
+        print("ROW: " , rowSelection)
         super.viewDidLoad()
-        self.title = "Deals"
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,27 +24,24 @@ class DealsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MBDealsCell", for: indexPath) as? MBDealCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "DealDetailsCell", for: indexPath) as? DealDetailsCell {
+            //config here
             return cell
-            // config cell here
+            
         }
         return UITableViewCell()
-
-       
-
-        
     }
- 
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,25 +78,14 @@ class DealsTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        if segue.destination is DealDetailsTableViewController {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let vc = segue.destination as? DealDetailsTableViewController
-                vc?.rowSelection = indexPath.row
-            }
-        }
     }
-    
-    // Perform segue to specific deal
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSpecificDeal", sender: indexPath)
-    }
-    
+    */
 
 }

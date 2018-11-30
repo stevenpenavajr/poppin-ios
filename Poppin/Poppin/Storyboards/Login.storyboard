@@ -17,10 +17,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Login Controller-->
+        <!--Login View Controller-->
         <scene sceneID="cMG-Np-Tx8">
             <objects>
-                <viewController id="gIX-0x-IMf" customClass="MBLoginController" customModule="Poppin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gIX-0x-IMf" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hqb-mB-ZPX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
