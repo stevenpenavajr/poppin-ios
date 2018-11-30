@@ -18,7 +18,6 @@
 		0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* DealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
 		0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */; };
-		0ACD1C7D21B1DF120097B016 /* DealDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */; };
 		0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3921878C1E00FCEDEB /* Login.storyboard */; };
 		0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */; };
 		0AF36D41218792B000FCEDEB /* Touche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3D21878DD300FCEDEB /* Touche.otf */; };
@@ -35,6 +34,7 @@
 		BD4E2B8DC7E3293AA10294B6 /* Pods_Poppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */; };
 		CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */; };
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
+		CBB7191821B1E6C60054EC77 /* DealDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +49,6 @@
 		0ABD352621767D4D00CAD417 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
 		0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_roof.jpg; sourceTree = "<group>"; };
-		0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTitleCell.swift; sourceTree = "<group>"; };
 		0AF36D3921878C1E00FCEDEB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0AF36D3D21878DD300FCEDEB /* Touche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Touche.otf; sourceTree = "<group>"; };
 		0AF36D3E21878DD300FCEDEB /* ToucheBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ToucheBold.otf; sourceTree = "<group>"; };
@@ -69,6 +68,7 @@
 		AF40CA32216AE94E00E82D17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Facebook.swift"; sourceTree = "<group>"; };
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTitleCell.swift; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 			children = (
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
-				0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */,
+				CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -370,12 +370,12 @@
 				AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
+				CBB7191821B1E6C60054EC77 /* DealDetailsTitleCell.swift in Sources */,
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
-				0ACD1C7D21B1DF120097B016 /* DealDetailsTitleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
