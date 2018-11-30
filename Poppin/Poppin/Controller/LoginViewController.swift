@@ -3,11 +3,10 @@
 // Date Created: 10/29/18
 // Created By: Steven Penava
 
-import Foundation
+import Gifu
 import FBSDKLoginKit
 import FirebaseAuth
 import UIKit
-import Gifu
 
 class LoginViewController: UIViewController {
     
@@ -37,23 +36,4 @@ class LoginViewController: UIViewController {
         beerIcon.layer.add(pulse, forKey: "pulse")
     }
     
-}
-
-// MARK: FBSDKLoginButtonDelegate
-
-extension LoginViewController: FBSDKLoginButtonDelegate {
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        if let error = error {
-            print(error.localizedDescription)
-            return
-        } else {
-            print("======")
-            print("Login success, perform segue here")
-            print("======")
-        }
-    }
 }

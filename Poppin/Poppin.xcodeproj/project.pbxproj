@@ -33,6 +33,7 @@
 		AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */; };
 		AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA32216AE94E00E82D17 /* MapViewController.swift */; };
 		BD4E2B8DC7E3293AA10294B6 /* Pods_Poppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */; };
+		CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */; };
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		AF40CA2E216AE92400E82D17 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewController.swift; sourceTree = "<group>"; };
 		AF40CA32216AE94E00E82D17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Facebook.swift"; sourceTree = "<group>"; };
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -96,14 +98,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		0ABD352821767D5600CAD417 /* Cells */ = {
+		0ABD352821767D5600CAD417 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
 				0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */,
 			);
-			path = Cells;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0ABD3529217680A200CAD417 /* Fonts */ = {
@@ -162,15 +164,15 @@
 		AF40CA11216AE69800E82D17 /* Poppin */ = {
 			isa = PBXGroup;
 			children = (
-				0A42FD1A21879CA9000F117B /* Images */,
-				0ABD3529217680A200CAD417 /* Fonts */,
-				0ABD352821767D5600CAD417 /* Cells */,
-				AF40CA26216AE82E00E82D17 /* Controller */,
-				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				AF40CA12216AE69800E82D17 /* AppDelegate.swift */,
 				CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */,
 				AF40CA1E216AE69A00E82D17 /* Info.plist */,
-				AF40CA12216AE69800E82D17 /* AppDelegate.swift */,
-				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
+				CB2DF2EC21B1E243000C6A9F /* Model */,
+				0ABD352821767D5600CAD417 /* View */,
+				AF40CA26216AE82E00E82D17 /* Controller */,
+				CB2DF2EB21B1E238000C6A9F /* Content */,
+				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				CB2DF2ED21B1E255000C6A9F /* Assets */,
 			);
 			path = Poppin;
 			sourceTree = "<group>";
@@ -178,11 +180,12 @@
 		AF40CA26216AE82E00E82D17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AF40CA2A216AE8EC00E82D17 /* TabBarController.swift */,
 				AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */,
-				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
-				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
 				0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */,
+				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
+				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
+				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
+				AF40CA2A216AE8EC00E82D17 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +200,30 @@
 				0AF36D3921878C1E00FCEDEB /* Login.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CB2DF2EB21B1E238000C6A9F /* Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Content;
+			sourceTree = "<group>";
+		};
+		CB2DF2EC21B1E243000C6A9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB2DF2ED21B1E255000C6A9F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
+				0ABD3529217680A200CAD417 /* Fonts */,
+				0A42FD1A21879CA9000F117B /* Images */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +370,7 @@
 				AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
+				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
