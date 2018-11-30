@@ -66,15 +66,12 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsImageCell" rowHeight="158" id="eCT-6P-r5Z" customClass="DealDetailsImageCell" customModule="Poppin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCT-6P-r5Z" id="EVk-zn-5pW">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCT-6P-r5Z" id="EVk-zn-5pW">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tin_roof.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="etO-QJ-b9D">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="150" id="aXv-XS-kWz"/>
-                                            </constraints>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -85,28 +82,55 @@
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsTitleCell" rowHeight="56" id="A1E-eW-aGM" customClass="DealDetailsTitleCell" customModule="Poppin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="186" width="375" height="56"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsDescriptionCell" rowHeight="264" id="A1E-eW-aGM" customClass="DealDetailsDescriptionCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="186" width="375" height="264"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A1E-eW-aGM" id="8U8-iT-Odi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="263.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Goes Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scf-SI-afb">
-                                            <rect key="frame" x="132" y="17.5" width="111.5" height="20.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bar Name Here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-6H-h4g">
+                                            <rect key="frame" x="16" y="11" width="343" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-1S-eEj">
+                                            <rect key="frame" x="16" y="111" width="343" height="142"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <string key="text">Details: get hella margaritas!
+
+Several flavors
+
+Tap "USE DEAL" to use!</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-zz-zBG">
+                                            <rect key="frame" x="16" y="43" width="343" height="57.5"/>
+                                            <string key="text">$5 Pitchers All Night
+More text</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="scf-SI-afb" firstAttribute="centerY" secondItem="8U8-iT-Odi" secondAttribute="centerY" id="0ti-XY-LgJ"/>
-                                        <constraint firstItem="scf-SI-afb" firstAttribute="centerX" secondItem="8U8-iT-Odi" secondAttribute="centerX" id="uD3-qd-V9l"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leadingMargin" id="GBK-FV-kTb"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="centerX" secondItem="8U8-iT-Odi" secondAttribute="centerX" id="HKA-XU-enC"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gFL-zz-zBG" secondAttribute="trailing" id="KWa-l0-PFW"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="centerX" secondItem="8U8-iT-Odi" secondAttribute="centerX" id="UxQ-Oe-xd2"/>
+                                        <constraint firstItem="gFL-zz-zBG" firstAttribute="centerX" secondItem="8U8-iT-Odi" secondAttribute="centerX" id="WxJ-PQ-9qS"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="bottom" secondItem="8U8-iT-Odi" secondAttribute="bottomMargin" id="baS-vx-gs0"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="trailing" secondItem="8U8-iT-Odi" secondAttribute="trailingMargin" id="d0l-1h-87C"/>
+                                        <constraint firstItem="gFL-zz-zBG" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leadingMargin" id="dhi-g4-h73"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="trailing" secondItem="8U8-iT-Odi" secondAttribute="trailingMargin" id="fld-kg-cNk"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leadingMargin" id="kP6-Wm-kq4"/>
+                                        <constraint firstItem="gFL-zz-zBG" firstAttribute="top" secondItem="jML-6H-h4g" secondAttribute="bottom" constant="11.5" id="owj-V7-aWJ"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="top" secondItem="8U8-iT-Odi" secondAttribute="topMargin" id="uVd-n0-mhH"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="top" secondItem="gFL-zz-zBG" secondAttribute="bottom" constant="10.5" id="vtu-kN-NuT"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="barTitleLabel" destination="scf-SI-afb" id="aRP-RP-JD9"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

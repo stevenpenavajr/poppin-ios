@@ -12,6 +12,7 @@ class DealDetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         print("ROW: " , rowSelection)
         super.viewDidLoad()
+        tableView.separatorStyle = .none
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,7 +39,7 @@ class DealDetailsTableViewController: UITableViewController {
         case 0:
             return DealDetailsImageCell.height
         case 1:
-            return DealDetailsTitleCell.height
+            return DealDetailsDescriptionCell.height
         default:
             return 0.0
         }
@@ -53,7 +54,7 @@ class DealDetailsTableViewController: UITableViewController {
                     return cell
                 }
             case 1:
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTitleCell", for: indexPath) as? DealDetailsTitleCell {
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsDescriptionCell", for: indexPath) as? DealDetailsDescriptionCell {
                     //config here
                     return cell
                 }

@@ -5,15 +5,13 @@
 
 import UIKit
 
-class DealDetailsTitleCell: UITableViewCell {
-    static let height: CGFloat = 100.0
-    
-    @IBOutlet weak var barTitleLabel: UILabel!
+class DealDetailsDescriptionCell: UITableViewCell {
+    static let height: CGFloat = 300.0
     
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        barTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
+//        barTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         // Initialization code
     }
     
