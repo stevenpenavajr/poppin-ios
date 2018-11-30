@@ -1,11 +1,11 @@
-// File: SpecificDealCell.swift
+// File: DealDetailsTitleCell.swift
 // Purpose: <enter purpose>
 // Date Created: 11/30/18
 // Created By: Steven Penava
 
 import UIKit
 
-class DealDetailsCell: UITableViewCell {
+class DealDetailsTitleCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

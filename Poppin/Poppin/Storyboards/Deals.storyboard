@@ -63,11 +63,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealDetailsCell" id="eCT-6P-r5Z" customClass="DealDetailsCell" customModule="Poppin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsImageCell" rowHeight="158" id="eCT-6P-r5Z" customClass="DealDetailsImageCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCT-6P-r5Z" id="EVk-zn-5pW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tin_roof.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="etO-QJ-b9D">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="158"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="etO-QJ-b9D" firstAttribute="top" secondItem="EVk-zn-5pW" secondAttribute="top" id="4cd-Ve-u4N"/>
+                                        <constraint firstAttribute="trailing" secondItem="etO-QJ-b9D" secondAttribute="trailing" id="JFg-LJ-5Ai"/>
+                                        <constraint firstItem="etO-QJ-b9D" firstAttribute="leading" secondItem="EVk-zn-5pW" secondAttribute="leading" id="gpF-0x-DSO"/>
+                                        <constraint firstAttribute="bottom" secondItem="etO-QJ-b9D" secondAttribute="bottom" constant="-0.5" id="i2h-CP-teI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsTitleCell" rowHeight="159" id="A1E-eW-aGM" customClass="DealDetailsTitleCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="186" width="375" height="159"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A1E-eW-aGM" id="8U8-iT-Odi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="158.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -80,7 +99,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdG-1Q-sz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1873" y="48"/>
+            <point key="canvasLocation" x="1872.8" y="47.226386806596707"/>
         </scene>
         <!--Deals-->
         <scene sceneID="I3w-re-jgC">
@@ -101,4 +120,7 @@
             <point key="canvasLocation" x="90" y="48"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tin_roof.jpg" width="1140" height="641"/>
+    </resources>
 </document>
