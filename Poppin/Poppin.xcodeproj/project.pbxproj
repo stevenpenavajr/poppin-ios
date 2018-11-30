@@ -12,6 +12,7 @@
 		0A42FD202187A484000F117B /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1F2187A484000F117B /* barrel.png */; };
 		0A42FD222187A4EC000F117B /* mug.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD212187A4EB000F117B /* mug.png */; };
 		0A42FD242187A899000F117B /* temp-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD232187A898000F117B /* temp-logo.png */; };
+		0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A43EEFA21B1AE9E0041954C /* launch_bg.png */; };
 		0ABD352721767D4D00CAD417 /* MBDealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* MBDealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
 		0AF36D3A21878C1E00FCEDEB /* MBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3921878C1E00FCEDEB /* MBLogin.storyboard */; };
@@ -37,6 +38,7 @@
 		0A42FD1F2187A484000F117B /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
 		0A42FD212187A4EB000F117B /* mug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mug.png; sourceTree = "<group>"; };
 		0A42FD232187A898000F117B /* temp-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp-logo.png"; sourceTree = "<group>"; };
+		0A43EEFA21B1AE9E0041954C /* launch_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_bg.png; sourceTree = "<group>"; };
 		0ABD352621767D4D00CAD417 /* MBDealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
 		0AF36D3921878C1E00FCEDEB /* MBLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MBLogin.storyboard; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0A43EEFA21B1AE9E0041954C /* launch_bg.png */,
 				0A42FD232187A898000F117B /* temp-logo.png */,
 				0A42FD1F2187A484000F117B /* barrel.png */,
 				0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */,
@@ -247,6 +250,7 @@
 				0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */,
 				0A42FD222187A4EC000F117B /* mug.png in Resources */,
 				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
+				0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */,
 				0AF36D41218792B000FCEDEB /* Touche.otf in Resources */,
 				0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */,
 				0A42FD242187A899000F117B /* temp-logo.png in Resources */,
