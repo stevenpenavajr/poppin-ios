@@ -32,6 +32,18 @@ class DealDetailsTableViewController: UITableViewController {
         return 2
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.row {
+        case 0:
+            return DealDetailsImageCell.height
+        case 1:
+            return DealDetailsTitleCell.height
+        default:
+            return 0.0
+        }
+        return 0.0
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch (indexPath.row) {
@@ -47,7 +59,7 @@ class DealDetailsTableViewController: UITableViewController {
                 }
             
             default:
-                print("Default")
+                return UITableViewCell()
             }
         
         return UITableViewCell()

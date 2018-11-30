@@ -7,6 +7,8 @@ import UIKit
 
 class DealDetailsImageCell: UITableViewCell {
 
+    static let height: CGFloat = 170.0
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

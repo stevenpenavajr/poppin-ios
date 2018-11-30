@@ -6,14 +6,14 @@
 import UIKit
 
 class DealDetailsTitleCell: UITableViewCell {
-    
     static let height: CGFloat = 100.0
     
     @IBOutlet weak var barTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        barTitleLabel.font = UIFont.systemFont(ofSize: 14, weight: .heavy)
+
+        barTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: .regular)
         // Initialization code
     }
     
