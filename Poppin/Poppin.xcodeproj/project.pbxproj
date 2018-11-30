@@ -14,9 +14,11 @@
 		0A42FD242187A899000F117B /* temp-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD232187A898000F117B /* temp-logo.png */; };
 		0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A43EEFA21B1AE9E0041954C /* launch_bg.png */; };
 		0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */; };
-		0A43EEFF21B1BF960041954C /* DealDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFE21B1BF960041954C /* DealDetailsCell.swift */; };
+		0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */; };
 		0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* DealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
+		0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */; };
+		0ACD1C7D21B1DF120097B016 /* DealDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */; };
 		0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3921878C1E00FCEDEB /* Login.storyboard */; };
 		0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */; };
 		0AF36D41218792B000FCEDEB /* Touche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3D21878DD300FCEDEB /* Touche.otf */; };
@@ -43,9 +45,11 @@
 		0A42FD232187A898000F117B /* temp-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp-logo.png"; sourceTree = "<group>"; };
 		0A43EEFA21B1AE9E0041954C /* launch_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_bg.png; sourceTree = "<group>"; };
 		0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTableViewController.swift; sourceTree = "<group>"; };
-		0A43EEFE21B1BF960041954C /* DealDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsCell.swift; sourceTree = "<group>"; };
+		0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsImageCell.swift; sourceTree = "<group>"; };
 		0ABD352621767D4D00CAD417 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
+		0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_roof.jpg; sourceTree = "<group>"; };
+		0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTitleCell.swift; sourceTree = "<group>"; };
 		0AF36D3921878C1E00FCEDEB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0AF36D3D21878DD300FCEDEB /* Touche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Touche.otf; sourceTree = "<group>"; };
 		0AF36D3E21878DD300FCEDEB /* ToucheBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ToucheBold.otf; sourceTree = "<group>"; };
@@ -83,6 +87,7 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */,
 				0A43EEFA21B1AE9E0041954C /* launch_bg.png */,
 				0A42FD232187A898000F117B /* temp-logo.png */,
 				0A42FD1F2187A484000F117B /* barrel.png */,
@@ -97,7 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
-				0A43EEFE21B1BF960041954C /* DealDetailsCell.swift */,
+				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
+				0ACD1C7C21B1DF120097B016 /* DealDetailsTitleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
 				AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */,
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,
+				0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */,
 				0A42FD1E21879FAD000F117B /* beer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,9 +372,10 @@
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
-				0A43EEFF21B1BF960041954C /* DealDetailsCell.swift in Sources */,
+				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
+				0ACD1C7D21B1DF120097B016 /* DealDetailsTitleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

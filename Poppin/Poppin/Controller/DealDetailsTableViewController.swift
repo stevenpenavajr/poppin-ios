@@ -24,21 +24,32 @@ class DealDetailsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 2
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "DealDetailsCell", for: indexPath) as? DealDetailsCell {
-            //config here
-            return cell
+        switch (indexPath.row) {
+            case 0:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsImageCell", for: indexPath) as? DealDetailsImageCell {
+                    //config here
+                    return cell
+                }
+            case 1:
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTitleCell", for: indexPath) as? DealDetailsTitleCell {
+                    //config here
+                    return cell
+                }
             
-        }
+            default:
+                print("Default")
+            }
+        
         return UITableViewCell()
     }
     
