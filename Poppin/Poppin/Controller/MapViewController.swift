@@ -9,11 +9,11 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, MKMapViewDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
 
+    let pin = UIImage(named: "Images/temp-logo.png")
+    
     @IBOutlet weak var mapView: MKMapView!
-    
-    
     
     
     override func viewDidLoad() {
@@ -28,12 +28,14 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         let tinroof = MKPointAnnotation()
         tinroof.title = "Tin Roof: A Life Music Joint"
         tinroof.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
+        //tinroof.image = pinImage
+        
         mapView.addAnnotation(tinroof)
         
         
         
     } // End of viewDidLoad()
-    
+
     
     // Helper Function to center location on map
     let regionRadius: CLLocationDistance = 2000
