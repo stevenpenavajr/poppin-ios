@@ -7,11 +7,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Ubuntu-B.ttf">
-            <string>Ubuntu-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Deals Table View Controller-->
         <scene sceneID="nIx-tX-tbZ">
@@ -22,22 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MBDealsCell" rowHeight="225" id="Vp0-qP-GZl" customClass="MBDealCell" customModule="Poppin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealCell" rowHeight="225" id="Vp0-qP-GZl" customClass="DealCell" customModule="Poppin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="225"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vp0-qP-GZl" id="Iad-EX-7ES">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="224.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Two Keys Tavern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-J9-wpF">
-                                            <rect key="frame" x="16" y="11" width="343" height="57"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="33"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haR-PK-X2U">
+                                            <rect key="frame" x="166.5" y="102" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="haR-PK-X2U" firstAttribute="centerY" secondItem="Iad-EX-7ES" secondAttribute="centerY" id="YBA-Zx-Q7D"/>
+                                        <constraint firstItem="haR-PK-X2U" firstAttribute="centerX" secondItem="Iad-EX-7ES" secondAttribute="centerX" id="YqE-U1-6na"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barNameLabel" destination="haR-PK-X2U" id="t55-tT-D7j"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
