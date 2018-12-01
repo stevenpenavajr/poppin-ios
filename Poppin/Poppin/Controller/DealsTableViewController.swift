@@ -20,6 +20,12 @@ class DealsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if tabBarController?.tabBar.isHidden ?? false {
+            self.tabBarController?.tabBar.toggleView(isVisible: true)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -99,7 +105,7 @@ class DealsTableViewController: UITableViewController {
     
     // Perform segue to specific deal
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSpecificDeal", sender: indexPath)
+        performSegue(withIdentifier: DealDetailsTableViewController.segueIdentifier, sender: indexPath)
     }
     
 

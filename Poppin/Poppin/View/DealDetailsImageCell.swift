@@ -7,8 +7,6 @@ import UIKit
 
 class DealDetailsImageCell: UITableViewCell {
 
-    static let height: CGFloat = 170.0
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +16,10 @@ class DealDetailsImageCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: size.width, height: 290.0)
     }
 
 }

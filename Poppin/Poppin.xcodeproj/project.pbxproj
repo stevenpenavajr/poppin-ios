@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31AB6621B320F600C51459 /* UIView+Animations.swift */; };
 		0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */; };
 		0A42FD1E21879FAD000F117B /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1D21879FAD000F117B /* beer.png */; };
 		0A42FD202187A484000F117B /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1F2187A484000F117B /* barrel.png */; };
@@ -34,10 +35,11 @@
 		BD4E2B8DC7E3293AA10294B6 /* Pods_Poppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */; };
 		CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */; };
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
-		CBB7191821B1E6C60054EC77 /* DealDetailsTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */; };
+		CBB7191821B1E6C60054EC77 /* DealDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191721B1E6C60054EC77 /* DealDetailsDescriptionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A31AB6621B320F600C51459 /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "beer-pour-blur-new.gif"; sourceTree = "<group>"; };
 		0A42FD1D21879FAD000F117B /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		0A42FD1F2187A484000F117B /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
@@ -68,7 +70,7 @@
 		AF40CA32216AE94E00E82D17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Facebook.swift"; sourceTree = "<group>"; };
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTitleCell.swift; sourceTree = "<group>"; };
+		CBB7191721B1E6C60054EC77 /* DealDetailsDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsDescriptionCell.swift; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A31AB6521B320C800C51459 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0A31AB6621B320F600C51459 /* UIView+Animations.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +113,7 @@
 			children = (
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
-				CBB7191721B1E6C60054EC77 /* DealDetailsTitleCell.swift */,
+				CBB7191721B1E6C60054EC77 /* DealDetailsDescriptionCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,6 +196,7 @@
 				AF40CA26216AE82E00E82D17 /* Controller */,
 				0ACD1C7F21B1E7EF0097B016 /* Content */,
 				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				0A31AB6521B320C800C51459 /* Util */,
 				CB2DF2ED21B1E255000C6A9F /* Assets */,
 			);
 			path = Poppin;
@@ -370,12 +381,13 @@
 				AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
-				CBB7191821B1E6C60054EC77 /* DealDetailsTitleCell.swift in Sources */,
+				CBB7191821B1E6C60054EC77 /* DealDetailsDescriptionCell.swift in Sources */,
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
+				0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
