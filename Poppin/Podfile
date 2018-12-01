@@ -10,6 +10,7 @@ target 'Poppin' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'Gifu'
   pod 'ObjectMapper', '~> 3.4'  
   pod 'NVActivityIndicatorView'

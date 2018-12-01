@@ -10,6 +10,6 @@ import Foundation
 import Firebase
 
 protocol FirebaseSubscription {
-    func initialize()
+    func initializeFirebaseSubscribtion()
     func handleUpdate()
 }

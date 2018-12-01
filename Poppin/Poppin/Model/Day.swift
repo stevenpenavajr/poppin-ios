@@ -7,16 +7,15 @@
 //
 
 import Foundation
+import ObjectMapper
 
-struct Hours {
-    var open: Int?
-    var close: Int?
-}
+class Day: Mappable {
+    
+    
+    
+    required init?(map: Map) {}
+    
+    func mapping(map: Map) {}
+    
 
-class Day {
-    
-    var hours: Hours?
-    var music
-    
-    
 }

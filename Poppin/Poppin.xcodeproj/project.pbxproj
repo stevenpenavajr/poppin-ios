@@ -39,7 +39,7 @@
 		CBB7191C21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191B21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift */; };
 		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
 		CBB7192021B1F0120054EC77 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191F21B1F0120054EC77 /* Day.swift */; };
-		CBB7192221B1F05A0054EC77 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192121B1F05A0054EC77 /* Music.swift */; };
+		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +78,7 @@
 		CBB7191B21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+FirebaseSubscription.swift"; sourceTree = "<group>"; };
 		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		CBB7191F21B1F0120054EC77 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		CBB7192121B1F05A0054EC77 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -130,9 +130,9 @@
 		0ACD1C7E21B1E7E70097B016 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CBB7191D21B1EE4E0054EC77 /* Pub.swift */,
 				CBB7191F21B1F0120054EC77 /* Day.swift */,
-				CBB7192121B1F05A0054EC77 /* Music.swift */,
+				CBB7192321B3048D0054EC77 /* Deal.swift */,
+				CBB7191D21B1EE4E0054EC77 /* Pub.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +332,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Poppin/Pods-Poppin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -339,13 +340,21 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
 				"${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -353,8 +362,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberRides.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +405,6 @@
 			files = (
 				CBB7192021B1F0120054EC77 /* Day.swift in Sources */,
 				0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */,
-				CBB7192221B1F05A0054EC77 /* Music.swift in Sources */,
 				AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
@@ -402,6 +417,7 @@
 				CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
+				CBB7192421B3048D0054EC77 /* Deal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
