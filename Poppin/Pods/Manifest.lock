@@ -74,6 +74,10 @@ PODS:
   - NVActivityIndicatorView (4.4.0):
     - NVActivityIndicatorView/Presenter (= 4.4.0)
   - NVActivityIndicatorView/Presenter (4.4.0)
+  - ObjectMapper (3.4.1)
+  - UberCore (0.11.0)
+  - UberRides (0.11.0):
+    - UberCore
 
 DEPENDENCIES:
   - FBSDKLoginKit
@@ -82,6 +86,8 @@ DEPENDENCIES:
   - Firebase/Core
   - Gifu
   - NVActivityIndicatorView
+  - ObjectMapper (~> 3.4)
+  - UberRides (~> 0.11)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -100,6 +106,9 @@ SPEC REPOS:
     - GTMSessionFetcher
     - nanopb
     - NVActivityIndicatorView
+    - ObjectMapper
+    - UberCore
+    - UberRides
 
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
@@ -117,7 +126,10 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
+  ObjectMapper: 5311bd50ca732930959e7ca1a2de43ab823a5ced
+  UberCore: b72013357bff720a30a1b12669e724750b775ef7
+  UberRides: d39c7c9f612d8f5ebfb69f475a553e1a54c3c4b5
 
-PODFILE CHECKSUM: 99a6e286ba586f73f17dc62d1e7b8bed54a24c55
+PODFILE CHECKSUM: d5712a2d77690e25126d2aabc88c1ff74ee04c2b
 
 COCOAPODS: 1.5.3
