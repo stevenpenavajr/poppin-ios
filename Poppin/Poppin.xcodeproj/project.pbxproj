@@ -7,42 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31AB6621B320F600C51459 /* UIView+Animations.swift */; };
 		0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */; };
 		0A42FD1E21879FAD000F117B /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1D21879FAD000F117B /* beer.png */; };
 		0A42FD202187A484000F117B /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1F2187A484000F117B /* barrel.png */; };
 		0A42FD222187A4EC000F117B /* mug.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD212187A4EB000F117B /* mug.png */; };
 		0A42FD242187A899000F117B /* temp-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD232187A898000F117B /* temp-logo.png */; };
-		0ABD352721767D4D00CAD417 /* MBDealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* MBDealCell.swift */; };
+		0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A43EEFA21B1AE9E0041954C /* launch_bg.png */; };
+		0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */; };
+		0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */; };
+		0A6850E721B326A400CC4E17 /* DealDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */; };
+		0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* DealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
-		0AF36D3A21878C1E00FCEDEB /* MBLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3921878C1E00FCEDEB /* MBLogin.storyboard */; };
-		0AF36D40218791BD00FCEDEB /* MBLoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF36D3F218791BD00FCEDEB /* MBLoginController.swift */; };
+		0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */; };
+		0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3921878C1E00FCEDEB /* Login.storyboard */; };
+		0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */; };
 		0AF36D41218792B000FCEDEB /* Touche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3D21878DD300FCEDEB /* Touche.otf */; };
 		0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3E21878DD300FCEDEB /* ToucheBold.otf */; };
 		AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA12216AE69800E82D17 /* AppDelegate.swift */; };
 		AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA19216AE69A00E82D17 /* Assets.xcassets */; };
 		AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA1B216AE69A00E82D17 /* LaunchScreen.storyboard */; };
-		AF40CA29216AE88900E82D17 /* MBTabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA28216AE88900E82D17 /* MBTabBar.storyboard */; };
-		AF40CA2B216AE8EC00E82D17 /* MBTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA2A216AE8EC00E82D17 /* MBTabBarController.swift */; };
+		AF40CA29216AE88900E82D17 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA28216AE88900E82D17 /* TabBar.storyboard */; };
+		AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA2A216AE8EC00E82D17 /* TabBarController.swift */; };
 		AF40CA2D216AE91C00E82D17 /* Deals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA2C216AE91C00E82D17 /* Deals.storyboard */; };
 		AF40CA2F216AE92400E82D17 /* Map.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA2E216AE92400E82D17 /* Map.storyboard */; };
 		AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */; };
 		AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA32216AE94E00E82D17 /* MapViewController.swift */; };
 		BD4E2B8DC7E3293AA10294B6 /* Pods_Poppin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */; };
+		CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */; };
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
+		CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */; };
+		CBB7191C21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191B21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift */; };
+		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
+		CBB7192021B1F0120054EC77 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191F21B1F0120054EC77 /* Day.swift */; };
+		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A31AB6621B320F600C51459 /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "beer-pour-blur-new.gif"; sourceTree = "<group>"; };
 		0A42FD1D21879FAD000F117B /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		0A42FD1F2187A484000F117B /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
 		0A42FD212187A4EB000F117B /* mug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mug.png; sourceTree = "<group>"; };
 		0A42FD232187A898000F117B /* temp-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "temp-logo.png"; sourceTree = "<group>"; };
-		0ABD352621767D4D00CAD417 /* MBDealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBDealCell.swift; sourceTree = "<group>"; };
+		0A43EEFA21B1AE9E0041954C /* launch_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch_bg.png; sourceTree = "<group>"; };
+		0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTableViewController.swift; sourceTree = "<group>"; };
+		0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsImageCell.swift; sourceTree = "<group>"; };
+		0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealDetailsDescriptionCell.swift; sourceTree = "<group>"; };
+		0ABD352621767D4D00CAD417 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
-		0AF36D3921878C1E00FCEDEB /* MBLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MBLogin.storyboard; sourceTree = "<group>"; };
+		0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tin_roof.jpg; sourceTree = "<group>"; };
+		0AF36D3921878C1E00FCEDEB /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		0AF36D3D21878DD300FCEDEB /* Touche.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Touche.otf; sourceTree = "<group>"; };
 		0AF36D3E21878DD300FCEDEB /* ToucheBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ToucheBold.otf; sourceTree = "<group>"; };
-		0AF36D3F218791BD00FCEDEB /* MBLoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBLoginController.swift; sourceTree = "<group>"; };
+		0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17D7C13EE0B125F46C7982C9 /* Pods-Poppin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.debug.xcconfig"; sourceTree = "<group>"; };
 		8D83FFC035B1AB6D62D162B4 /* Pods-Poppin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.release.xcconfig"; sourceTree = "<group>"; };
 		AF40CA0F216AE69800E82D17 /* Poppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,13 +68,19 @@
 		AF40CA19216AE69A00E82D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF40CA1C216AE69A00E82D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF40CA1E216AE69A00E82D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF40CA28216AE88900E82D17 /* MBTabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MBTabBar.storyboard; sourceTree = "<group>"; };
-		AF40CA2A216AE8EC00E82D17 /* MBTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTabBarController.swift; sourceTree = "<group>"; };
+		AF40CA28216AE88900E82D17 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		AF40CA2A216AE8EC00E82D17 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		AF40CA2C216AE91C00E82D17 /* Deals.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Deals.storyboard; sourceTree = "<group>"; };
 		AF40CA2E216AE92400E82D17 /* Map.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Map.storyboard; sourceTree = "<group>"; };
 		AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsTableViewController.swift; sourceTree = "<group>"; };
 		AF40CA32216AE94E00E82D17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Facebook.swift"; sourceTree = "<group>"; };
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
+		CBB7191B21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+FirebaseSubscription.swift"; sourceTree = "<group>"; };
+		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
+		CBB7191F21B1F0120054EC77 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -72,9 +96,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A31AB6521B320C800C51459 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				0A31AB6621B320F600C51459 /* UIView+Animations.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */,
+				0A43EEFA21B1AE9E0041954C /* launch_bg.png */,
 				0A42FD232187A898000F117B /* temp-logo.png */,
 				0A42FD1F2187A484000F117B /* barrel.png */,
 				0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */,
@@ -84,12 +118,14 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		0ABD352821767D5600CAD417 /* Cells */ = {
+		0ABD352821767D5600CAD417 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0ABD352621767D4D00CAD417 /* MBDealCell.swift */,
+				0ABD352621767D4D00CAD417 /* DealCell.swift */,
+				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
+				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
 			);
-			path = Cells;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0ABD3529217680A200CAD417 /* Fonts */ = {
@@ -99,6 +135,24 @@
 				0ABD352A217680BE00CAD417 /* Ubuntu */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0ACD1C7E21B1E7E70097B016 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CBB7191F21B1F0120054EC77 /* Day.swift */,
+				CBB7192321B3048D0054EC77 /* Deal.swift */,
+				CBB7191D21B1EE4E0054EC77 /* Pub.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0ACD1C7F21B1E7EF0097B016 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 		0AF36D3C21878DC400FCEDEB /* ToucheFont */ = {
@@ -148,15 +202,16 @@
 		AF40CA11216AE69800E82D17 /* Poppin */ = {
 			isa = PBXGroup;
 			children = (
-				0A42FD1A21879CA9000F117B /* Images */,
-				0ABD3529217680A200CAD417 /* Fonts */,
-				0ABD352821767D5600CAD417 /* Cells */,
-				AF40CA26216AE82E00E82D17 /* Controller */,
-				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				AF40CA12216AE69800E82D17 /* AppDelegate.swift */,
 				CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */,
 				AF40CA1E216AE69A00E82D17 /* Info.plist */,
-				AF40CA12216AE69800E82D17 /* AppDelegate.swift */,
-				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
+				0ACD1C7E21B1E7E70097B016 /* Model */,
+				0ABD352821767D5600CAD417 /* View */,
+				AF40CA26216AE82E00E82D17 /* Controller */,
+				0ACD1C7F21B1E7EF0097B016 /* Content */,
+				AF40CA27216AE83F00E82D17 /* Storyboards */,
+				0A31AB6521B320C800C51459 /* Util */,
+				CB2DF2ED21B1E255000C6A9F /* Assets */,
 			);
 			path = Poppin;
 			sourceTree = "<group>";
@@ -164,10 +219,13 @@
 		AF40CA26216AE82E00E82D17 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				AF40CA2A216AE8EC00E82D17 /* MBTabBarController.swift */,
 				AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */,
+				CBB7191B21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift */,
+				0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */,
+				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
+				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
-				0AF36D3F218791BD00FCEDEB /* MBLoginController.swift */,
+				AF40CA2A216AE8EC00E82D17 /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -176,12 +234,22 @@
 			isa = PBXGroup;
 			children = (
 				AF40CA1B216AE69A00E82D17 /* LaunchScreen.storyboard */,
-				AF40CA28216AE88900E82D17 /* MBTabBar.storyboard */,
+				AF40CA28216AE88900E82D17 /* TabBar.storyboard */,
 				AF40CA2C216AE91C00E82D17 /* Deals.storyboard */,
 				AF40CA2E216AE92400E82D17 /* Map.storyboard */,
-				0AF36D3921878C1E00FCEDEB /* MBLogin.storyboard */,
+				0AF36D3921878C1E00FCEDEB /* Login.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CB2DF2ED21B1E255000C6A9F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
+				0ABD3529217680A200CAD417 /* Fonts */,
+				0A42FD1A21879CA9000F117B /* Images */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,17 +315,19 @@
 				0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */,
 				0A42FD222187A4EC000F117B /* mug.png in Resources */,
 				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
+				0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */,
 				0AF36D41218792B000FCEDEB /* Touche.otf in Resources */,
 				0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */,
 				0A42FD242187A899000F117B /* temp-logo.png in Resources */,
-				0AF36D3A21878C1E00FCEDEB /* MBLogin.storyboard in Resources */,
+				0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */,
 				AF40CA2D216AE91C00E82D17 /* Deals.storyboard in Resources */,
 				0A42FD202187A484000F117B /* barrel.png in Resources */,
-				AF40CA29216AE88900E82D17 /* MBTabBar.storyboard in Resources */,
+				AF40CA29216AE88900E82D17 /* TabBar.storyboard in Resources */,
 				AF40CA2F216AE92400E82D17 /* Map.storyboard in Resources */,
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
 				AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */,
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,
+				0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */,
 				0A42FD1E21879FAD000F117B /* beer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,23 +343,45 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Poppin/Pods-Poppin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/UberCore/UberCore.framework",
+				"${BUILT_PRODUCTS_DIR}/UberRides/UberRides.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UberRides.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,12 +414,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AF36D40218791BD00FCEDEB /* MBLoginController.swift in Sources */,
-				AF40CA2B216AE8EC00E82D17 /* MBTabBarController.swift in Sources */,
+				CBB7192021B1F0120054EC77 /* Day.swift in Sources */,
+				0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */,
+				AF40CA2B216AE8EC00E82D17 /* TabBarController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
-				0ABD352721767D4D00CAD417 /* MBDealCell.swift in Sources */,
+				0A6850E721B326A400CC4E17 /* DealDetailsDescriptionCell.swift in Sources */,
+				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
+				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
+				CBB7191C21B1EDBA0054EC77 /* DealsTableViewController+FirebaseSubscription.swift in Sources */,
+				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
+				CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */,
+				CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */,
+				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
+				0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */,
+				CBB7192421B3048D0054EC77 /* Deal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

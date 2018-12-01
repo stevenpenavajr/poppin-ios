@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5fw-rp-V7t">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5fw-rp-V7t">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Ubuntu-B.ttf">
-            <string>Ubuntu-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Deals Table View Controller-->
         <scene sceneID="nIx-tX-tbZ">
@@ -22,22 +17,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="225" id="Vp0-qP-GZl" customClass="MBDealCell" customModule="Poppin" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealCell" rowHeight="225" id="Vp0-qP-GZl" customClass="DealCell" customModule="Poppin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="225"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vp0-qP-GZl" id="Iad-EX-7ES">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="224.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Two Keys Tavern" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-J9-wpF">
-                                            <rect key="frame" x="16" y="11" width="343" height="57"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="Ubuntu-Bold" family="Ubuntu" pointSize="33"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haR-PK-X2U">
+                                            <rect key="frame" x="166.5" y="102" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="haR-PK-X2U" firstAttribute="centerY" secondItem="Iad-EX-7ES" secondAttribute="centerY" id="YBA-Zx-Q7D"/>
+                                        <constraint firstItem="haR-PK-X2U" firstAttribute="centerX" secondItem="Iad-EX-7ES" secondAttribute="centerX" id="YqE-U1-6na"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barNameLabel" destination="haR-PK-X2U" id="t55-tT-D7j"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -46,10 +47,104 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Rfc-xs-R9o"/>
+                    <connections>
+                        <segue destination="RQJ-SQ-7Wt" kind="show" identifier="DealDetails" id="YUo-Pu-rVb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I7q-HF-eFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="992.79999999999995" y="48.125937031484263"/>
+        </scene>
+        <!--Deal Details Table View Controller-->
+        <scene sceneID="vrf-ll-nhW">
+            <objects>
+                <tableViewController id="RQJ-SQ-7Wt" customClass="DealDetailsTableViewController" customModule="Poppin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dsm-64-wm4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsImageCell" rowHeight="158" id="eCT-6P-r5Z" customClass="DealDetailsImageCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="158"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eCT-6P-r5Z" id="EVk-zn-5pW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tin_roof.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="etO-QJ-b9D">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="etO-QJ-b9D" firstAttribute="top" secondItem="EVk-zn-5pW" secondAttribute="top" id="Veo-z4-e2T"/>
+                                        <constraint firstAttribute="bottom" secondItem="etO-QJ-b9D" secondAttribute="bottom" id="bLN-Xs-JpA"/>
+                                        <constraint firstItem="etO-QJ-b9D" firstAttribute="leading" secondItem="EVk-zn-5pW" secondAttribute="leading" id="hKY-hW-PjJ"/>
+                                        <constraint firstAttribute="trailing" secondItem="etO-QJ-b9D" secondAttribute="trailing" id="s1P-HZ-Eg1"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsDescriptionCell" rowHeight="281" id="A1E-eW-aGM" customClass="DealDetailsDescriptionCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="186" width="375" height="281"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A1E-eW-aGM" id="8U8-iT-Odi">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="280.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin Roof of Lexington" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jML-6H-h4g">
+                                            <rect key="frame" x="20" y="20" width="335" height="23"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wpn-1S-eEj">
+                                            <rect key="frame" x="20" y="123.5" width="335" height="147"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <string key="text">Details: get hella margaritas!
+
+Several flavors
+
+Tap "USE DEAL" to use!</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-zz-zBG">
+                                            <rect key="frame" x="20" y="51" width="335" height="64.5"/>
+                                            <string key="text">$5 Pitchers All Night
+More text</string>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gFL-zz-zBG" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leading" constant="20" id="4RS-Gk-7Oq"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leading" constant="20" id="DQZ-mE-Jlx"/>
+                                        <constraint firstAttribute="trailing" secondItem="jML-6H-h4g" secondAttribute="trailing" constant="20" id="Rd1-V2-k5J"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="leading" secondItem="8U8-iT-Odi" secondAttribute="leading" constant="20" id="TPZ-fP-QGn"/>
+                                        <constraint firstAttribute="trailing" secondItem="Wpn-1S-eEj" secondAttribute="trailing" constant="20" id="fT0-4y-KdO"/>
+                                        <constraint firstAttribute="trailing" secondItem="gFL-zz-zBG" secondAttribute="trailing" constant="20" id="fwM-6T-0rR"/>
+                                        <constraint firstItem="jML-6H-h4g" firstAttribute="top" secondItem="8U8-iT-Odi" secondAttribute="top" constant="20" id="gfu-CD-ihR"/>
+                                        <constraint firstAttribute="bottom" secondItem="Wpn-1S-eEj" secondAttribute="bottom" constant="10" id="o9U-ae-N9a"/>
+                                        <constraint firstItem="gFL-zz-zBG" firstAttribute="top" secondItem="jML-6H-h4g" secondAttribute="bottom" constant="8" id="owj-V7-aWJ"/>
+                                        <constraint firstItem="Wpn-1S-eEj" firstAttribute="top" secondItem="gFL-zz-zBG" secondAttribute="bottom" constant="8" id="vtu-kN-NuT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barTitleLabel" destination="jML-6H-h4g" id="ciP-Tr-8US"/>
+                                    <outlet property="dealDescriptionLabel" destination="Wpn-1S-eEj" id="0kU-9M-nnz"/>
+                                    <outlet property="dealTitleLabel" destination="gFL-zz-zBG" id="sMe-P3-oBO"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RQJ-SQ-7Wt" id="PLL-8C-kVj"/>
+                            <outlet property="delegate" destination="RQJ-SQ-7Wt" id="Y9B-cy-g4n"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdG-1Q-sz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872.8" y="47.226386806596707"/>
         </scene>
         <!--Deals-->
         <scene sceneID="I3w-re-jgC">
@@ -70,4 +165,7 @@
             <point key="canvasLocation" x="90" y="48"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tin_roof.jpg" width="1140" height="641"/>
+    </resources>
 </document>

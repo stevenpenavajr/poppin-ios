@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beer-pour-blur-new.gif" translatesAutoresizingMaskIntoConstraints="NO" id="2vb-K7-LrW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="2vb-K7-LrW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                         </subviews>
@@ -37,6 +37,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="beer-pour-blur-new.gif" width="600" height="338"/>
+        <image name="launch_bg.png" width="600" height="338"/>
     </resources>
 </document>
