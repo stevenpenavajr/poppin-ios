@@ -7,17 +7,29 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
+import ObjectMapper
 
 extension DealsTableViewController: FirebaseSubscription {
     
-    func initialize() {
-        
+    func initializeFirebaseSubscribtion() {
+        Firestore.firestore().collection("pubs").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    guard let deal = Mapper<Deal>().map(JSON: document.data()) else { print("HERE:BLAKE"); return }
+                    self.deals.append(deal)
+                }
+                self.handleUpdate()
+            }
+        }
     }
     
     func handleUpdate() {
         tableView.reloadData()
     }
-    
-    
     
 }

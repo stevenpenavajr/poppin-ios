@@ -5,8 +5,12 @@
 
 import UIKit
 
-class MBDealCell: UITableViewCell {
+class DealCell: UITableViewCell {
 
+    static let identifier = "DealCell"
+    
+    @IBOutlet weak var barNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
