@@ -18,6 +18,12 @@ class DealsTableViewController: UITableViewController {
         self.title = "Deals"
         initializeFirebaseSubscribtion()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if tabBarController?.tabBar.isHidden ?? false {
+            self.tabBarController?.tabBar.toggleView(isVisible: true)
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -60,7 +66,7 @@ class DealsTableViewController: UITableViewController {
     
     // Perform segue to specific deal
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSpecificDeal", sender: indexPath)
+        performSegue(withIdentifier: DealDetailsTableViewController.segueIdentifier, sender: indexPath)
     }
     
 

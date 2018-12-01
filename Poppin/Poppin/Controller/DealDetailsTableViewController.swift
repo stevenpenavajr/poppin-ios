@@ -7,17 +7,57 @@ import UIKit
 
 class DealDetailsTableViewController: UITableViewController {
     
+    static let segueIdentifier = "DealDetails"
+    
+    private var uberButton: UIButton = {
+        let btn = UIButton()
+        btn.backgroundColor = .black
+        btn.setTitle("Uber", for: .normal)
+        btn.setTitleColor(.white, for: .normal)
+        btn.alpha = 0.0
+        btn.layer.cornerRadius = 10
+        btn.clipsToBounds = true
+        return btn
+    }()
+    
+    private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 2)
+    
     var rowSelection = 0
 
     override func viewDidLoad() {
         print("ROW: " , rowSelection)
         super.viewDidLoad()
+        
+        
+        tableView.separatorStyle = .none
+        
+        // HIDE TAB BAR !!
+        self.tabBarController?.tabBar.toggleView(isVisible: false, completion: {
+            let navController = self
+            let layoutGuide = navController.view.layoutMarginsGuide
+            navController.view.addSubview(self.uberButton)
+            self.uberButton.toggleView(isVisible: true)
+            self.uberButton.translatesAutoresizingMaskIntoConstraints = false
+            self.uberButton.backgroundColor = UIColor.black
+            self.uberButton.heightAnchor.constraint(equalToConstant: 56.0).isActive = true
+            self.uberButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
+            self.uberButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
+            self.uberButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -20).isActive = true
+        })
+
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        uberButton.toggleView(isVisible: false) 
     }
 
     // MARK: - Table view data source
@@ -33,16 +73,7 @@ class DealDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        switch indexPath.row {
-        case 0:
-            return DealDetailsImageCell.height
-        case 1:
-            return DealDetailsTitleCell.height
-        default:
-            return 0.0
-        }
-        return 0.0
+        return cellHeights[indexPath.row]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -50,11 +81,18 @@ class DealDetailsTableViewController: UITableViewController {
             case 0:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsImageCell", for: indexPath) as? DealDetailsImageCell {
                     //config here
+                    
+                    if cellHeights[indexPath.row] == 0.0 {
+                        cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
+                    }
+                    
                     return cell
                 }
             case 1:
-                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTitleCell", for: indexPath) as? DealDetailsTitleCell {
-                    //config here
+                if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsDescriptionCell", for: indexPath) as? DealDetailsDescriptionCell {
+                    if cellHeights[indexPath.row] == 0.0 {
+                        cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
+                    }
                     return cell
                 }
             
@@ -66,49 +104,16 @@ class DealDetailsTableViewController: UITableViewController {
     }
     
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
+    func toggleUberButton(isVisible: Bool) {
+        
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
