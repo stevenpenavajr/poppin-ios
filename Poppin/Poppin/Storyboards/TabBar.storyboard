@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="lai-hZ-ksV">
             <objects>
-                <tabBarController id="ndJ-bv-URA" customClass="TabBarController" customModule="Poppin" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ndJ-bv-URA" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1WC-uh-4Ib">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

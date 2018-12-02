@@ -20,7 +20,7 @@ extension DealsTableViewController: FirebaseSubscription {
             } else {
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
-                    guard let deal = Mapper<Deal>().map(JSON: document.data()) else { print("HERE:BLAKE"); return }
+                    guard let deal = Mapper<Deal>().map(JSON: document.data()) else { return }
                     self.deals.append(deal)
                 }
                 self.handleUpdate()
