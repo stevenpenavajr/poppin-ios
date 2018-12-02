@@ -16,7 +16,7 @@ class DealsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Deals"
-        initializeFirebaseSubscribtion()
+        initializeFirebaseSubscription()
     }
     
     override func viewWillAppear(_ animated: Bool) {

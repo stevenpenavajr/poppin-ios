@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31AB6621B320F600C51459 /* UIView+Animations.swift */; };
+		0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E6B0121B36CD30099261C /* uber-icon.png */; };
 		0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */; };
 		0A42FD1E21879FAD000F117B /* beer.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1D21879FAD000F117B /* beer.png */; };
 		0A42FD202187A484000F117B /* barrel.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1F2187A484000F117B /* barrel.png */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		0A31AB6621B320F600C51459 /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
+		0A3E6B0121B36CD30099261C /* uber-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uber-icon.png"; sourceTree = "<group>"; };
 		0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "beer-pour-blur-new.gif"; sourceTree = "<group>"; };
 		0A42FD1D21879FAD000F117B /* beer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beer.png; sourceTree = "<group>"; };
 		0A42FD1F2187A484000F117B /* barrel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = barrel.png; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0A3E6B0121B36CD30099261C /* uber-icon.png */,
 				0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */,
 				0A43EEFA21B1AE9E0041954C /* launch_bg.png */,
 				0A42FD232187A898000F117B /* temp-logo.png */,
@@ -324,6 +327,7 @@
 				0A42FD202187A484000F117B /* barrel.png in Resources */,
 				AF40CA29216AE88900E82D17 /* TabBar.storyboard in Resources */,
 				AF40CA2F216AE92400E82D17 /* Map.storyboard in Resources */,
+				0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */,
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
 				AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */,
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,

@@ -17,6 +17,7 @@ class DealDetailsTableViewController: UITableViewController {
         btn.alpha = 0.0
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
+        btn.showsTouchWhenHighlighted = true
         return btn
     }()
     

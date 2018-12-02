@@ -13,7 +13,7 @@ import ObjectMapper
 
 extension DealsTableViewController: FirebaseSubscription {
     
-    func initializeFirebaseSubscribtion() {
+    func initializeFirebaseSubscription() {
         Firestore.firestore().collection("pubs").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
