@@ -12,17 +12,24 @@ class DealDetailsTableViewController: UITableViewController {
     private var uberButton: UIButton = {
         let btn = UIButton()
         btn.backgroundColor = .black
-        btn.setTitle("Uber", for: .normal)
+        btn.setTitle("Request an Uber", for: .normal)
         btn.setTitleColor(.white, for: .normal)
+        btn.setTitleColor(.lightGray, for: .highlighted)
+        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
-        btn.showsTouchWhenHighlighted = true
+//        btn.showsTouchWhenHighlighted = true
+        
+        btn.addTarget(self, action: #selector(uberButtonPressed), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(highlightUberButton), for: .touchDown)
+        
         return btn
     }()
     
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 2)
     
     var rowSelection = 0
+    
 
     override func viewDidLoad() {
         print("ROW: " , rowSelection)
@@ -40,11 +47,22 @@ class DealDetailsTableViewController: UITableViewController {
         self.uberButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
         self.uberButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
         self.uberButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 40).isActive = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    @objc func uberButtonPressed(sender: UIButton!) {
+        print("Uber pressed")
+        self.uberButton.setTitleColor(.white, for: .normal)
+    }
+    
+    @objc func highlightUberButton(sender: UIButton!) {
+        print("Uber tapped")
+        self.uberButton.setTitleColor(.lightGray, for: .normal)
     }
     
     // MARK: - Table view data source
