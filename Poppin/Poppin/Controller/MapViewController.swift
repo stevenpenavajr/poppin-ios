@@ -15,14 +15,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Map"
-        
         // Set initial location to Lexington, Kentucky
         let initialLocation = CLLocation(latitude: 38.0406, longitude: -84.5037)
         centerMapOnLocation(location: initialLocation)
         
     } // End of viewDidLoad()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
+    }
     
     // Helper Function to center location on map
     let regionRadius: CLLocationDistance = 2000
