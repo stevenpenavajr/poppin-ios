@@ -14,7 +14,6 @@ class DealDetailsTableViewController: UITableViewController {
         btn.backgroundColor = .black
         btn.setTitle("Uber", for: .normal)
         btn.setTitleColor(.white, for: .normal)
-        btn.alpha = 0.0
         btn.layer.cornerRadius = 10
         btn.clipsToBounds = true
         return btn
@@ -28,27 +27,18 @@ class DealDetailsTableViewController: UITableViewController {
         print("ROW: " , rowSelection)
         super.viewDidLoad()
         
+        setTabBarHidden(true)
         
         tableView.separatorStyle = .none
-        
-        // HIDE TAB BAR !!
-        self.tabBarController?.tabBar.toggleView(isVisible: false, completion: {
-            let navController = self
-            let layoutGuide = navController.view.layoutMarginsGuide
-            navController.view.addSubview(self.uberButton)
-            self.uberButton.toggleView(isVisible: true)
-            self.uberButton.translatesAutoresizingMaskIntoConstraints = false
-            self.uberButton.backgroundColor = UIColor.black
-            self.uberButton.heightAnchor.constraint(equalToConstant: 56.0).isActive = true
-            self.uberButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
-            self.uberButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
-            self.uberButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: -20).isActive = true
-        })
-
-        
-        
-        
-
+        view.addSubview(self.uberButton)
+        var layoutGuide = view.layoutMarginsGuide
+        if #available(iOS 11, *) { layoutGuide = view.safeAreaLayoutGuide }
+        self.uberButton.translatesAutoresizingMaskIntoConstraints = false
+        self.uberButton.backgroundColor = UIColor.black
+        self.uberButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        self.uberButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
+        self.uberButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
+        self.uberButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 40).isActive = true
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -56,10 +46,6 @@ class DealDetailsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        uberButton.toggleView(isVisible: false) 
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -103,12 +89,6 @@ class DealDetailsTableViewController: UITableViewController {
         return UITableViewCell()
     }
     
-
-    // MARK: - Navigation
-
-    func toggleUberButton(isVisible: Bool) {
-        
-    }
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

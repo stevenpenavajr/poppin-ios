@@ -11,15 +11,25 @@ import Firebase
 
 class DealsTableViewController: UITableViewController {
 
-    var deals = [Deal]()
+    var deals = [Deal]() {
+        didSet {
+            cellHeights = [CGFloat].init(repeating: 0, count: deals.count)
+        }
+    }
+    
+    private var cellHeights = [CGFloat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Deals"
+        tableView.separatorStyle = .none
         initializeFirebaseSubscribtion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let tabBar = self.tabBarController?.tabBar else { return }
+        if tabBar.alpha < 1 { setTabBarHidden(false) }
+        (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
         if tabBarController?.tabBar.isHidden ?? false {
             self.tabBarController?.tabBar.toggleView(isVisible: true)
         }
@@ -36,17 +46,17 @@ class DealsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 51.0
+        return cellHeights[indexPath.row]
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let dealCell = tableView.dequeueReusableCell(withIdentifier: DealCell.identifier, for: indexPath) as? DealCell {
-            dealCell.barNameLabel.text = deals[indexPath.row].name
-            print(deals[indexPath.row].name)
-            
+            dealCell.configureCell(withDeal: deals[indexPath.row])
+            if cellHeights[indexPath.row] == 0 {
+                cellHeights[indexPath.row] = dealCell.sizeThatFits(CGSize(width: dealCell.bounds.width, height: .greatestFiniteMagnitude)).height
+            }
             return dealCell
         }
-        
         return UITableViewCell()
     }
     
