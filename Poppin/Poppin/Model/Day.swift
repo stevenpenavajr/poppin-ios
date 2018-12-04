@@ -12,7 +12,6 @@ import ObjectMapper
 class Day: Mappable {
     
     
-    
     required init?(map: Map) {}
     
     func mapping(map: Map) {}
