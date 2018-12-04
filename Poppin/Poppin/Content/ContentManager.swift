@@ -18,6 +18,7 @@ class ContentManager {
     
     internal var pubs = [Pub]()
     internal var deals = [Deal]()
+    internal var currentDeals = [Deal]()
     
     weak var delegate: ContentManagerDelegate?
     
@@ -32,6 +33,31 @@ class ContentManager {
     func getCurrentDeals() -> [Deal] {
         
         // TODO
+        // // first: order pubs by distance
+        // // probably using euclidian distance formulas
+        // for pub in pubs (sorted) :
+        //      today = realday
+        //      time = realtime
+        //      if time + 24 < pub.close
+        //          today = realyesterday
+        //          time = time + 24
+        //      if pub.today != nil
+        //          for deal in today (happy-hour/
+        //          trivia/music/special/other)
+        //              // if deal not over but started
+        //              if time < deal[3] (end) && time >
+        //              deal[2] (begin)
+        //                  currentDeals.append(deal)
+        //              }
+        //          }
+        //          // now add deals that havent started yet
+        //          for deal in today
+        //              if time < deal[2] (begin)
+        //                  currentDeals.append(deal)
+        // return currentDeals
+        
+        
+        
         return deals
         
     }

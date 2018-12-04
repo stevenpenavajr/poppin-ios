@@ -14,7 +14,10 @@ class Day: Mappable {
     
     required init?(map: Map) {}
     
-    func mapping(map: Map) {}
+    func mapping(map: Map) {
+        
+        
+    }
     
 
 }
