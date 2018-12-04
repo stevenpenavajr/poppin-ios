@@ -12,7 +12,8 @@ target 'Poppin' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Gifu'
+  pod 'Kingfisher', '~> 4.0'	
+  pod 'NVActivityIndicatorView' 
   pod 'ObjectMapper', '~> 3.4'  
-  pod 'NVActivityIndicatorView'
   pod 'UberRides', '~> 0.11'
 end

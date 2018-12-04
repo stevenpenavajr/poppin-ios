@@ -20,7 +20,7 @@
         <!--Login View Controller-->
         <scene sceneID="cMG-Np-Tx8">
             <objects>
-                <viewController id="gIX-0x-IMf" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="gIX-0x-IMf" customClass="LoginViewController" customModule="Poppin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hqb-mB-ZPX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We'll tell you where to drink." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBn-X7-u7X">
-                                <rect key="frame" x="70" y="148" width="235" height="17"/>
+                                <rect key="frame" x="70.5" y="148" width="234.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Touche-Regular" family="Touche" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -89,14 +89,23 @@
                         <viewLayoutGuide key="safeArea" id="e3R-df-xsZ"/>
                     </view>
                     <connections>
-                        <outlet property="backgroundGif" destination="Ubu-mO-CXu" id="gXm-wt-Mzd"/>
-                        <outlet property="beerIcon" destination="aOQ-FH-f0B" id="KkI-6V-e0y"/>
+                        <outlet property="backgroundGif" destination="Ubu-mO-CXu" id="xlH-f1-rVe"/>
+                        <outlet property="beerIcon" destination="aOQ-FH-f0B" id="ygw-xE-hFn"/>
                         <outlet property="signUpButtonOutlet" destination="CyF-8e-bLG" id="1fz-rP-5O6"/>
+                        <segue destination="qVe-bx-Abq" kind="presentation" identifier="LoginSegue" modalTransitionStyle="crossDissolve" id="2Co-M6-fEM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZ5-vS-nlq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="28" y="8.1280788177339911"/>
+        </scene>
+        <!--TabBar-->
+        <scene sceneID="y5r-hn-xon">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" id="qVe-bx-Abq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g6B-do-Y8I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="455"/>
         </scene>
     </scenes>
     <resources>

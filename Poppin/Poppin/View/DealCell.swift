@@ -80,8 +80,10 @@ class DealCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
-        UIView.animate(withDuration: 0.3) {
-            // TODO: Animate card to get smaller on tap
+        let scale: CGFloat = highlighted ? 0.98 : 1.0
+        UIView.animate(withDuration: 0.1) {
+            self.dropShadowView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
+            self.containerView.transform = CGAffineTransform.identity.scaledBy(x: scale, y: scale)
         }
     }
     
