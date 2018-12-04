@@ -48,6 +48,7 @@
 		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
 		CBB7192621B333F10054EC77 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192521B333F10054EC77 /* Theme.swift */; };
 		CBB7192821B337070054EC77 /* CustomNavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192721B337070054EC77 /* CustomNavigationBarController.swift */; };
+		CBC8A27E21B709B8009E7B47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC8A27D21B709B8009E7B47 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		CBB7192521B333F10054EC77 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CBB7192721B337070054EC77 /* CustomNavigationBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarController.swift; sourceTree = "<group>"; };
+		CBC8A27D21B709B8009E7B47 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F4CA4DDDD1C40C7BAD4EB5F3 /* Pods_Poppin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Poppin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 				CBB7191F21B1F0120054EC77 /* Day.swift */,
 				CBB7192321B3048D0054EC77 /* Deal.swift */,
 				CBB7191D21B1EE4E0054EC77 /* Pub.swift */,
+				CBC8A27D21B709B8009E7B47 /* User.swift */,
 				0ADDE28C21B5EDA60089F766 /* PubAnnotation.swift */,
 			);
 			path = Model;
@@ -372,6 +375,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/Gifu/Gifu.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -394,6 +398,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gifu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
@@ -446,6 +451,7 @@
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
 				CB1BCD9321B5EAA30029689F /* ContentManager.swift in Sources */,
+				CBC8A27E21B709B8009E7B47 /* User.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */,
 				CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */,
@@ -597,7 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = VZN2WUL34L;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -616,7 +622,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = VZN2WUL34L;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

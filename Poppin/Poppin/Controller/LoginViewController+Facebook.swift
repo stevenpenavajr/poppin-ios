@@ -6,6 +6,7 @@
 //  Copyright © 2018 MoBamba. All rights reserved.
 //
 
+import Gifu
 import FBSDKLoginKit
 import FirebaseAuth
 import UIKit
@@ -22,9 +23,16 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             print(error.localizedDescription)
             return
         } else {
-            print("======")
-            print("Login success, perform segue here")
-            print("======")
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    return
+                }
+                print("User signed in")
+                self.checkAuthStatus()
+            }
         }
     }
 }

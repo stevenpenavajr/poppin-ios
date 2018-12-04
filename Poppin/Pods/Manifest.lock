@@ -121,6 +121,7 @@ PODS:
     - gRPC-Core (= 1.14.0)
     - gRPC-RxLibrary (= 1.14.0)
   - GTMSessionFetcher/Core (1.2.1)
+  - Kingfisher (4.10.1)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
@@ -143,6 +144,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - Gifu
+  - Kingfisher (~> 4.0)
   - NVActivityIndicatorView
   - ObjectMapper (~> 3.4)
   - UberRides (~> 0.11)
@@ -169,6 +171,7 @@ SPEC REPOS:
     - gRPC-ProtoRPC
     - gRPC-RxLibrary
     - GTMSessionFetcher
+    - Kingfisher
     - leveldb-library
     - nanopb
     - NVActivityIndicatorView
@@ -198,6 +201,7 @@ SPEC CHECKSUMS:
   gRPC-ProtoRPC: 76f6053639a842e1fb45fa82aa598bf3f4d9f66f
   gRPC-RxLibrary: 3c305f32155024b116b780f389323c73a28197e6
   GTMSessionFetcher: 32aeca0aa144acea523e1c8e053089dec2cb98ca
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: ec7440a57af2450319d3a4181cca7da6fc127064
@@ -206,6 +210,6 @@ SPEC CHECKSUMS:
   UberCore: b72013357bff720a30a1b12669e724750b775ef7
   UberRides: d39c7c9f612d8f5ebfb69f475a553e1a54c3c4b5
 
-PODFILE CHECKSUM: 318862f1b2f3c36dacda7ccc9b5708552971f8e5
+PODFILE CHECKSUM: 5f32c6738db19875d174c563d0b2dbf9ba0e5f15
 
 COCOAPODS: 1.5.3
