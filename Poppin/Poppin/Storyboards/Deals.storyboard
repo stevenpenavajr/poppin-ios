@@ -139,6 +139,10 @@
                                     <outlet property="barLogoImageView" destination="ZSm-p7-A8x" id="VPO-e3-n7d"/>
                                     <outlet property="barNameLabel" destination="haR-PK-X2U" id="t55-tT-D7j"/>
                                     <outlet property="containerView" destination="Abf-fO-ek2" id="Ax5-wI-zpR"/>
+                                    <outlet property="containerViewBottomConstraint" destination="fU2-51-ZdO" id="veJ-sS-smL"/>
+                                    <outlet property="containerViewLeadingConstraint" destination="qwr-hM-n2b" id="cRW-v3-qxu"/>
+                                    <outlet property="containerViewTopConstraint" destination="mH7-4u-YSp" id="Exf-mv-KQD"/>
+                                    <outlet property="containerViewTrailingConstraint" destination="Pym-Xe-R6o" id="JTj-Vp-5ox"/>
                                     <outlet property="dealDescriptionLabel" destination="9Sf-dH-lpN" id="goa-OC-zTP"/>
                                     <outlet property="dropShadowView" destination="0FD-QT-8Im" id="1yG-KJ-5nd"/>
                                     <outlet property="saveButton" destination="JHc-iR-NlB" id="Go8-4p-ovd"/>

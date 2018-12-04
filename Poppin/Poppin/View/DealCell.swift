@@ -21,6 +21,11 @@ class DealCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dropShadowView: UIView!
     
+    @IBOutlet weak var containerViewTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
@@ -75,6 +80,9 @@ class DealCell: UITableViewCell {
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
+        UIView.animate(withDuration: 0.3) {
+            // TODO: Animate card to get smaller on tap
+        }
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

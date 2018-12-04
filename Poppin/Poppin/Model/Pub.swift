@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestore
 import ObjectMapper
 
 class Pub: Mappable {
@@ -20,6 +21,8 @@ class Pub: Mappable {
     var phone: String?
     var website: String?
     var categories: [String]?
+    
+    var location: GeoPoint?
     
     var monday: Day?
     var tuesday: Day?
@@ -40,7 +43,7 @@ class Pub: Mappable {
         phone <- map["phone"]
         website <- map["website"]
         categories <- map["category"]
-        
+        location <- map["location"]
         monday <- map["Monday"]
         tuesday <- map["Monday"]
         wednesday <- map["Monday"]

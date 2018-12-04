@@ -14,6 +14,7 @@ class DealsTableViewController: UITableViewController {
     var deals = [Deal]() {
         didSet {
             cellHeights = [CGFloat].init(repeating: 0, count: deals.count)
+            tableView.reloadData()
         }
     }
     
@@ -21,8 +22,9 @@ class DealsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ContentManager.shared.delegate = self
+        deals = ContentManager.shared.getDeals()
         tableView.separatorStyle = .none
-        initializeFirebaseSubscribtion()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +37,11 @@ class DealsTableViewController: UITableViewController {
         }
     }
 
+    func reloadData() {
+        deals = ContentManager.shared.getDeals()
+        tableView.reloadData()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
