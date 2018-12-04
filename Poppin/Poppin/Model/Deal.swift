@@ -19,6 +19,8 @@ class Deal: Mappable {
     var website: String?
     var categories: [String]?
     
+    var pub: Pub?
+    
     required init?(map: Map) {}
     
     func mapping(map: Map) {
@@ -31,4 +33,5 @@ class Deal: Mappable {
         website <- map["website"]
         categories <- map["category"]
     }
+    
 }

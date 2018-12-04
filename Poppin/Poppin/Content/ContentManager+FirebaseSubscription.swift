@@ -1,27 +1,32 @@
 //
-//  DealsTableViewController+FirebaseSubscription.swift
+//  ContentManager+FirebaseSubscription.swift
 //  Poppin
 //
-//  Created by Blake Swaidner on 11/30/18.
+//  Created by Blake Swaidner on 12/3/18.
 //  Copyright © 2018 MoBamba. All rights reserved.
 //
 
-import Foundation
 import Firebase
 import FirebaseFirestore
 import ObjectMapper
 
-extension DealsTableViewController: FirebaseSubscription {
+extension ContentManager: FirebaseSubscription {
     
     func initializeFirebaseSubscription() {
         Firestore.firestore().collection("pubs").getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
+                self.pubs.removeAll()
+                self.deals.removeAll()
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
+                    
                     guard let deal = Mapper<Deal>().map(JSON: document.data()) else { return }
                     self.deals.append(deal)
+                    
+                    guard let pub = Mapper<Pub>().map(JSON: document.data()) else { return }
+                    self.pubs.append(pub)
                 }
                 self.handleUpdate()
             }
@@ -29,7 +34,7 @@ extension DealsTableViewController: FirebaseSubscription {
     }
     
     func handleUpdate() {
-        tableView.reloadData()
+        delegate?.contentManagerDidUpdate(self)
     }
     
 }
