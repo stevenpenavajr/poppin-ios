@@ -14,8 +14,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     /* Map view */
     @IBOutlet weak var mapView: MKMapView!
     
-    /* Custom annotation for bar */
-    var pubAnnotation:PubAnnotation!
+    /* Custom annotation image for bar */
     var annotationImage: UIImage?
     
     /* An array to hold the annotation objects from Firebase */
@@ -32,8 +31,6 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Map"
         
         guard let pubImage = UIImage(named: "annotation.png") else { return }
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
@@ -79,10 +76,10 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         
         /* SHOULD LOAD FROM FIREBASE HERE */
         // for bar in firebase db....
-            // set coords, title, subtitles, etc...
-            // add to 'pubs' array... or just add it to MV right here.
+        // set coords, title, subtitles, etc...
+        // add to 'pubs' array... or just add it to MV right here.
         
-        /* FOR NOW, JUST ONE BAR */
+        /* For now, just a couple of bars... */
         let pubAnnotation = PubAnnotation()
         pubAnnotation.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
         pubAnnotation.title = "The Tin Roof"
@@ -90,21 +87,35 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
         mapView.addAnnotation(pubAnnotationView.annotation!)
         
+        let pubAnnotation2 = PubAnnotation()
+        pubAnnotation2.coordinate = CLLocationCoordinate2D(latitude:38.0428, longitude: -84.5022)
+        pubAnnotation2.title = "Two Keys"
+        pubAnnotation2.subtitle = "Tavern"
+        let pubAnnotationView2 = MKPinAnnotationView(annotation: pubAnnotation2, reuseIdentifier: nil)
+        mapView.addAnnotation(pubAnnotationView2.annotation!)
+        
+        let pubAnnotation3 = PubAnnotation()
+        pubAnnotation3.coordinate = CLLocationCoordinate2D(latitude:38.0418, longitude: -84.5037)
+        pubAnnotation3.title = "Pazzo's"
+        pubAnnotation3.subtitle = "Pizza Pub"
+        let pubAnnotationView3 = MKPinAnnotationView(annotation: pubAnnotation3, reuseIdentifier: nil)
+        mapView.addAnnotation(pubAnnotationView3.annotation!)
+        
+        let pubAnnotation4 = PubAnnotation()
+        pubAnnotation4.coordinate = CLLocationCoordinate2D(latitude:38.0432, longitude: -84.5025)
+        pubAnnotation4.title = "The Paddock"
+        pubAnnotation4.subtitle = "Bar & Patio"
+        let pubAnnotationView4 = MKPinAnnotationView(annotation: pubAnnotation4, reuseIdentifier: nil)
+        mapView.addAnnotation(pubAnnotationView4.annotation!)
+        
     }
     
     // MARK: - MapView delegate methods
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         let reuseIdentifier = "pubAnnotationView"
-        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
-
+        annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        annotationView?.canShowCallout = true
         annotationView?.image = annotationImage
         
         return annotationView
