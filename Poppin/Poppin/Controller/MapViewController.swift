@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
@@ -21,19 +22,15 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     /* An array to hold the annotation objects from Firebase */
     var pubs: [MKPointAnnotation] = []
     
-    /* Keep track of authorization status for accessing the user’s location */
-    let locationManager = CLLocationManager()
+    let regionRadius: CLLocationDistance = 2000
     
     /* Check location permissions upon view */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLocationAuthorizationStatus()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Map"
         
         guard let pubImage = UIImage(named: "annotation.png") else { return }
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
@@ -45,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         mapView.delegate = self
         
         /* Setting MapViewController as the delegate of the location manager */
-        locationManager.delegate = self
+//        locationManager.delegate = self THIS IS DONE ABOVE NOW ?
         
         /* load pub locations into array of MKPointAnnotation, add to MV */
         createAnnotations()
@@ -57,18 +54,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
     }
     
-    /* “Tick” the map view’s Shows-User-Location checkbox if your app is authorized */
-    func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            mapView.showsUserLocation = true
-        } else { // tell locationManager to request authorization from the user
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
     /* Center location on map */
-    let regionRadius: CLLocationDistance = 2000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)

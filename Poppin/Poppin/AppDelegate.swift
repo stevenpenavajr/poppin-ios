@@ -8,18 +8,32 @@
 
 import Firebase
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
-
+    
+    /* Keep track of authorization status for accessing the user’s location */
+    let locationManager = CLLocationManager()
+    var currentUserLocation: CLLocation?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.startUpdatingLocation()
+        
         // Override point for customization after application launch.
         FirebaseApp.configure()
         ContentManager.shared.initializeFirebaseSubscription()
         return true
+    }
+    
+    // MARK: - LocationManager delegate methods
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentUserLocation = locations.last
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

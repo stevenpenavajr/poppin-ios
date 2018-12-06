@@ -144,10 +144,10 @@
                                     <outlet property="containerViewTopConstraint" destination="mH7-4u-YSp" id="Exf-mv-KQD"/>
                                     <outlet property="containerViewTrailingConstraint" destination="Pym-Xe-R6o" id="JTj-Vp-5ox"/>
                                     <outlet property="dealDescriptionLabel" destination="9Sf-dH-lpN" id="goa-OC-zTP"/>
+                                    <outlet property="distanceFromUserLabel" destination="1XV-nT-MFM" id="t99-Ke-RaS"/>
                                     <outlet property="dropShadowView" destination="0FD-QT-8Im" id="1yG-KJ-5nd"/>
                                     <outlet property="saveButton" destination="JHc-iR-NlB" id="Go8-4p-ovd"/>
                                     <outlet property="shareButton" destination="K8o-Oq-siU" id="g1l-XW-OIj"/>
-                                    <outlet property="timeRemainingLabel" destination="1XV-nT-MFM" id="BpN-Da-K4p"/>
                                     <outlet property="viewDealLabel" destination="HAn-2q-8l3" id="gSX-JF-sF2"/>
                                 </connections>
                             </tableViewCell>

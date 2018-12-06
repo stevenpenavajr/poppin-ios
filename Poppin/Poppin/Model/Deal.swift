@@ -8,6 +8,8 @@
 
 import Foundation
 import ObjectMapper
+import FirebaseFirestore
+import CoreLocation
 
 class Deal: Mappable {
     var name: String?
@@ -19,10 +21,13 @@ class Deal: Mappable {
     var website: String?
     var categories: [String]?
     
+    var locationGP: GeoPoint?
+    var distFromUser: CLLocationDistance?
+    
     var pub: Pub?
     
     required init?(map: Map) {}
-    
+
     func mapping(map: Map) {
         name <- map["name"]
         address <- map["address"]
@@ -32,6 +37,7 @@ class Deal: Mappable {
         phone <- map["phone"]
         website <- map["website"]
         categories <- map["category"]
+        locationGP <- map["location"]
     }
     
 }

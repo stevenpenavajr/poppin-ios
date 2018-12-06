@@ -4,6 +4,7 @@
 // Created By: Steven Penava
 
 import UIKit
+import CoreLocation
 
 class DealCell: UITableViewCell {
 
@@ -11,8 +12,8 @@ class DealCell: UITableViewCell {
     
     @IBOutlet weak var barNameLabel: UILabel!
     @IBOutlet weak var barLogoImageView: UIImageView!
-    @IBOutlet weak var timeRemainingLabel: UILabel!
     @IBOutlet weak var barHeaderImageView: UIImageView!
+    @IBOutlet weak var distanceFromUserLabel: UILabel!
     @IBOutlet weak var dealTitleLabel: UILabel!
     @IBOutlet weak var dealDescriptionLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
@@ -41,8 +42,8 @@ class DealCell: UITableViewCell {
         barNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         barNameLabel.textColor = Theme.Color.textColor
         
-        timeRemainingLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        timeRemainingLabel.textColor = Theme.Color.textOffColor
+        distanceFromUserLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        distanceFromUserLabel.textColor = Theme.Color.textOffColor
         
         barHeaderImageView.contentMode = .scaleAspectFill
         barHeaderImageView.backgroundColor = Theme.Color.imageBackgroundColor
@@ -71,6 +72,7 @@ class DealCell: UITableViewCell {
     func configureCell(withDeal deal: Deal) {
         barNameLabel.text = deal.name
         dealDescriptionLabel.text = deal.description
+        distanceFromUserLabel.text = String(deal.distFromUser!) + " mi"
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {

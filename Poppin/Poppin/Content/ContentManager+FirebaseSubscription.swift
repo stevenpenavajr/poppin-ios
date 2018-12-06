@@ -20,6 +20,8 @@ extension ContentManager: FirebaseSubscription {
                 self.pubs.removeAll()
                 self.deals.removeAll()
                 for document in querySnapshot!.documents {
+                    print("QUERY SNAPSHOT LOOP")
+                    print("---")
                     print("\(document.documentID) => \(document.data())")
                     
                     guard let deal = Mapper<Deal>().map(JSON: document.data()) else { return }

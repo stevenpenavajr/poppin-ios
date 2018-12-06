@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
-class DealsTableViewController: UITableViewController {
+class DealsTableViewController: UITableViewController , CLLocationManagerDelegate {
 
     var deals = [Deal]() {
         didSet {
@@ -22,6 +23,7 @@ class DealsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ContentManager.shared.delegate = self
         deals = ContentManager.shared.getDeals()
         tableView.separatorStyle = .none
@@ -39,7 +41,27 @@ class DealsTableViewController: UITableViewController {
 
     func reloadData() {
         deals = ContentManager.shared.getDeals()
+        orderDealsByProximity()
         tableView.reloadData()
+    }
+    
+    func orderDealsByProximity() {
+        /* get reference to AppDelegate to access user location */
+        let poppinAppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let userLoc = poppinAppDelegate.currentUserLocation // CLLocation
+        
+        /* assign distances from user */
+        for deal in deals {
+            let lat:CLLocationDegrees = deal.locationGP?.latitude ?? 0
+            let long:CLLocationDegrees = deal.locationGP?.longitude ?? 0
+            let pubLocCL = CLLocation(latitude: lat, longitude: long)
+            var distance = userLoc!.distance(from: pubLocCL) * 0.000621371 // convert to miles
+            distance = Double(round(10*distance)/10) // rounding to two decimal places
+            
+            deal.distFromUser = distance
+        }
+        
+        deals = deals.sorted(by: { $0.distFromUser! < $1.distFromUser! })
     }
     
     // MARK: - Table view data source
