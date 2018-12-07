@@ -4,65 +4,54 @@
 // Created By: Steven Penava
 
 import UIKit
+import UberRides
+import CoreLocation
 
 class DealDetailsTableViewController: UITableViewController {
     
     static let segueIdentifier = "DealDetails"
-    
-    private var uberButton: UIButton = {
-        let btn = UIButton()
-        btn.backgroundColor = .black
-        btn.setTitle("Request an Uber", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.setTitleColor(.lightGray, for: .highlighted)
-        btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        btn.layer.cornerRadius = 10
-        btn.clipsToBounds = true
-//        btn.showsTouchWhenHighlighted = true
-        
-        btn.addTarget(self, action: #selector(uberButtonPressed), for: .touchUpInside)
-        btn.addTarget(self, action: #selector(highlightUberButton), for: .touchDown)
-        
-        return btn
-    }()
-    
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 2)
     
     var rowSelection = 0
     
 
     override func viewDidLoad() {
-        print("ROW: " , rowSelection)
+        /* Creating Uber button (just Tin Roof for now) */
+        let builder = RideParametersBuilder()
+        let pickupLocation = CLLocation(latitude: 38.0381, longitude: -84.5038)
+        let dropoffLocation = CLLocation(latitude:38.043302, longitude: -84.501813)
+        builder.pickupLocation = pickupLocation
+        builder.dropoffLocation = dropoffLocation
+        builder.dropoffNickname = "Tin Roof"
+        builder.dropoffAddress = "303 S. Limestone"
+        let rideParameters = builder.build()
+        
+        /* Instantiating the UberRides button */
+        let uberRidesButton = RideRequestButton(rideParameters: rideParameters)
+        
         super.viewDidLoad()
         
         setTabBarHidden(true)
         
         tableView.separatorStyle = .none
-        view.addSubview(self.uberButton)
+        
+        view.addSubview(uberRidesButton)
+        
         var layoutGuide = view.layoutMarginsGuide
         if #available(iOS 11, *) { layoutGuide = view.safeAreaLayoutGuide }
-        self.uberButton.translatesAutoresizingMaskIntoConstraints = false
-        self.uberButton.backgroundColor = UIColor.black
-        self.uberButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        self.uberButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
-        self.uberButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
-        self.uberButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 40).isActive = true
+        
+        uberRidesButton.translatesAutoresizingMaskIntoConstraints = false
+        uberRidesButton.backgroundColor = UIColor.black
+        uberRidesButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        uberRidesButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
+        uberRidesButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
+        uberRidesButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 40).isActive = true
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    
-    @objc func uberButtonPressed(sender: UIButton!) {
-        print("Uber pressed")
-        self.uberButton.setTitleColor(.white, for: .normal)
-    }
-    
-    @objc func highlightUberButton(sender: UIButton!) {
-        print("Uber tapped")
-        self.uberButton.setTitleColor(.lightGray, for: .normal)
     }
     
     // MARK: - Table view data source

@@ -22,7 +22,7 @@ class ContentManager {
     
     var currentUser: User? {
         return nil
-        return Auth.auth().currentUser 
+//        return Auth.auth().currentUser 
     }
     
     weak var delegate: ContentManagerDelegate?

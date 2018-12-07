@@ -8,32 +8,35 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
     
     /* Map view */
     @IBOutlet weak var mapView: MKMapView!
     
+    let mapIconPoppin = UIImage(named: "map-poppin")!.resizeImage(size: CGSize(width: 30, height: 30))
+
+    
+    /* list of Pub objects from Firebase NEED TO REORGANIZE?? */
+//    var deals: [Deal] = []
+    
     /* Custom annotation for bar */
     var pubAnnotation:PubAnnotation!
     var annotationImage: UIImage?
     
     /* An array to hold the annotation objects from Firebase */
-    var pubs: [MKPointAnnotation] = []
+    var pubAnnotations: [MKPointAnnotation] = []
     
-    /* Keep track of authorization status for accessing the user’s location */
-    let locationManager = CLLocationManager()
+    let regionRadius: CLLocationDistance = 2000
     
     /* Check location permissions upon view */
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        checkLocationAuthorizationStatus()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Map"
         
         guard let pubImage = UIImage(named: "annotation.png") else { return }
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
@@ -43,12 +46,9 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         
         /* Setting MapViewController as the delegate of the map view */
         mapView.delegate = self
-        
-        /* Setting MapViewController as the delegate of the location manager */
-        locationManager.delegate = self
-        
+    
         /* load pub locations into array of MKPointAnnotation, add to MV */
-        createAnnotations()
+//        createAnnotations()
         
     } // End of viewDidLoad()
     
@@ -57,40 +57,28 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
     }
     
-    /* “Tick” the map view’s Shows-User-Location checkbox if your app is authorized */
-    func checkLocationAuthorizationStatus() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            mapView.showsUserLocation = true
-        } else { // tell locationManager to request authorization from the user
-            locationManager.requestWhenInUseAuthorization()
-            locationManager.startUpdatingLocation()
-        }
-    }
-    
     /* Center location on map */
-    let regionRadius: CLLocationDistance = 2000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         mapView.setRegion(coordinateRegion, animated: true)
     }
     
     /* Loading Firebase data */
-    func createAnnotations() {
+//    func createAnnotations() {
+//        print("Nothing right now.")
+//        deals = ContentManager.shared.getDeals()
         
-        /* SHOULD LOAD FROM FIREBASE HERE */
-        // for bar in firebase db....
-            // set coords, title, subtitles, etc...
-            // add to 'pubs' array... or just add it to MV right here.
-        
-        /* FOR NOW, JUST ONE BAR */
-        let pubAnnotation = PubAnnotation()
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
-        pubAnnotation.title = "The Tin Roof"
-        pubAnnotation.subtitle = "A Live Music Joint"
-        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView.annotation!)
-        
-    }
+//        for deal in deals {
+//            let pubAnnotation = PubAnnotation()
+//            if (deal.locationGP != nil) {
+//                pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: deal.locationGP!.latitude, longitude: deal.locationGP!.longitude)
+//                pubAnnotation.title = deal.name
+//                pubAnnotation.subtitle = deal.description
+//                let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
+//                mapView.addAnnotation(pubAnnotationView.annotation!)
+//            }
+//        }
+//    }
     
     // MARK: - MapView delegate methods
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
