@@ -29,7 +29,6 @@ class DealDetailsTableViewController: UITableViewController {
         /* Instantiating the UberRides button */
         let uberRidesButton = RideRequestButton(rideParameters: rideParameters)
         
-        print("ROW: " , rowSelection)
         super.viewDidLoad()
         
         setTabBarHidden(true)

@@ -20,17 +20,17 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         if let error = error {
-            print(error.localizedDescription)
+//            print(error.localizedDescription)
             return
         } else {
             let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             
             Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
                 if let error = error {
-                    print(error.localizedDescription)
+//                    print(error.localizedDescription)
                     return
                 }
-                print("User signed in")
+//                print("User signed in")
                 self.checkAuthStatus()
             }
         }

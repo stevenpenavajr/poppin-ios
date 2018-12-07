@@ -30,9 +30,7 @@ class LoginViewController: UIViewController {
     
     func checkAuthStatus() {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("HEERE")
             if user != nil {
-                print("HERE")
                 self.performSegue(withIdentifier: "LoginSegue", sender: self)
             }
         }
@@ -40,7 +38,6 @@ class LoginViewController: UIViewController {
     
     func startLoginAnimations() {
         backgroundGif.animate(withGIFNamed: "beer-pour-blur-new") {
-            print("It's animating!")
         }
         let pulse = CAKeyframeAnimation(keyPath: "transform.scale")
         pulse.duration = 3

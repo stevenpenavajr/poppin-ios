@@ -15,12 +15,18 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     /* Map view */
     @IBOutlet weak var mapView: MKMapView!
     
+    let mapIconPoppin = UIImage(named: "map-poppin")!.resizeImage(size: CGSize(width: 30, height: 30))
+
+    
+    /* list of Pub objects from Firebase NEED TO REORGANIZE?? */
+//    var deals: [Deal] = []
+    
     /* Custom annotation for bar */
     var pubAnnotation:PubAnnotation!
     var annotationImage: UIImage?
     
     /* An array to hold the annotation objects from Firebase */
-    var pubs: [MKPointAnnotation] = []
+    var pubAnnotations: [MKPointAnnotation] = []
     
     let regionRadius: CLLocationDistance = 2000
     
@@ -40,12 +46,9 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         
         /* Setting MapViewController as the delegate of the map view */
         mapView.delegate = self
-        
-        /* Setting MapViewController as the delegate of the location manager */
-//        locationManager.delegate = self THIS IS DONE ABOVE NOW ?
-        
+    
         /* load pub locations into array of MKPointAnnotation, add to MV */
-        createAnnotations()
+//        createAnnotations()
         
     } // End of viewDidLoad()
     
@@ -61,22 +64,21 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     }
     
     /* Loading Firebase data */
-    func createAnnotations() {
+//    func createAnnotations() {
+//        print("Nothing right now.")
+//        deals = ContentManager.shared.getDeals()
         
-        /* SHOULD LOAD FROM FIREBASE HERE */
-        // for bar in firebase db....
-            // set coords, title, subtitles, etc...
-            // add to 'pubs' array... or just add it to MV right here.
-        
-        /* FOR NOW, JUST ONE BAR */
-        let pubAnnotation = PubAnnotation()
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
-        pubAnnotation.title = "The Tin Roof"
-        pubAnnotation.subtitle = "A Live Music Joint"
-        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView.annotation!)
-        
-    }
+//        for deal in deals {
+//            let pubAnnotation = PubAnnotation()
+//            if (deal.locationGP != nil) {
+//                pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: deal.locationGP!.latitude, longitude: deal.locationGP!.longitude)
+//                pubAnnotation.title = deal.name
+//                pubAnnotation.subtitle = deal.description
+//                let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
+//                mapView.addAnnotation(pubAnnotationView.annotation!)
+//            }
+//        }
+//    }
     
     // MARK: - MapView delegate methods
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class DealsTableViewController: UITableViewController , CLLocationManagerDelegate {
+class DealsTableViewController: UITableViewController , CLLocationManagerDelegate, UITabBarDelegate {
 
     var deals = [Deal]() {
         didSet {
@@ -20,6 +20,11 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
     }
     
     private var cellHeights = [CGFloat]()
+    
+    let mapIconGray = UIImage(named: "map-gray")!.resizeImage(size: CGSize(width: 30, height: 30))
+    let mapIconPoppin = UIImage(named: "map-poppin")!.resizeImage(size: CGSize(width: 30, height: 30))
+    let dealsIconGray = UIImage(named: "deals-gray")!.resizeImage(size: CGSize(width: 35, height: 35))
+    let dealsIconPoppin = UIImage(named: "deals-poppin")!.resizeImage(size: CGSize(width: 35, height: 35))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,17 +36,38 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         guard let tabBar = self.tabBarController?.tabBar else { return }
+        
+        styleTabBar(tabBar)
+        
         if tabBar.alpha < 1 { setTabBarHidden(false) }
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
         if tabBarController?.tabBar.isHidden ?? false {
             self.tabBarController?.tabBar.toggleView(isVisible: true)
         }
     }
+    
+    func styleTabBar(_ poppinTabBar: UITabBar) {
+    
+        poppinTabBar.items?[0].image = dealsIconPoppin.withRenderingMode(.alwaysOriginal)
+        poppinTabBar.items?[0].title = nil
+        poppinTabBar.items?[0].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -5, right: 0)
+        
+        poppinTabBar.items?[1].image = mapIconGray.withRenderingMode(.alwaysOriginal)
+        poppinTabBar.items?[1].title = nil
+        poppinTabBar.items?[1].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -5, right: 0)
+    }
 
     func reloadData() {
         deals = ContentManager.shared.getDeals()
         orderDealsByProximity()
+        
+//        print("PRINTING DEALS")
+//        for deal in deals {
+//            print(deal.)
+//        }
+        
         tableView.reloadData()
     }
     
@@ -60,7 +86,6 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
             
             deal.distFromUser = distance
         }
-        
         deals = deals.sorted(by: { $0.distFromUser! < $1.distFromUser! })
     }
     
@@ -101,6 +126,11 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
                 vc?.rowSelection = indexPath.row
             }
         }
+    }
+    
+    // MARK: - TabBar Delegate Methods
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
+        print(item)
     }
     
     // Perform segue to specific deal

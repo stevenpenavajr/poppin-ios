@@ -13,11 +13,13 @@ class DealCell: UITableViewCell {
     @IBOutlet weak var barNameLabel: UILabel!
     @IBOutlet weak var barLogoImageView: UIImageView!
     @IBOutlet weak var barHeaderImageView: UIImageView!
+    
     @IBOutlet weak var distanceFromUserLabel: UILabel!
+    @IBOutlet weak var timeRemainingLabel: UILabel!
+    
     @IBOutlet weak var dealTitleLabel: UILabel!
     @IBOutlet weak var dealDescriptionLabel: UILabel!
     @IBOutlet weak var shareButton: UIButton!
-    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var viewDealLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var dropShadowView: UIView!
@@ -67,12 +69,16 @@ class DealCell: UITableViewCell {
         dealDescriptionLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
         dealDescriptionLabel.textColor = Theme.Color.textOffColor
         dealDescriptionLabel.numberOfLines = 0
+        
+        timeRemainingLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        timeRemainingLabel.textColor = Theme.Color.textOffColor
     }
 
     func configureCell(withDeal deal: Deal) {
         barNameLabel.text = deal.name
         dealDescriptionLabel.text = deal.description
         distanceFromUserLabel.text = String(deal.distFromUser!) + " mi"
+        timeRemainingLabel.text = "23:42 remaining"
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {

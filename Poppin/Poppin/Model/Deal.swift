@@ -26,6 +26,7 @@ class Deal: Mappable {
     
     var pub: Pub?
     
+    
     required init?(map: Map) {}
 
     func mapping(map: Map) {
