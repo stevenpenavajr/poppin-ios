@@ -21,10 +21,25 @@ class Deal: Mappable {
     var website: String?
     var categories: [String]?
     
-    var locationGP: GeoPoint?
     var distFromUser: CLLocationDistance?
     
     var pub: Pub?
+    
+    // Location
+    
+    var lat: CLLocationDegrees?
+    var long: CLLocationDegrees?
+    
+    var locationGP: GeoPoint? {
+        didSet {
+            lat = locationGP?.latitude
+            long = locationGP?.longitude
+        }
+    }
+    
+    var location: CLLocation? {
+        return CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+    }
     
     
     required init?(map: Map) {}

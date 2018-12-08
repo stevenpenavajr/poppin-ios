@@ -10,8 +10,17 @@ import UIKit
 import Firebase
 import CoreLocation
 
-class DealsTableViewController: UITableViewController , CLLocationManagerDelegate, UITabBarDelegate {
+class DealsTableViewController: UITableViewController, UITabBarDelegate {
 
+    let locationManager = CLLocationManager()
+    
+    let reloadControl: UIRefreshControl = {
+        let rc = UIRefreshControl()
+        rc.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        rc.tintColor = .black
+        return rc
+    }()
+    
     var deals = [Deal]() {
         didSet {
             cellHeights = [CGFloat].init(repeating: 0, count: deals.count)
@@ -28,19 +37,18 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ContentManager.shared.delegate = self
-        deals = ContentManager.shared.getDeals()
+        deals = ContentManager.shared.getSortedDeals()
+        requestUserLocation()
         tableView.separatorStyle = .none
+        // TODO: Fix refresh control
+        //tableView.refreshControl = reloadControl
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         guard let tabBar = self.tabBarController?.tabBar else { return }
-        
         styleTabBar(tabBar)
-        
         if tabBar.alpha < 1 { setTabBarHidden(false) }
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
         if tabBarController?.tabBar.isHidden ?? false {
@@ -59,34 +67,10 @@ class DealsTableViewController: UITableViewController , CLLocationManagerDelegat
         poppinTabBar.items?[1].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -5, right: 0)
     }
 
-    func reloadData() {
-        deals = ContentManager.shared.getDeals()
-        orderDealsByProximity()
-        
-//        print("PRINTING DEALS")
-//        for deal in deals {
-//            print(deal.)
-//        }
-        
+    @objc func reloadData() {
+        deals = ContentManager.shared.getSortedDeals()
+        reloadControl.endRefreshing()
         tableView.reloadData()
-    }
-    
-    func orderDealsByProximity() {
-        /* get reference to AppDelegate to access user location */
-        let poppinAppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let userLoc = poppinAppDelegate.currentUserLocation // CLLocation
-        
-        /* assign distances from user */
-        for deal in deals {
-            let lat:CLLocationDegrees = deal.locationGP?.latitude ?? 0
-            let long:CLLocationDegrees = deal.locationGP?.longitude ?? 0
-            let pubLocCL = CLLocation(latitude: lat, longitude: long)
-            var distance = userLoc!.distance(from: pubLocCL) * 0.000621371 // convert to miles
-            distance = Double(round(10*distance)/10) // rounding to two decimal places
-            
-            deal.distFromUser = distance
-        }
-        deals = deals.sorted(by: { $0.distFromUser! < $1.distFromUser! })
     }
     
     // MARK: - Table view data source
