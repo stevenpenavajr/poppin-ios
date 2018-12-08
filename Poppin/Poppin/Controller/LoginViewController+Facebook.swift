@@ -30,6 +30,8 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
 //                    print(error.localizedDescription)
                     return
                 }
+                ContentManager.shared.updateCurrentUser(name: "Blake", email: "blake.swaidner@gmail.com")
+                
 //                print("User signed in")
                 self.checkAuthStatus()
             }
