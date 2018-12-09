@@ -6,54 +6,34 @@
 //  Copyright © 2018 MoBamba. All rights reserved.
 //
 
+import FirebaseFirestore
 import Foundation
 import ObjectMapper
-import FirebaseFirestore
-import CoreLocation
 
 class Deal: Mappable {
-    var name: String?
-    var address: String?
-    var open: Int?
-    var close: Int?
+    
+    var pub: Pub? {
+        return ContentManager.shared.getPub(forId: barId)
+    }
+    
+    var barId: String?
+    var days: [Int]?
     var description: String?
-    var phone: String?
-    var website: String?
-    var categories: [String]?
+    var id: String?
+    var time: [Date]?
+    var title: String?
     
-    var distFromUser: CLLocationDistance?
-    
-    var pub: Pub?
-    
-    // Location
-    
-    var lat: CLLocationDegrees?
-    var long: CLLocationDegrees?
-    
-    var locationGP: GeoPoint? {
-        didSet {
-            lat = locationGP?.latitude
-            long = locationGP?.longitude
-        }
-    }
-    
-    var location: CLLocation? {
-        return CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
-    }
-    
+    var isActive: Bool = false
     
     required init?(map: Map) {}
 
     func mapping(map: Map) {
-        name <- map["name"]
-        address <- map["address"]
-        open <- map["open"]
-        close <- map["close"]
-        description <- map["description"]
-        phone <- map["phone"]
-        website <- map["website"]
-        categories <- map["category"]
-        locationGP <- map["location"]
+        id <- map["id"]
+        barId <- map["bar-id"]
+        days <- map["days"]
+        title <- map["title"]
+        description <- map["deal"]
+        time <- map["time"]
     }
     
 }
