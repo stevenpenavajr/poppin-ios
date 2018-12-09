@@ -57,7 +57,6 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
     }
     
     func styleTabBar(_ poppinTabBar: UITabBar) {
-    
         poppinTabBar.items?[0].image = dealsIconPoppin.withRenderingMode(.alwaysOriginal)
         poppinTabBar.items?[0].title = nil
         poppinTabBar.items?[0].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -5, right: 0)

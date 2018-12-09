@@ -6,6 +6,7 @@
 //  Copyright © 2018 MoBamba. All rights reserved.
 //
 
+import CoreLocation
 import Foundation
 import Firebase
 import FirebaseFirestore
@@ -13,28 +14,37 @@ import ObjectMapper
 
 class Pub: Mappable {
     
-    var name: String?
+    var id: String?
     var address: String?
+    var categories: [String]?
+    var name: String?
     var open: Int?
     var close: Int?
     var description: String?
     var phone: String?
     var website: String?
-    var categories: [String]?
+    var imageUrl: String?
     
-    var location: GeoPoint?
+    var distFromUser: CLLocationDistance?
+    var lat: CLLocationDegrees?
+    var long: CLLocationDegrees?
     
-    var monday: Day?
-    var tuesday: Day?
-    var wednesday: Day?
-    var thursday: Day?
-    var friday: Day?
-    var saturday: Day?
-    var sunday: Day?
+    var locationGP: GeoPoint? {
+        didSet {
+            lat = locationGP?.latitude
+            long = locationGP?.longitude
+        }
+    }
+    
+    var location: CLLocation? {
+        return CLLocation(latitude: lat ?? 0, longitude: long ?? 0)
+    }
+    
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
+        id <- map["id"]
         name <- map["name"]
         address <- map["address"]
         open <- map["open"]
@@ -43,14 +53,7 @@ class Pub: Mappable {
         phone <- map["phone"]
         website <- map["website"]
         categories <- map["category"]
-        location <- map["location"]
-        monday <- map["Monday"]
-        tuesday <- map["Monday"]
-        wednesday <- map["Monday"]
-        thursday <- map["Monday"]
-        friday <- map["Monday"]
-        saturday <- map["Monday"]
-        sunday <- map["Sunday"]
+        locationGP <- map["location"]
     }
     
 }

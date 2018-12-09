@@ -17,41 +17,16 @@ protocol ContentManagerDelegate: class {
 class ContentManager {
     
     static let shared = ContentManager()
-    
-    internal var pubs = [Pub]()
-    internal var deals = [Deal]()
+   
     internal var currentUser = User()
+    internal var deals = [Deal]()
+    internal var dealsMap = [String : Deal]()
+    internal var pubs = [Pub]()
+    internal var pubsMap = [String : Pub]()
     
     weak var delegate: ContentManagerDelegate?
     
-    // Pubs & Deals
-    
-    func getDeals() -> [Deal] {
-        return deals
-    }
-    
-    func getSortedDeals() -> [Deal] {
-        guard let userLocation = currentUser.location else { return deals }
-        for deal in deals {
-            guard let dealLocation = deal.location else { return deals }
-            var distance = userLocation.distance(from: dealLocation) * 0.000621371 // convert to miles
-            distance = Double(round(10*distance)/10) // rounding to two decimal places
-            deal.distFromUser = distance
-        }
-        print("BLAKE")
-        return deals.sorted(by: { $0.distFromUser ?? 0.0 < $1.distFromUser ?? 0.0 })
-    }
-    
-    func getPubs() -> [Pub] {
-        return pubs
-    }
-    
-    func getCurrentDeals() -> [Deal] {
-        // TODO
-        return deals
-    }
-    
-    // User
+    // MARK: - User
     
     func getCurrentUser() -> User? {
         return currentUser
@@ -62,6 +37,57 @@ class ContentManager {
         currentUser.email = email
         currentUser.imageUrl = imageUrl
         currentUser.location = location
+    }
+    
+    // MARK: - Deals
+    
+    func addDeal(deal: Deal?, id: String?) {
+        guard let deal = deal, let id = id else { return }
+        dealsMap[id] = deal
+    }
+    
+    func getDeal(forId id: String?) -> Deal? {
+        guard let id = id else { return nil }
+        return dealsMap[id]
+    }
+    
+    func getDeals() -> [Deal] {
+        return deals
+    }
+    
+    func getCurrentDeals() -> [Deal] {
+        let sortedDeals = getSortedDeals()
+        let calendar = Calendar.current.component(.day, from: Date())
+        return deals
+    }
+    
+    func getSortedDeals() -> [Deal] {
+        guard let userLocation = currentUser.location else { return deals }
+        for deal in deals {
+            guard let pub = deal.pub else { return deals }
+            guard let pubLocation = pub.location else { return deals }
+            var distance = userLocation.distance(from: pubLocation) * 0.000621371 // convert to miles
+            distance = Double(round(10*distance)/10) // rounding to two decimal places
+            pub.distFromUser = distance
+        }
+        return deals.sorted(by: { $0.pub?.distFromUser ?? 0.0 < $1.pub?.distFromUser ?? 0.0 })
+    }
+    
+    // MARK: - Pubs
+    
+    func addPub(pub: Pub?, id: String?) {
+        guard let id = id, let pub = pub else { return }
+        pubsMap[id] = pub
+    }
+    
+    func getPub(forId id: String?) -> Pub? {
+        guard let id = id else { return nil }
+        print("id: \(id)")
+        return pubsMap[id]
+    }
+    
+    func getPubs() -> [Pub] {
+        return pubs
     }
 
 }

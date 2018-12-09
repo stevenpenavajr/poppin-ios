@@ -75,9 +75,12 @@ class DealCell: UITableViewCell {
     }
 
     func configureCell(withDeal deal: Deal) {
-        barNameLabel.text = deal.name
-        dealDescriptionLabel.text = deal.description
-        distanceFromUserLabel.text = String(deal.distFromUser!) + " mi"
+        print("BLAKE")
+        guard let pub = deal.pub else { print("HERE \(deal.title)"); return }
+        print("YOO", pub.name ?? "")
+        barNameLabel.text = pub.name ?? ""
+        dealDescriptionLabel.text = deal.title
+        //distanceFromUserLabel.text = String(pub.distFromUser!) + " mi"
         timeRemainingLabel.text = "23:42 remaining"
     }
     
