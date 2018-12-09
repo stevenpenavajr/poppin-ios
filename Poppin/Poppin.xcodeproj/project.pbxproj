@@ -23,6 +23,8 @@
 		0AB77A8421B9A7BB00EBEC07 /* map-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8021B9A7BB00EBEC07 /* map-gray.png */; };
 		0AB77A8521B9A7BB00EBEC07 /* map-poppin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8121B9A7BB00EBEC07 /* map-poppin.png */; };
 		0AB77A8621B9A7BB00EBEC07 /* deals-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8221B9A7BB00EBEC07 /* deals-gray.png */; };
+		0AB9DEFA21BDBF5A00117B8E /* PubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */; };
+		0AB9DEFC21BDBF7600117B8E /* Pub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */; };
 		0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* DealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
 		0ACB278E21B8D837008131AE /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB278D21B8D837008131AE /* map.png */; };
@@ -75,6 +77,8 @@
 		0AB77A8021B9A7BB00EBEC07 /* map-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-gray.png"; sourceTree = "<group>"; };
 		0AB77A8121B9A7BB00EBEC07 /* map-poppin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-poppin.png"; sourceTree = "<group>"; };
 		0AB77A8221B9A7BB00EBEC07 /* deals-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deals-gray.png"; sourceTree = "<group>"; };
+		0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubTableViewController.swift; sourceTree = "<group>"; };
+		0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pub.storyboard; sourceTree = "<group>"; };
 		0ABD352621767D4D00CAD417 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
 		0ACB278D21B8D837008131AE /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
@@ -271,6 +275,7 @@
 				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
 				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
+				0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				AF40CA2C216AE91C00E82D17 /* Deals.storyboard */,
 				AF40CA2E216AE92400E82D17 /* Map.storyboard */,
 				0AF36D3921878C1E00FCEDEB /* Login.storyboard */,
+				0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,
 				0ADDE28F21B6052F0089F766 /* annotation.png in Resources */,
 				0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */,
+				0AB9DEFC21BDBF7600117B8E /* Pub.storyboard in Resources */,
 				0A42FD1E21879FAD000F117B /* beer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +478,7 @@
 				0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */,
 				CB7E645721BB2F0300F931EE /* CustomTabBarController.swift in Sources */,
 				0ADDE28D21B5EDA60089F766 /* PubAnnotation.swift in Sources */,
+				0AB9DEFA21BDBF5A00117B8E /* PubTableViewController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
 				CB7E645921BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,

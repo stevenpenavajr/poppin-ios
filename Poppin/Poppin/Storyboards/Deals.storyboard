@@ -255,10 +255,21 @@ More text</string>
                             <outlet property="delegate" destination="RQJ-SQ-7Wt" id="Y9B-cy-g4n"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="mqc-oK-M7O" kind="show" identifier="PubSegue" id="a9P-gI-V1q"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdG-1Q-sz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1872.8" y="47.226386806596707"/>
+        </scene>
+        <!--Pub-->
+        <scene sceneID="7Ii-tu-plF">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pub" id="mqc-oK-M7O" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6N-6M-B8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2632" y="36"/>
         </scene>
         <!--Deals-->
         <scene sceneID="I3w-re-jgC">

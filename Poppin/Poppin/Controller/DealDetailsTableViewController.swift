@@ -97,11 +97,21 @@ class DealDetailsTableViewController: UITableViewController {
         return UITableViewCell()
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 1 {
+            performSegue(withIdentifier: "PubSegue", sender: self)
+        }
+    }
+    
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        // if let segue.destination or vc = ....
+        // if let pubvc == segue.dest as pubvc {
+                // pubvc.pub = deal.pub this will work eventually
     }
 
 }
