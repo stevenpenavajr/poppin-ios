@@ -53,7 +53,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GtV-nA-g6Q">
-                                            <rect key="frame" x="36" y="67" width="303" height="87"/>
+                                            <rect key="frame" x="20" y="67" width="335" height="97.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <string key="text">Stagger Inn is a very cool bar located on W. Main St. here in Lexington, KY. From cheap beers to live country music, Stagger Inn has it all. Stop by for a great time with great people!</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -62,10 +62,10 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cGf-ew-XfG" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leadingMargin" constant="20" id="2uC-tJ-ABQ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="GtV-nA-g6Q" secondAttribute="trailing" constant="20" id="4tL-Qc-NrN"/>
-                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="top" secondItem="cGf-ew-XfG" secondAttribute="bottom" constant="8" id="DId-oC-TVo"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="GtV-nA-g6Q" secondAttribute="bottom" constant="10" id="gvt-d4-fYr"/>
-                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leadingMargin" constant="20" id="jC7-vH-Mtx"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leading" constant="20" id="5Lj-LU-sVX"/>
+                                        <constraint firstAttribute="trailing" secondItem="GtV-nA-g6Q" secondAttribute="trailing" constant="20" id="HWf-eW-fTW"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="top" secondItem="cGf-ew-XfG" secondAttribute="bottom" constant="8" id="NAz-Qv-NTI"/>
+                                        <constraint firstAttribute="bottom" secondItem="GtV-nA-g6Q" secondAttribute="bottom" constant="10" id="RxJ-Ra-92H"/>
                                         <constraint firstItem="cGf-ew-XfG" firstAttribute="top" secondItem="56W-hN-kCt" secondAttribute="topMargin" constant="8" id="jvY-jL-Bxy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cGf-ew-XfG" secondAttribute="trailing" constant="20" id="nzI-wP-Dxx"/>
                                     </constraints>
