@@ -14,6 +14,9 @@ class DealDetailsTableViewController: UITableViewController {
     
     var rowSelection = 0
     
+    /* This deal object's pub property will be passed to the PubTVC */
+    var deal: Deal?
+    
 
     override func viewDidLoad() {
         /* Creating Uber button (just Tin Roof for now) */
@@ -98,6 +101,8 @@ class DealDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // when a user clicks on the description cell...
         if indexPath.row == 1 {
             performSegue(withIdentifier: "PubSegue", sender: self)
         }
@@ -106,12 +111,9 @@ class DealDetailsTableViewController: UITableViewController {
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        
-        // if let segue.destination or vc = ....
-        // if let pubvc == segue.dest as pubvc {
-                // pubvc.pub = deal.pub this will work eventually
+        if let pubVC = segue.destination as? PubTableViewController {
+            pubVC.pub = deal?.pub
+        }
     }
 
 }
