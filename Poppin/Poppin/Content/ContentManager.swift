@@ -56,9 +56,27 @@ class ContentManager {
     }
     
     func getCurrentDeals() -> [Deal] {
+        var currentDeals: [Deal] = []
         let sortedDeals = getSortedDeals()
-        let calendar = Calendar.current.component(.day, from: Date())
-        return deals
+        let day = Calendar.current.component(.weekday, from: Date())
+
+        print("Getting current deals...")
+        for deal in sortedDeals {
+            guard let days = deal.days else { break }
+            guard let hours = deal.time else { break }
+            
+            if days.contains(day), Date().isBetweenDates(startDate: hours[0], endDate: hours[1]) {
+                print(deal.pub?.name)
+                print(deal.description)
+                print(days)
+                print(day)
+                print(hours[0])
+                print(hours[1])
+                print("adding deal...")
+                currentDeals.append(deal)
+            }
+        }
+        return currentDeals
     }
     
     func getSortedDeals() -> [Deal] {
@@ -82,7 +100,6 @@ class ContentManager {
     
     func getPub(forId id: String?) -> Pub? {
         guard let id = id else { return nil }
-        print("id: \(id)")
         return pubsMap[id]
     }
     

@@ -3,8 +3,9 @@
 // Date Created: 10/16/18
 // Created By: Steven Penava
 
-import UIKit
 import CoreLocation
+import Kingfisher
+import UIKit
 
 class DealCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class DealCell: UITableViewCell {
     @IBOutlet weak var barNameLabel: UILabel!
     @IBOutlet weak var barLogoImageView: UIImageView!
     @IBOutlet weak var barHeaderImageView: UIImageView!
+    private let barHeaderImageGradient = CAGradientLayer()
     
     @IBOutlet weak var distanceFromUserLabel: UILabel!
     @IBOutlet weak var timeRemainingLabel: UILabel!
@@ -29,65 +31,55 @@ class DealCell: UITableViewCell {
     @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
     
+    var deal: Deal?
+    private var timeRemainingTimer: Timer?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
         styleSubviews()
-        
+        startTimer()
     }
     
-    func styleSubviews() {
-        barLogoImageView.layer.cornerRadius = barLogoImageView.frame.height / 2
-        barLogoImageView.clipsToBounds = true
-        barLogoImageView.backgroundColor = Theme.Color.imageBackgroundColor
-        
-        barNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
-        barNameLabel.textColor = Theme.Color.textColor
-        
-        distanceFromUserLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
-        distanceFromUserLabel.textColor = Theme.Color.textOffColor
-        
-        barHeaderImageView.contentMode = .scaleAspectFill
-        barHeaderImageView.backgroundColor = Theme.Color.imageBackgroundColor
-        
-        containerView.layer.cornerRadius = 10.0
-        containerView.clipsToBounds = true
-        
-        dropShadowView.layer.masksToBounds = false
-        dropShadowView.layer.shadowRadius = 6.0
-        dropShadowView.layer.shadowOpacity = 0.25
-        dropShadowView.layer.shadowColor = UIColor.black.cgColor
-        dropShadowView.layer.shadowOffset = CGSize(width: 4.0 , height: 4.0)
-        
-        viewDealLabel.backgroundColor = Theme.Color.primaryYellow
-        viewDealLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
-        viewDealLabel.text = "View Deal"
-        viewDealLabel.textAlignment = .center
-        viewDealLabel.clipsToBounds = true
-        viewDealLabel.layer.cornerRadius = viewDealLabel.frame.height / 2
-        
-        dealDescriptionLabel.font = UIFont.systemFont(ofSize: 12, weight: .regular)
-        dealDescriptionLabel.textColor = Theme.Color.textOffColor
-        dealDescriptionLabel.numberOfLines = 0
-        
-        timeRemainingLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
-        timeRemainingLabel.textColor = Theme.Color.textOffColor
-    }
-
-    func configureCell(withDeal deal: Deal) {
-        print("BLAKE")
-        guard let pub = deal.pub else { print("HERE \(deal.title)"); return }
-        print("YOO", pub.name ?? "")
-        barNameLabel.text = pub.name ?? ""
-        dealDescriptionLabel.text = deal.title
-        //distanceFromUserLabel.text = String(pub.distFromUser!) + " mi"
-        timeRemainingLabel.text = "23:42 remaining"
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        barHeaderImageGradient.frame = barHeaderImageView.layer.frame
     }
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let height: CGFloat = 10.0 + 58.0 + 160.0 + 24.0 + dealDescriptionLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + 16.0 + 28.0 + 20.0
+        let height: CGFloat = 10.0 + 58.0 + 160.0 + 24.0 + dealTitleLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + dealDescriptionLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + 16.0 + 28.0 + 20.0
         return CGSize(width: size.width, height: height)
     }
+    
+    // MARK: - Initialization
+    
+    func startTimer() {
+        timeRemainingTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimeRemaining), userInfo: nil, repeats: true)
+        timeRemainingTimer?.fire()
+    }
+    
+    @objc func updateTimeRemaining() {
+        guard let days = deal?.days else { return }
+        guard let hours = deal?.time else { return }
+        let date = Date().timeUntilDate(date: hours[1])
+        let timeRemaining = String(format: "%02d:%02d:%02d", date.hour ?? 0, date.minute ?? 0, date.second ?? 0)
+        self.timeRemainingLabel.text = timeRemaining
+    }
+    
+    func configureCell(withDeal deal: Deal) {
+        self.deal = deal
+        guard let pub = deal.pub else { return }
+        barHeaderImageView.kf.setImage(with: pub.imageUrl)
+        barNameLabel.text = pub.name ?? ""
+        dealTitleLabel.text = deal.title
+        dealDescriptionLabel.text = deal.description
+        distanceFromUserLabel.text = String(pub.distFromUser ?? 0.0) + " mi"
+        timeRemainingLabel.text = ""
+        startTimer()
+    }
+    
+    // MARK: - Styling
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
@@ -98,10 +90,62 @@ class DealCell: UITableViewCell {
         }
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func styleSubviews() {
+        
+        // Container View
+        containerView.layer.cornerRadius = 10.0
+        containerView.clipsToBounds = true
+        
+        // Drop Shadow View
+        dropShadowView.layer.masksToBounds = false
+        dropShadowView.layer.shadowRadius = 6.0
+        dropShadowView.layer.shadowOpacity = 0.25
+        dropShadowView.layer.shadowColor = UIColor.black.cgColor
+        dropShadowView.layer.shadowOffset = CGSize(width: 4.0 , height: 4.0)
+        
+        // Bar Logo ImageView
+        barLogoImageView.layer.cornerRadius = barLogoImageView.frame.height / 2
+        barLogoImageView.clipsToBounds = true
+        barLogoImageView.backgroundColor = Theme.Color.imageBackgroundColor
+        
+        // Bar Name Label
+        barNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        barNameLabel.textColor = Theme.Color.textColor
+        
+        // Distance From User Label
+        distanceFromUserLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        distanceFromUserLabel.textColor = Theme.Color.textOffColor
+        
+        // Header Image
+        barHeaderImageView.contentMode = .scaleAspectFill
+        barHeaderImageView.backgroundColor = Theme.Color.imageBackgroundColor
+        barHeaderImageView.clipsToBounds = true
+        barHeaderImageGradient.colors = [Theme.Color.clear.cgColor, UIColor.black.withAlphaComponent(0.7).cgColor]
+        barHeaderImageGradient.locations = [0.7, 1.0]
+        barHeaderImageView.layer.addSublayer(barHeaderImageGradient)
+        
+        // Deal Title Label
+        dealTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .heavy)
+        dealTitleLabel.textColor = Theme.Color.textColor
+        dealTitleLabel.numberOfLines = 0
+        
+        // Deal Description Label
+        dealDescriptionLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        dealDescriptionLabel.textColor = Theme.Color.textOffColor
+        dealDescriptionLabel.numberOfLines = 0
+        
+        // Time Remaining Label
+        timeRemainingLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        timeRemainingLabel.textColor = Theme.Color.textOffColor
+        
+        // View Deal Label
+        viewDealLabel.backgroundColor = Theme.Color.primaryYellow
+        viewDealLabel.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        viewDealLabel.text = "View Deal"
+        viewDealLabel.textAlignment = .center
+        viewDealLabel.clipsToBounds = true
+        viewDealLabel.layer.cornerRadius = viewDealLabel.frame.height / 2
+        
     }
 
 }

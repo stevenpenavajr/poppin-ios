@@ -23,7 +23,12 @@ class Pub: Mappable {
     var description: String?
     var phone: String?
     var website: String?
-    var imageUrl: String?
+    
+    var imageString: String?
+    var imageUrl: URL? {
+        guard let image = imageString else { return nil }
+        return URL(string: image)
+    }
     
     var distFromUser: CLLocationDistance?
     var lat: CLLocationDegrees?
@@ -54,6 +59,7 @@ class Pub: Mappable {
         website <- map["website"]
         categories <- map["category"]
         locationGP <- map["location"]
+        imageString <- map["imageUrl"]
     }
     
 }

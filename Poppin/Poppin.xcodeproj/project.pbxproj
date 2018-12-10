@@ -61,6 +61,7 @@
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
 		CB7E645721BB2F0300F931EE /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */; };
 		CB7E645921BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */; };
+		CB7E645B21BDED2300F931EE /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645A21BDED2300F931EE /* DateHelper.swift */; };
 		CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */; };
 		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
 		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
@@ -127,6 +128,7 @@
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		CB7E645A21BDED2300F931EE /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
 		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		0A31AB6521B320C800C51459 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				CB7E645A21BDED2300F931EE /* DateHelper.swift */,
 				CBB7192521B333F10054EC77 /* Theme.swift */,
 				0ADDE29021B605D90089F766 /* UIImage+Resize.swift */,
 				0AB77A7D21B9A13A00EBEC07 /* UITabBar+Resize.swift */,
@@ -530,6 +533,7 @@
 				0ADDE29121B605D90089F766 /* UIImage+Resize.swift in Sources */,
 				0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */,
 				CBB7192421B3048D0054EC77 /* Deal.swift in Sources */,
+				CB7E645B21BDED2300F931EE /* DateHelper.swift in Sources */,
 				CBB7192621B333F10054EC77 /* Theme.swift in Sources */,
 				CB1BCD9521B5EAD20029689F /* ContentManager+FirebaseSubscription.swift in Sources */,
 				0AB9DEFE21BDCDE500117B8E /* PubImageCell.swift in Sources */,

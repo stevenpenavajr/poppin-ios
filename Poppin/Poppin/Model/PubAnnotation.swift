@@ -9,7 +9,7 @@ import MapKit
 
 class PubAnnotation: MKPointAnnotation {
 
-    var name:String?
+    var name: String?
     var image: UIImage? = UIImage(named: "temp-logo.png")
 
 }
