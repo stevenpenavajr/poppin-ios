@@ -25,6 +25,15 @@
 		0AB77A8621B9A7BB00EBEC07 /* deals-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8221B9A7BB00EBEC07 /* deals-gray.png */; };
 		0AB9DEFA21BDBF5A00117B8E /* PubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */; };
 		0AB9DEFC21BDBF7600117B8E /* Pub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */; };
+		0AB9DEFE21BDCDE500117B8E /* PubImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */; };
+		0AB9DF0021BDD07900117B8E /* stagger.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DEFF21BDD07900117B8E /* stagger.jpg */; };
+		0AB9DF0221BDD10100117B8E /* PubDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */; };
+		0AB9DF0421BDD89500117B8E /* PubButtonsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */; };
+		0AB9DF0621BDDA9300117B8E /* PubMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0521BDDA9300117B8E /* PubMapCell.swift */; };
+		0AB9DF0B21BDDD0000117B8E /* navigation.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0721BDDCFD00117B8E /* navigation.png */; };
+		0AB9DF0C21BDDD0000117B8E /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0821BDDCFE00117B8E /* globe.png */; };
+		0AB9DF0D21BDDD0000117B8E /* phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0921BDDCFE00117B8E /* phone.png */; };
+		0AB9DF0E21BDDD0000117B8E /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB9DF0A21BDDCFF00117B8E /* share.png */; };
 		0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD352621767D4D00CAD417 /* DealCell.swift */; };
 		0ABD352B217680BE00CAD417 /* Ubuntu in Resources */ = {isa = PBXBuildFile; fileRef = 0ABD352A217680BE00CAD417 /* Ubuntu */; };
 		0ACB278E21B8D837008131AE /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 0ACB278D21B8D837008131AE /* map.png */; };
@@ -79,6 +88,15 @@
 		0AB77A8221B9A7BB00EBEC07 /* deals-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deals-gray.png"; sourceTree = "<group>"; };
 		0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubTableViewController.swift; sourceTree = "<group>"; };
 		0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pub.storyboard; sourceTree = "<group>"; };
+		0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubImageCell.swift; sourceTree = "<group>"; };
+		0AB9DEFF21BDD07900117B8E /* stagger.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = stagger.jpg; sourceTree = "<group>"; };
+		0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubDescriptionCell.swift; sourceTree = "<group>"; };
+		0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubButtonsCell.swift; sourceTree = "<group>"; };
+		0AB9DF0521BDDA9300117B8E /* PubMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubMapCell.swift; sourceTree = "<group>"; };
+		0AB9DF0721BDDCFD00117B8E /* navigation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navigation.png; sourceTree = "<group>"; };
+		0AB9DF0821BDDCFE00117B8E /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		0AB9DF0921BDDCFE00117B8E /* phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone.png; sourceTree = "<group>"; };
+		0AB9DF0A21BDDCFF00117B8E /* share.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share.png; sourceTree = "<group>"; };
 		0ABD352621767D4D00CAD417 /* DealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealCell.swift; sourceTree = "<group>"; };
 		0ABD352A217680BE00CAD417 /* Ubuntu */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Ubuntu; sourceTree = "<group>"; };
 		0ACB278D21B8D837008131AE /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
@@ -144,6 +162,11 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0AB9DF0821BDDCFE00117B8E /* globe.png */,
+				0AB9DF0721BDDCFD00117B8E /* navigation.png */,
+				0AB9DF0921BDDCFE00117B8E /* phone.png */,
+				0AB9DF0A21BDDCFF00117B8E /* share.png */,
+				0AB9DEFF21BDD07900117B8E /* stagger.jpg */,
 				0AB77A8221B9A7BB00EBEC07 /* deals-gray.png */,
 				0AB77A7F21B9A7BA00EBEC07 /* deals-poppin.png */,
 				0AB77A8021B9A7BB00EBEC07 /* map-gray.png */,
@@ -168,6 +191,10 @@
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
+				0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */,
+				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
+				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
+				0AB9DF0521BDDA9300117B8E /* PubMapCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,10 +391,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */,
+				0AB9DF0C21BDDD0000117B8E /* globe.png in Resources */,
 				0A42FD222187A4EC000F117B /* mug.png in Resources */,
 				0AB77A8621B9A7BB00EBEC07 /* deals-gray.png in Resources */,
 				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
+				0AB9DF0B21BDDD0000117B8E /* navigation.png in Resources */,
 				0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */,
+				0AB9DF0E21BDDD0000117B8E /* share.png in Resources */,
 				0ACB278E21B8D837008131AE /* map.png in Resources */,
 				0AF36D41218792B000FCEDEB /* Touche.otf in Resources */,
 				0AB77A8521B9A7BB00EBEC07 /* map-poppin.png in Resources */,
@@ -379,6 +409,7 @@
 				0AB77A8421B9A7BB00EBEC07 /* map-gray.png in Resources */,
 				AF40CA29216AE88900E82D17 /* TabBar.storyboard in Resources */,
 				AF40CA2F216AE92400E82D17 /* Map.storyboard in Resources */,
+				0AB9DF0D21BDDD0000117B8E /* phone.png in Resources */,
 				0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */,
 				0AB77A8321B9A7BB00EBEC07 /* deals-poppin.png in Resources */,
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
@@ -386,6 +417,7 @@
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,
 				0ADDE28F21B6052F0089F766 /* annotation.png in Resources */,
 				0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */,
+				0AB9DF0021BDD07900117B8E /* stagger.jpg in Resources */,
 				0AB9DEFC21BDBF7600117B8E /* Pub.storyboard in Resources */,
 				0A42FD1E21879FAD000F117B /* beer.png in Resources */,
 			);
@@ -476,6 +508,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */,
+				0AB9DF0421BDD89500117B8E /* PubButtonsCell.swift in Sources */,
+				0AB9DF0221BDD10100117B8E /* PubDescriptionCell.swift in Sources */,
 				CB7E645721BB2F0300F931EE /* CustomTabBarController.swift in Sources */,
 				0ADDE28D21B5EDA60089F766 /* PubAnnotation.swift in Sources */,
 				0AB9DEFA21BDBF5A00117B8E /* PubTableViewController.swift in Sources */,
@@ -498,7 +532,9 @@
 				CBB7192421B3048D0054EC77 /* Deal.swift in Sources */,
 				CBB7192621B333F10054EC77 /* Theme.swift in Sources */,
 				CB1BCD9521B5EAD20029689F /* ContentManager+FirebaseSubscription.swift in Sources */,
+				0AB9DEFE21BDCDE500117B8E /* PubImageCell.swift in Sources */,
 				CB1BCD9921B5FE540029689F /* DealsTableViewController+ContentManagerDelegate.swift in Sources */,
+				0AB9DF0621BDDA9300117B8E /* PubMapCell.swift in Sources */,
 				CBB7192821B337070054EC77 /* CustomNavigationBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
