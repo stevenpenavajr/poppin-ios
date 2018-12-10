@@ -17,13 +17,125 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lW9-5z-MqV">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubImageCell" rowHeight="158" id="lW9-5z-MqV" customClass="PubImageCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="158"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lW9-5z-MqV" id="SBH-Bh-MHg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stagger.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="46d-Jl-vRA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="157.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="46d-Jl-vRA" secondAttribute="trailing" id="gpl-Tw-XE4"/>
+                                        <constraint firstItem="46d-Jl-vRA" firstAttribute="top" secondItem="SBH-Bh-MHg" secondAttribute="top" id="lGC-Eo-xpX"/>
+                                        <constraint firstAttribute="bottom" secondItem="46d-Jl-vRA" secondAttribute="bottom" id="nWu-W5-9bX"/>
+                                        <constraint firstItem="46d-Jl-vRA" firstAttribute="leading" secondItem="SBH-Bh-MHg" secondAttribute="leading" id="xJm-ZK-Q6N"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubDescriptionCell" rowHeight="175" id="RQg-la-0Oz" customClass="PubDescriptionCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="186" width="375" height="175"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RQg-la-0Oz" id="56W-hN-kCt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="174.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stagger Inn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGf-ew-XfG">
+                                            <rect key="frame" x="36" y="19" width="303" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="W8k-cg-DzM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GtV-nA-g6Q">
+                                            <rect key="frame" x="20" y="67" width="335" height="97.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <string key="text">Stagger Inn is a very cool bar located on W. Main St. here in Lexington, KY. From cheap beers to live country music, Stagger Inn has it all. Stop by for a great time with great people!</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="cGf-ew-XfG" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leadingMargin" constant="20" id="2uC-tJ-ABQ"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leading" constant="20" id="5Lj-LU-sVX"/>
+                                        <constraint firstAttribute="trailing" secondItem="GtV-nA-g6Q" secondAttribute="trailing" constant="20" id="HWf-eW-fTW"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="top" secondItem="cGf-ew-XfG" secondAttribute="bottom" constant="8" id="NAz-Qv-NTI"/>
+                                        <constraint firstAttribute="bottom" secondItem="GtV-nA-g6Q" secondAttribute="bottom" constant="10" id="RxJ-Ra-92H"/>
+                                        <constraint firstItem="cGf-ew-XfG" firstAttribute="top" secondItem="56W-hN-kCt" secondAttribute="topMargin" constant="8" id="jvY-jL-Bxy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cGf-ew-XfG" secondAttribute="trailing" constant="20" id="nzI-wP-Dxx"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barDescriptionLabel" destination="GtV-nA-g6Q" id="c2F-zS-kUf"/>
+                                    <outlet property="barTitleLabel" destination="cGf-ew-XfG" id="C8C-6f-JxT"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubButtonsCell" rowHeight="85" id="dkL-zo-K0M" customClass="PubButtonsCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="361" width="375" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dkL-zo-K0M" id="WX9-Zd-GBe">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5sn-ZO-F02">
+                                            <rect key="frame" x="20" y="8" width="335" height="66.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-1n-wRx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="84" height="66.5"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-2M-2gH">
+                                                    <rect key="frame" x="84" y="0.0" width="83.5" height="66.5"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVh-sH-JNJ">
+                                                    <rect key="frame" x="167.5" y="0.0" width="84" height="66.5"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-Oh-JdQ">
+                                                    <rect key="frame" x="251.5" y="0.0" width="83.5" height="66.5"/>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5sn-ZO-F02" firstAttribute="leading" secondItem="WX9-Zd-GBe" secondAttribute="leading" constant="20" id="7EW-op-5KO"/>
+                                        <constraint firstAttribute="trailing" secondItem="5sn-ZO-F02" secondAttribute="trailing" constant="20" id="PhD-TL-jhT"/>
+                                        <constraint firstAttribute="bottom" secondItem="5sn-ZO-F02" secondAttribute="bottom" constant="10" id="opz-1F-iBV"/>
+                                        <constraint firstItem="5sn-ZO-F02" firstAttribute="top" secondItem="WX9-Zd-GBe" secondAttribute="top" constant="8" id="qZi-Br-qAd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="barSiteButton" destination="OFR-2M-2gH" id="0Jg-G3-qgI"/>
+                                    <outlet property="buttonStackView" destination="5sn-ZO-F02" id="MZc-Xz-MJV"/>
+                                    <outlet property="callBarButton" destination="2ly-1n-wRx" id="3wf-qx-TNB"/>
+                                    <outlet property="mapsBarButton" destination="xVh-sH-JNJ" id="ZfS-Lh-u7K"/>
+                                    <outlet property="shareBarButton" destination="Dv9-Oh-JdQ" id="h6d-vZ-XtU"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubMapCell" rowHeight="171" id="Fux-0g-oqE" customClass="PubMapCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="446" width="375" height="171"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fux-0g-oqE" id="RDf-GM-LJJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="k2M-G3-3jq">
+                                            <rect key="frame" x="20" y="16" width="335" height="144.5"/>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="k2M-G3-3jq" secondAttribute="bottom" constant="10" id="Toh-Zv-mBW"/>
+                                        <constraint firstItem="k2M-G3-3jq" firstAttribute="top" secondItem="RDf-GM-LJJ" secondAttribute="top" constant="16" id="V9R-gW-NbL"/>
+                                        <constraint firstAttribute="trailing" secondItem="k2M-G3-3jq" secondAttribute="trailing" constant="20" id="c8t-eU-Ux5"/>
+                                        <constraint firstItem="k2M-G3-3jq" firstAttribute="leading" secondItem="RDf-GM-LJJ" secondAttribute="leading" constant="20" id="i3w-P4-gfa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pubMapView" destination="k2M-G3-3jq" id="9HO-kZ-FbO"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +146,10 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3b-kP-gOJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-273" y="114"/>
+            <point key="canvasLocation" x="-274.39999999999998" y="113.79310344827587"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="stagger.jpg" width="1968" height="1312"/>
+    </resources>
 </document>
