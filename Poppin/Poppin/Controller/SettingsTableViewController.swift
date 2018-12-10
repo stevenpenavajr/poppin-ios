@@ -21,7 +21,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return section == 0 ? 300.0 : 51.0
+        return indexPath.section == 0 ? 300.0 : 51.0
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +44,7 @@ class SettingsTableViewController: UITableViewController {
             switch indexPath.row {
             case 0:
                 cell.textLabel?.text = "Location"
-                cell.accessoryType = .
+                cell.accessoryType = .detailDisclosureButton
             case 1:
                 cell.textLabel?.text = "Sign Out"
                 
