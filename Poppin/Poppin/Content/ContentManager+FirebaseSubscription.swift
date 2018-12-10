@@ -22,7 +22,7 @@ extension ContentManager: FirebaseSubscription {
     }
     
     func observePubsCollection() {
-        Firestore.firestore().collection("pubs").getDocuments() { (querySnapshot, err) in
+        Firestore.firestore().collection("pubs").addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -38,7 +38,7 @@ extension ContentManager: FirebaseSubscription {
     }
     
     func observeDealsCollection() {
-        Firestore.firestore().collection("weekly").getDocuments() { (querySnapshot, err) in
+        Firestore.firestore().collection("weekly").addSnapshotListener { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
