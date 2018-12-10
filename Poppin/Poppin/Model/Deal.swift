@@ -30,7 +30,7 @@ class Deal: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         barId <- map["bar-id"]
-        days <- map["days"]
+        days <- map["day"]
         title <- map["title"]
         description <- map["deal"]
         time <- map["time"]

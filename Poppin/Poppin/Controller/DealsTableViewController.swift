@@ -38,7 +38,7 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         ContentManager.shared.delegate = self
-        deals = ContentManager.shared.getSortedDeals()
+        deals = ContentManager.shared.getCurrentDeals()
         requestUserLocation()
         tableView.separatorStyle = .none
         // TODO: Fix refresh control
@@ -67,7 +67,7 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
     }
 
     @objc func reloadData() {
-        deals = ContentManager.shared.getSortedDeals()
+        deals = ContentManager.shared.getCurrentDeals()
         reloadControl.endRefreshing()
         tableView.reloadData()
     }
