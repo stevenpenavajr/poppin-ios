@@ -38,6 +38,12 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>test1</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>test2</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>test3 </string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Ubuntu-B.ttf</string>
@@ -55,7 +61,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string>TabBar</string>
+	<string>Login</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -79,11 +85,5 @@
 	<string>[Poppin]</string>
 	<key>UberServerToken</key>
 	<string>[q9_h8JzBAKdXm3C_enO5jXgZR7lQxbrfWJZrfuIy]</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>test1</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>test2</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>test3 </string>
 </dict>
 </plist>

@@ -104,10 +104,8 @@ class DealCell: UITableViewCell {
         dropShadowView.layer.shadowOffset = CGSize(width: 4.0 , height: 4.0)
         
         // Bar Logo ImageView
-        barLogoImageView.layer.cornerRadius = barLogoImageView.frame.height / 2
         barLogoImageView.clipsToBounds = true
-        barLogoImageView.backgroundColor = Theme.Color.imageBackgroundColor
-        
+        barLogoImageView.contentMode = .scaleAspectFit
         // Bar Name Label
         barNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         barNameLabel.textColor = Theme.Color.textColor

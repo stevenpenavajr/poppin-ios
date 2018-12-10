@@ -62,6 +62,10 @@
 		CB7E645721BB2F0300F931EE /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */; };
 		CB7E645921BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */; };
 		CB7E645B21BDED2300F931EE /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645A21BDED2300F931EE /* DateHelper.swift */; };
+		CB7E645D21BF248000F931EE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */; };
+		CB7E645F21BF26F700F931EE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7E645E21BF26F700F931EE /* Settings.storyboard */; };
+		CB7E646121BF2BC100F931EE /* SettingsProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */; };
+		CB7E646321BF2BCB00F931EE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */; };
 		CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */; };
 		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
 		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
@@ -129,6 +133,10 @@
 		CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		CB7E645A21BDED2300F931EE /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CB7E645E21BF26F700F931EE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileTableViewCell.swift; sourceTree = "<group>"; };
+		CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
 		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
@@ -194,6 +202,8 @@
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
+				CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */,
+				CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */,
 				0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */,
 				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
 				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
@@ -306,6 +316,7 @@
 				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
 				0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */,
+				CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -319,6 +330,7 @@
 				AF40CA2E216AE92400E82D17 /* Map.storyboard */,
 				0AF36D3921878C1E00FCEDEB /* Login.storyboard */,
 				0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */,
+				CB7E645E21BF26F700F931EE /* Settings.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -407,6 +419,7 @@
 				0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */,
 				0A42FD242187A899000F117B /* temp-logo.png in Resources */,
 				0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */,
+				CB7E645F21BF26F700F931EE /* Settings.storyboard in Resources */,
 				AF40CA2D216AE91C00E82D17 /* Deals.storyboard in Resources */,
 				0A42FD202187A484000F117B /* barrel.png in Resources */,
 				0AB77A8421B9A7BB00EBEC07 /* map-gray.png in Resources */,
@@ -522,13 +535,16 @@
 				0A6850E721B326A400CC4E17 /* DealDetailsDescriptionCell.swift in Sources */,
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
+				CB7E646121BF2BC100F931EE /* SettingsProfileTableViewCell.swift in Sources */,
 				CB1BCD9321B5EAA30029689F /* ContentManager.swift in Sources */,
 				CBC8A27E21B709B8009E7B47 /* User.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
 				0AB77A7E21B9A13A00EBEC07 /* UITabBar+Resize.swift in Sources */,
+				CB7E646321BF2BCB00F931EE /* SettingsTableViewCell.swift in Sources */,
 				CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */,
 				CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */,
 				0ABD352721767D4D00CAD417 /* DealCell.swift in Sources */,
+				CB7E645D21BF248000F931EE /* SettingsTableViewController.swift in Sources */,
 				AF40CA33216AE94E00E82D17 /* MapViewController.swift in Sources */,
 				0ADDE29121B605D90089F766 /* UIImage+Resize.swift in Sources */,
 				0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */,
@@ -679,7 +695,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -698,7 +714,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

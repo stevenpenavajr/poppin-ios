@@ -44,19 +44,22 @@ extension Date {
     
     func isBetweenDates(startDate: Date, endDate: Date) -> Bool {
         guard   let start = startDate.convertToCurrentDate(),
-                let end = endDate.convertToCurrentDate()
+                let end = endDate.convertToCurrentDate(),
+                let now = Date().convertToCurrentDate()
                 else { return false }
-        return start.compare(self) == self.compare(end)
+        return start.compare(now) == now.compare(end)
     }
     
     func convertToCurrentDate() -> Date? {
-        var calendar = Calendar.current
-        let currentDate = calendar.dateComponents([.day, .month, .year], from: Date())
-        var startComponents = calendar.dateComponents([.hour, .minute, .second], from: self)
+        // TODO: blake- Figure out future solution for UTC offset
+        let calendar = Calendar.current
+        let currentDate = calendar.dateComponents([.day, .month, .year], from: Date().addingTimeInterval(-18000))
+        var startComponents = calendar.dateComponents([.hour, .minute, .second], from: self.addingTimeInterval(-18000))
         startComponents.setValue(currentDate.day ?? 0, for: .day)
         startComponents.setValue(currentDate.month ?? 0, for: .month)
         startComponents.setValue(currentDate.year ?? 0, for: .year)
-        return calendar.date(from: startComponents)
+        
+        return calendar.date(from: startComponents)?.addingTimeInterval(-18000)
     }
     
 }
