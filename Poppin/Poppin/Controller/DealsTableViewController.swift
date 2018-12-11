@@ -106,7 +106,7 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
         if segue.destination is DealDetailsTableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let vc = segue.destination as? DealDetailsTableViewController
-                vc?.rowSelection = indexPath.row
+                vc?.deal = deals[indexPath.row]
             }
         }
     }

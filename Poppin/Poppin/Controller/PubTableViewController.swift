@@ -8,7 +8,7 @@ import UIKit
 
 class PubTableViewController: UITableViewController {
     
-    private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 4)
+    private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 5)
     var pub: Pub?
     
     override func viewDidLoad() {
@@ -24,7 +24,7 @@ class PubTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 4
+        return 5
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -49,6 +49,9 @@ class PubTableViewController: UITableViewController {
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PubDescriptionCell", for: indexPath) as? PubDescriptionCell {
                 
+                guard let pub = pub else { return UITableViewCell() }
+                cell.configureCell(withPub: pub)
+                
                 if cellHeights[indexPath.row] == 0.0 {
                     cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                 }
@@ -56,7 +59,11 @@ class PubTableViewController: UITableViewController {
                 return cell
             }
         case 2:
-            if let cell = tableView.dequeueReusableCell(withIdentifier: "PubButtonsCell", for: indexPath) as? PubButtonsCell {
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PubHoursCell", for: indexPath) as? PubHoursCell {
+                
+                guard let pub = pub else { return UITableViewCell() }
+                
+                cell.configureHours(withPub: pub)
                 
                 if cellHeights[indexPath.row] == 0.0 {
                     cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
@@ -64,6 +71,17 @@ class PubTableViewController: UITableViewController {
                 return cell
             }
         case 3:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "PubButtonsCell", for: indexPath) as? PubButtonsCell {
+                
+                guard let pub = pub else { return UITableViewCell() }
+                cell.configureCell(withPub: pub)
+                
+                if cellHeights[indexPath.row] == 0.0 {
+                    cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
+                }
+                return cell
+            }
+        case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PubMapCell", for: indexPath) as? PubMapCell {
                 
                 if cellHeights[indexPath.row] == 0.0 {

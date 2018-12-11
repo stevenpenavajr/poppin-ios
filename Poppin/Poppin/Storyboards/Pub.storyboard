@@ -44,39 +44,88 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stagger Inn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGf-ew-XfG">
-                                            <rect key="frame" x="36" y="19" width="303" height="40"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="W8k-cg-DzM"/>
-                                            </constraints>
+                                            <rect key="frame" x="36" y="19" width="303" height="27.5"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="GtV-nA-g6Q">
-                                            <rect key="frame" x="20" y="67" width="335" height="97.5"/>
+                                            <rect key="frame" x="20" y="88.5" width="335" height="76"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <string key="text">Stagger Inn is a very cool bar located on W. Main St. here in Lexington, KY. From cheap beers to live country music, Stagger Inn has it all. Stop by for a great time with great people!</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEE-BP-e6J">
+                                            <rect key="frame" x="20" y="56.5" width="335" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="wAe-ZH-s5B"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="cGf-ew-XfG" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leadingMargin" constant="20" id="2uC-tJ-ABQ"/>
-                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leading" constant="20" id="5Lj-LU-sVX"/>
-                                        <constraint firstAttribute="trailing" secondItem="GtV-nA-g6Q" secondAttribute="trailing" constant="20" id="HWf-eW-fTW"/>
-                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="top" secondItem="cGf-ew-XfG" secondAttribute="bottom" constant="8" id="NAz-Qv-NTI"/>
-                                        <constraint firstAttribute="bottom" secondItem="GtV-nA-g6Q" secondAttribute="bottom" constant="10" id="RxJ-Ra-92H"/>
+                                        <constraint firstAttribute="bottom" secondItem="GtV-nA-g6Q" secondAttribute="bottom" constant="10" id="CLz-5J-dCv"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leading" constant="20" id="HUE-iO-EMd"/>
+                                        <constraint firstItem="LEE-BP-e6J" firstAttribute="leading" secondItem="56W-hN-kCt" secondAttribute="leading" constant="20" id="Nfd-Dx-74E"/>
+                                        <constraint firstItem="GtV-nA-g6Q" firstAttribute="top" secondItem="LEE-BP-e6J" secondAttribute="bottom" constant="8" id="R6j-dl-in2"/>
+                                        <constraint firstItem="LEE-BP-e6J" firstAttribute="top" secondItem="cGf-ew-XfG" secondAttribute="bottom" constant="10" id="XpJ-LO-5fN"/>
+                                        <constraint firstAttribute="trailing" secondItem="LEE-BP-e6J" secondAttribute="trailing" constant="20" id="aDV-GL-na8"/>
                                         <constraint firstItem="cGf-ew-XfG" firstAttribute="top" secondItem="56W-hN-kCt" secondAttribute="topMargin" constant="8" id="jvY-jL-Bxy"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="cGf-ew-XfG" secondAttribute="trailing" constant="20" id="nzI-wP-Dxx"/>
+                                        <constraint firstAttribute="trailing" secondItem="GtV-nA-g6Q" secondAttribute="trailing" constant="20" id="w4f-xo-dSK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="barDescriptionHeadingLabel" destination="LEE-BP-e6J" id="WgB-yt-R7T"/>
                                     <outlet property="barDescriptionLabel" destination="GtV-nA-g6Q" id="c2F-zS-kUf"/>
                                     <outlet property="barTitleLabel" destination="cGf-ew-XfG" id="C8C-6f-JxT"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubHoursCell" rowHeight="130" id="xHb-gB-u3S" customClass="PubHoursCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="361" width="375" height="130"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xHb-gB-u3S" id="xn1-nQ-x7x">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="129.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-le-FxU">
+                                            <rect key="frame" x="20" y="8" width="335" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="Lns-VT-SsE"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hours go here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="39W-YU-WhG">
+                                            <rect key="frame" x="20" y="40" width="335" height="81.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="39W-YU-WhG" secondAttribute="bottom" constant="8" id="JEo-ol-jEX"/>
+                                        <constraint firstItem="39W-YU-WhG" firstAttribute="top" secondItem="wSK-le-FxU" secondAttribute="bottom" constant="8" id="ahv-dp-TX0"/>
+                                        <constraint firstAttribute="trailing" secondItem="wSK-le-FxU" secondAttribute="trailing" constant="20" id="j87-Fp-b3H"/>
+                                        <constraint firstAttribute="trailing" secondItem="39W-YU-WhG" secondAttribute="trailing" constant="20" id="oth-Ej-zoW"/>
+                                        <constraint firstItem="39W-YU-WhG" firstAttribute="leading" secondItem="xn1-nQ-x7x" secondAttribute="leading" constant="20" id="pHy-KN-OV8"/>
+                                        <constraint firstItem="wSK-le-FxU" firstAttribute="top" secondItem="xn1-nQ-x7x" secondAttribute="top" constant="8" id="qny-af-jPg"/>
+                                        <constraint firstItem="wSK-le-FxU" firstAttribute="leading" secondItem="xn1-nQ-x7x" secondAttribute="leading" constant="20" id="y4D-w7-nik"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="hoursTextView" destination="39W-YU-WhG" id="CWB-gZ-X50"/>
+                                    <outlet property="hoursTitleLabel" destination="wSK-le-FxU" id="Vlb-Px-fri"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubButtonsCell" rowHeight="85" id="dkL-zo-K0M" customClass="PubButtonsCell" customModule="Poppin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="361" width="375" height="85"/>
+                                <rect key="frame" x="0.0" y="491" width="375" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dkL-zo-K0M" id="WX9-Zd-GBe">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
@@ -87,12 +136,21 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ly-1n-wRx">
                                                     <rect key="frame" x="0.0" y="0.0" width="84" height="66.5"/>
+                                                    <connections>
+                                                        <action selector="callBarButtonPressed:" destination="dkL-zo-K0M" eventType="touchUpInside" id="oHi-0b-GVN"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFR-2M-2gH">
                                                     <rect key="frame" x="84" y="0.0" width="83.5" height="66.5"/>
+                                                    <connections>
+                                                        <action selector="barSiteButtonPressed:" destination="dkL-zo-K0M" eventType="touchUpInside" id="kck-2P-Ybo"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xVh-sH-JNJ">
                                                     <rect key="frame" x="167.5" y="0.0" width="84" height="66.5"/>
+                                                    <connections>
+                                                        <action selector="mapsBarButtonPressed:" destination="dkL-zo-K0M" eventType="touchUpInside" id="iTE-Ll-rc0"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dv9-Oh-JdQ">
                                                     <rect key="frame" x="251.5" y="0.0" width="83.5" height="66.5"/>
@@ -111,12 +169,12 @@
                                     <outlet property="barSiteButton" destination="OFR-2M-2gH" id="0Jg-G3-qgI"/>
                                     <outlet property="buttonStackView" destination="5sn-ZO-F02" id="MZc-Xz-MJV"/>
                                     <outlet property="callBarButton" destination="2ly-1n-wRx" id="3wf-qx-TNB"/>
+                                    <outlet property="dealsBarButton" destination="Dv9-Oh-JdQ" id="7kv-Fk-7zc"/>
                                     <outlet property="mapsBarButton" destination="xVh-sH-JNJ" id="ZfS-Lh-u7K"/>
-                                    <outlet property="shareBarButton" destination="Dv9-Oh-JdQ" id="h6d-vZ-XtU"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubMapCell" rowHeight="171" id="Fux-0g-oqE" customClass="PubMapCell" customModule="Poppin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="446" width="375" height="171"/>
+                                <rect key="frame" x="0.0" y="576" width="375" height="171"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fux-0g-oqE" id="RDf-GM-LJJ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="170.5"/>

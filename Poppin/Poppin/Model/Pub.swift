@@ -14,6 +14,8 @@ import ObjectMapper
 
 class Pub: Mappable {
     
+    var hours: [String: [Date]]?
+    
     var id: String?
     var address: String?
     var categories: [String]?
@@ -56,10 +58,11 @@ class Pub: Mappable {
         close <- map["close"]
         description <- map["description"]
         phone <- map["phone"]
-        website <- map["website"]
+        website <- map["site"]
         categories <- map["category"]
         locationGP <- map["location"]
         imageString <- map["imageUrl"]
+        hours <- map["hours"]
     }
     
 }
