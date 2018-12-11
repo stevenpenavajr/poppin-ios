@@ -62,6 +62,7 @@ class ContentManager {
     func getCurrentDeals() -> [Deal] {
         var currentDeals: [Deal] = []
         let sortedDeals = getSortedDeals()
+        
         let day = Calendar.current.component(.weekday, from: Date())
 
         print("Getting current deals...")
@@ -70,16 +71,11 @@ class ContentManager {
             guard let hours = deal.time else { break }
             
             if days.contains(day), Date().isBetweenDates(startDate: hours[0], endDate: hours[1]) {
-                print(deal.pub?.name)
-                print(deal.description)
-                print(days)
-                print(day)
-                print(hours[0])
-                print(hours[1])
-                print("adding deal...")
+                print("-------")                
                 currentDeals.append(deal)
             }
         }
+        
         return currentDeals
     }
     
@@ -107,37 +103,6 @@ class ContentManager {
         guard let id = id else { return nil }
         return pubsMap[id]
 
-    }
-    
-    func getCurrentDeals() -> [Deal] {
-        
-        // TODO
-        // // first: order pubs by distance
-        // // probably using euclidian distance formulas
-        // for pub in pubs (sorted) :
-        //      today = realday
-        //      time = realtime
-        //      if time + 24 < pub.close
-        //          today = realyesterday
-        //          time = time + 24
-        //      if pub.today != nil
-        //          for deal in today (happy-hour/
-        //          trivia/music/special/other)
-        //              // if deal not over but started
-        //              if time < deal[3] (end) && time >
-        //              deal[2] (begin)
-        //                  currentDeals.append(deal)
-        //              }
-        //          }
-        //          // now add deals that havent started yet
-        //          for deal in today
-        //              if time < deal[2] (begin)
-        //                  currentDeals.append(deal)
-        // return currentDeals
-        
-        
-        return deals
-        
     }
     
     func getPubs() -> [Pub] {

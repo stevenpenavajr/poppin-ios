@@ -25,7 +25,8 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     /* An array to hold the annotation objects from Firebase */
     var pubAnnotations: [MKPointAnnotation] = []
     
-    //let regionRadius: CLLocationDistance = 2000
+    /* An array to hold array of pubs */
+    var pubs: [Pub] = []
     
     /* Check location permissions upon view */
     override func viewDidAppear(_ animated: Bool) {
@@ -35,8 +36,6 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     // Variables to track users location
     private var locationManager: CLLocationManager!
     private var currentLocation: [CLLocation] = []
-    //var updatedLocationsArray = AnyObject
-    //var userLocation: MKUserLocation
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,34 +54,38 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         self.navigationItem.rightBarButtonItem = buttonItem
         
         /* load pub locations into array of MKPointAnnotation, add to MV */
-        //createAnnotations()
+        createAnnotations()
+        
+        //mapView.register(PubAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        //mapView.register(PubClusterView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
     
     } // End of viewDidLoad()
-    
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
     }
     
-    /*
     /* Loading Firebase data */
     func createAnnotations() {
-        print("Nothing right now.")
-        deal = ContentManager.shared.getDeals()
+    
+        pubs = ContentManager.shared.getPubs() // Grab pubs
         
-        for deal in deal {
+        for pub in pubs {
             let pubAnnotation = PubAnnotation()
-            if (deal.locationGP != nil) {
-                pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: deal.locationGP!.latitude, longitude: deal.locationGP!.longitude)
-                pubAnnotation.title = deal.name
-                pubAnnotation.subtitle = deal.description
+            if (pub.locationGP != nil) {
+                pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: pub.locationGP!.latitude, longitude: pub.locationGP!.longitude)
+                pubAnnotation.title = pub.name
+                
+                //pubAnnotation.subtitle = pub.description
                 let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
                 mapView.addAnnotation(pubAnnotationView.annotation!)
+                
+                //mapView.addAnnotation(pubAnnotation)
             }
         }
-    } */
+ 
+    }
     
     // Sets current location to updated location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
@@ -110,68 +113,28 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
             locationManager.startUpdatingLocation() // start updating location
         }
     }
-    /*
-    /* Loading Firebase data */
-    func createAnnotations() {
-        
-        /* SHOULD LOAD FROM FIREBASE HERE */
-        // for bar in firebase db....
-        // set coords, title, subtitles, etc...
-        // add to 'pubs' array... or just add it to MV right here.
-        
-        /* For now, just a couple of bars... */
-        let pubAnnotation = PubAnnotation()
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude:38.043302, longitude: -84.501813)
-        pubAnnotation.title = "The Tin Roof"
-        pubAnnotation.subtitle = "A Live Music Joint"
-        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView.annotation!)
-        
-        let pubAnnotation2 = PubAnnotation()
-        pubAnnotation2.coordinate = CLLocationCoordinate2D(latitude:38.0428, longitude: -84.5022)
-        pubAnnotation2.title = "Two Keys"
-        pubAnnotation2.subtitle = "Tavern"
-        let pubAnnotationView2 = MKPinAnnotationView(annotation: pubAnnotation2, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView2.annotation!)
-        
-        let pubAnnotation3 = PubAnnotation()
-        pubAnnotation3.coordinate = CLLocationCoordinate2D(latitude:38.0418, longitude: -84.5037)
-        pubAnnotation3.title = "Pazzo's"
-        pubAnnotation3.subtitle = "Pizza Pub"
-        let pubAnnotationView3 = MKPinAnnotationView(annotation: pubAnnotation3, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView3.annotation!)
-        
-        let pubAnnotation4 = PubAnnotation()
-        pubAnnotation4.coordinate = CLLocationCoordinate2D(latitude:38.0432, longitude: -84.5025)
-        pubAnnotation4.title = "The Paddock"
-        pubAnnotation4.subtitle = "Bar & Patio"
-        let pubAnnotationView4 = MKPinAnnotationView(annotation: pubAnnotation4, reuseIdentifier: nil)
-        mapView.addAnnotation(pubAnnotationView4.annotation!)
-        
-    }
- */
+    
     
     // MARK: - MapView delegate methods
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseIdentifier = "pubAnnotationView"
+        
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
 
-        //if (annotationView == mapView.userLocation) {
-        //    return nil
-        //}
-        //else 
-        if annotationView == nil {
+        if annotation is MKUserLocation { // Make user location appear as the blue dot
+            return nil
+        }
+        else if annotationView == nil { //
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
             annotationView?.canShowCallout = true
         } else {
             annotationView?.annotation = annotation
         }
-
-        //annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        //annotationView?.canShowCallout = true
-        //annotationView?.image = annotationImage
+        
+        annotationView?.image = annotationImage
         
         return annotationView
+        
     }
     
     // MARK: - Navigation

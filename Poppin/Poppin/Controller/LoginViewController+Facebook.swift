@@ -30,6 +30,9 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
 //                    print(error.localizedDescription)
                     return
                 }
+
+//                FBSDKAccessToken.current().user
+                
                 ContentManager.shared.updateCurrentUser(name: "Blake", email: "blake.swaidner@gmail.com")
                 
 //                print("User signed in")
@@ -37,4 +40,6 @@ extension LoginViewController: FBSDKLoginButtonDelegate {
             }
         }
     }
+    
+    
 }
