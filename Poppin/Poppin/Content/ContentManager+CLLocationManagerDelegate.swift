@@ -13,7 +13,7 @@ extension ContentManager: CLLocationManagerDelegate {
     
     func requestUserLocation() {
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
@@ -21,4 +21,5 @@ extension ContentManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         ContentManager.shared.updateCurrentUser(location: locations.last)
     }
+    
 }

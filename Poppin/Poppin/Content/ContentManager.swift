@@ -14,11 +14,22 @@ protocol ContentManagerDelegate: class {
     func contentManagerDidUpdate(_ contentManager: ContentManager)
 }
 
-class ContentManager {
+class ContentManager: NSObject {
     
     static let shared = ContentManager()
    
-    internal var currentUser = User()
+    internal var currentUser: User? {
+        didSet {
+            do {
+                let encodedData: Data = try NSKeyedArchiver.archivedData(withRootObject: currentUser, requiringSecureCoding: true)
+                UserDefaults.standard.set(encodedData, forKey: "currentUser")
+                UserDefaults.standard.synchronize()
+            } catch {
+                return
+            }
+        }
+    }
+    
     internal var deals = [Deal]()
 
     internal var dealsMap = [String : Deal]()
@@ -28,19 +39,29 @@ class ContentManager {
     internal var currentDeals = [Deal]()
 
     
+    let locationManager = CLLocationManager()
+    
     weak var delegate: ContentManagerDelegate?
     
     // MARK: - User
     
     func getCurrentUser() -> User? {
-        return currentUser
+        guard let decodedData  = UserDefaults.standard.object(forKey: "currentUser") as? Data else { return nil }
+        do {
+            let decodedUser = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [User.self], from: decodedData) as? User
+            return decodedUser
+        } catch {
+            return nil
+        }
     }
     
     func updateCurrentUser(name: String? = nil, email: String? = nil, imageUrl: String? = nil, location: CLLocation? = nil) {
-        currentUser.name = name
-        currentUser.email = email
-        currentUser.imageUrl = imageUrl
-        currentUser.location = location
+        let user = User()
+        user.name = name
+        user.email = email
+        user.imageUrl = imageUrl
+        user.location = location
+        currentUser = user
     }
     
     // MARK: - Deals
@@ -70,8 +91,7 @@ class ContentManager {
             guard let days = deal.days else { break }
             guard let hours = deal.time else { break }
             
-            if days.contains(day), Date().isBetweenDates(startDate: hours[0], endDate: hours[1]) {
-                print("-------")                
+            if days.contains(day), Date().isBetweenDates(startDate: hours[0], endDate: hours[1]) {               
                 currentDeals.append(deal)
             }
         }
@@ -81,7 +101,7 @@ class ContentManager {
     
 
     func getSortedDeals() -> [Deal] {
-        guard let userLocation = currentUser.location else { return deals }
+        guard let userLocation = currentUser?.location else { return deals }
         for deal in deals {
             guard let pub = deal.pub else { return deals }
             guard let pubLocation = pub.location else { return deals }

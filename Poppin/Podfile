@@ -6,7 +6,7 @@ target 'Poppin' do
   use_frameworks!
 
   # Pods for Poppin
-  pod 'FBSDKLoginKit'
+  pod 'FBSDKLoginKit', '4.38.1' 
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'

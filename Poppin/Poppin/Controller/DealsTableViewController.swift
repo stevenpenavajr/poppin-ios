@@ -11,15 +11,6 @@ import Firebase
 import CoreLocation
 
 class DealsTableViewController: UITableViewController, UITabBarDelegate {
-
-    let locationManager = CLLocationManager()
-    
-    let reloadControl: UIRefreshControl = {
-        let rc = UIRefreshControl()
-        rc.addTarget(self, action: #selector(reloadData), for: .valueChanged)
-        rc.tintColor = .black
-        return rc
-    }()
     
     var deals = [Deal]() {
         didSet {
@@ -39,10 +30,11 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
         super.viewDidLoad()
         ContentManager.shared.delegate = self
         deals = ContentManager.shared.getCurrentDeals()
-        requestUserLocation()
+        ContentManager.shared.requestUserLocation()
         tableView.separatorStyle = .none
-        // TODO: Fix refresh control
-        //tableView.refreshControl = reloadControl
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        refreshControl?.tintColor = .black
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,9 +59,9 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
     }
 
     @objc func reloadData() {
-        deals = ContentManager.shared.getCurrentDeals()
-        reloadControl.endRefreshing()
-        tableView.reloadData()
+        self.deals = ContentManager.shared.getCurrentDeals()
+        self.tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     // MARK: - Table view data source
@@ -106,7 +98,7 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
         if segue.destination is DealDetailsTableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let vc = segue.destination as? DealDetailsTableViewController
-                vc?.rowSelection = indexPath.row
+                vc?.deal = deals[indexPath.row]
             }
         }
     }
