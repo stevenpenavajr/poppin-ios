@@ -21,4 +21,5 @@ extension ContentManager: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         ContentManager.shared.updateCurrentUser(location: locations.last)
     }
+    
 }

@@ -62,12 +62,13 @@
 		CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */; };
 		CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */; };
 		CB7E645721BB2F0300F931EE /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */; };
-		CB7E645921BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */; };
+		CB7E645921BB37C500F931EE /* ContentManager+CLLocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645821BB37C500F931EE /* ContentManager+CLLocationManagerDelegate.swift */; };
 		CB7E645B21BDED2300F931EE /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645A21BDED2300F931EE /* DateHelper.swift */; };
 		CB7E645D21BF248000F931EE /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */; };
 		CB7E645F21BF26F700F931EE /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB7E645E21BF26F700F931EE /* Settings.storyboard */; };
 		CB7E646121BF2BC100F931EE /* SettingsProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */; };
 		CB7E646321BF2BCB00F931EE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */; };
+		CB7E646B21C04CDE00F931EE /* profile-avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7E646A21C04CDD00F931EE /* profile-avatar.png */; };
 		CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */; };
 		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
 		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
@@ -135,12 +136,13 @@
 		CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoginViewController+Facebook.swift"; sourceTree = "<group>"; };
 		CB64D4C321ADE3F1000FDEE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
+		CB7E645821BB37C500F931EE /* ContentManager+CLLocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentManager+CLLocationManagerDelegate.swift"; sourceTree = "<group>"; };
 		CB7E645A21BDED2300F931EE /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CB7E645E21BF26F700F931EE /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		CB7E646A21C04CDD00F931EE /* profile-avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-avatar.png"; sourceTree = "<group>"; };
 		CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
 		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
@@ -177,7 +179,9 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+
 				0A1360EF21C052F90097ACBB /* dollar-symbol.png */,
+				CB7E646A21C04CDD00F931EE /* profile-avatar.png */,
 				0AB9DF0821BDDCFE00117B8E /* globe.png */,
 				0AB9DF0721BDDCFD00117B8E /* navigation.png */,
 				0AB9DF0921BDDCFE00117B8E /* phone.png */,
@@ -207,6 +211,8 @@
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
+				0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */,
+				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
 				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
 				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
 				0A1360ED21C00C290097ACBB /* PubHoursCell.swift */,
@@ -242,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				CB1BCD9221B5EAA30029689F /* ContentManager.swift */,
+				CB7E645821BB37C500F931EE /* ContentManager+CLLocationManagerDelegate.swift */,
 				CB1BCD9421B5EAD20029689F /* ContentManager+FirebaseSubscription.swift */,
 				CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */,
 			);
@@ -315,7 +322,6 @@
 				CBB7192721B337070054EC77 /* CustomNavigationBarController.swift */,
 				CB7E645621BB2F0300F931EE /* CustomTabBarController.swift */,
 				AF40CA30216AE93E00E82D17 /* DealsTableViewController.swift */,
-				CB7E645821BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift */,
 				CB1BCD9821B5FE540029689F /* DealsTableViewController+ContentManagerDelegate.swift */,
 				0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */,
 				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
@@ -413,6 +419,7 @@
 			files = (
 				0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */,
 				0AB9DF0C21BDDD0000117B8E /* globe.png in Resources */,
+				CB7E646B21C04CDE00F931EE /* profile-avatar.png in Resources */,
 				0A42FD222187A4EC000F117B /* mug.png in Resources */,
 				0AB77A8621B9A7BB00EBEC07 /* deals-gray.png in Resources */,
 				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
@@ -537,7 +544,7 @@
 				0ADDE28D21B5EDA60089F766 /* PubAnnotation.swift in Sources */,
 				0AB9DEFA21BDBF5A00117B8E /* PubTableViewController.swift in Sources */,
 				AF40CA31216AE93E00E82D17 /* DealsTableViewController.swift in Sources */,
-				CB7E645921BB37C500F931EE /* DealsTableViewController+CLLocationManagerDelegate.swift in Sources */,
+				CB7E645921BB37C500F931EE /* ContentManager+CLLocationManagerDelegate.swift in Sources */,
 				AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */,
 				0A6850E721B326A400CC4E17 /* DealDetailsDescriptionCell.swift in Sources */,
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
