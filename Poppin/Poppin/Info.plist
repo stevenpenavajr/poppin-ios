@@ -80,10 +80,10 @@
 	<key>UberServerToken</key>
 	<string>[q9_h8JzBAKdXm3C_enO5jXgZR7lQxbrfWJZrfuIy]</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>test1</string>
+	<string>So we can let you know what&apos;s poppin!</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>test2</string>
+	<string>So we can let others know what&apos;s poppin!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>test3 </string>
+	<string>So we can let you know what&apos;s poppin!</string>
 </dict>
 </plist>

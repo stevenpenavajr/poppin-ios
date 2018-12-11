@@ -13,7 +13,7 @@ extension DealsTableViewController: CLLocationManagerDelegate {
     
     func requestUserLocation() {
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
     }
