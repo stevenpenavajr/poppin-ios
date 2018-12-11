@@ -6,21 +6,32 @@
 //  Copyright © 2018 MoBamba. All rights reserved.
 //
 
+import Kingfisher
 import UIKit
 
 class SettingsProfileTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     static let identifier = "SettingsProfileCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
+        profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+        profileImageView.clipsToBounds = true
+        nameLabel.font = UIFont.systemFont(ofSize: 14, weight: .light)
+        nameLabel.textColor = Theme.Color.textOffColor
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func configureCell() {
+        let user = ContentManager.shared.getCurrentUser()
+        print(user?.name, user?.email)
+        nameLabel.text = "Hi, \(user?.name ?? "User")"
+        guard   let image = user?.imageUrl,
+                let imageUrl = URL(string: image) else { return }
+        profileImageView.kf.setImage(with: imageUrl)
     }
 
 }

@@ -11,7 +11,7 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
-  - FBSDKCoreKit (4.38.1):
+  - FBSDKCoreKit (4.39.0):
     - Bolts (~> 1.9)
   - FBSDKLoginKit (4.38.1):
     - FBSDKCoreKit
@@ -138,7 +138,7 @@ PODS:
     - UberCore
 
 DEPENDENCIES:
-  - FBSDKLoginKit
+  - FBSDKLoginKit (= 4.38.1)
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -183,7 +183,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
-  FBSDKCoreKit: 8d47857400e2f5bdea697a80daff882e91c84ef6
+  FBSDKCoreKit: 1e3981faefab8c88edfaa9eecd94aab02d99a9bc
   FBSDKLoginKit: 4621c690d9dd8628031a4791497062183ea34b0d
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
@@ -210,6 +210,6 @@ SPEC CHECKSUMS:
   UberCore: b72013357bff720a30a1b12669e724750b775ef7
   UberRides: d39c7c9f612d8f5ebfb69f475a553e1a54c3c4b5
 
-PODFILE CHECKSUM: 5f32c6738db19875d174c563d0b2dbf9ba0e5f15
+PODFILE CHECKSUM: f71a3f4c370770efb7afd63d1d0de60cae620b04
 
 COCOAPODS: 1.5.3
