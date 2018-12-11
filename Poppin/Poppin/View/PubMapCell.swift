@@ -37,6 +37,9 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         pubMapView.isScrollEnabled = false
         pubMapView.isUserInteractionEnabled = false
         centerMapOnLocation(location: CLLocation(latitude: 38.048039, longitude: -84.4985))
+        
+        /* make cell not selectable */
+        self.selectionStyle = .none
        
     }
 

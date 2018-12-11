@@ -10,6 +10,7 @@ import CoreLocation
 class DealDetailsTableViewController: UITableViewController {
     
     static let segueIdentifier = "DealDetails"
+    
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 2)
     
     var rowSelection = 0
@@ -21,8 +22,13 @@ class DealDetailsTableViewController: UITableViewController {
     override func viewDidLoad() {
         /* Creating Uber button (just Tin Roof for now) */
         let builder = RideParametersBuilder()
+        
+        guard let deal = deal else { return }
+        
         let pickupLocation = CLLocation(latitude: 38.0381, longitude: -84.5038)
-        let dropoffLocation = CLLocation(latitude:38.043302, longitude: -84.501813)
+        
+        let dropoffLocation = deal.pub?.location
+        
         builder.pickupLocation = pickupLocation
         builder.dropoffLocation = dropoffLocation
         builder.dropoffNickname = "Tin Roof"
@@ -77,7 +83,10 @@ class DealDetailsTableViewController: UITableViewController {
         switch (indexPath.row) {
             case 0:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsImageCell", for: indexPath) as? DealDetailsImageCell {
-                    //config here
+                    
+                    guard let deal = deal else { return UITableViewCell() }
+                    cell.configureCell(withDeal: deal)
+                    
                     
                     if cellHeights[indexPath.row] == 0.0 {
                         cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
@@ -87,6 +96,9 @@ class DealDetailsTableViewController: UITableViewController {
                 }
             case 1:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsDescriptionCell", for: indexPath) as? DealDetailsDescriptionCell {
+                    
+                    guard let deal = deal else { return UITableViewCell() }
+                    cell.configureCell(withDeal: deal)
                     if cellHeights[indexPath.row] == 0.0 {
                         cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                     }

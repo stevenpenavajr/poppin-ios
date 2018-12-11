@@ -9,6 +9,7 @@ class DealDetailsDescriptionCell: UITableViewCell {
     
     static let height: CGFloat = 600.0
     
+    /* deal descr label is actually a text view */
     @IBOutlet weak var dealDescriptionLabel: UITextView!
     @IBOutlet weak var barTitleLabel: UILabel!
     @IBOutlet weak var dealTitleLabel: UILabel!
@@ -26,6 +27,10 @@ class DealDetailsDescriptionCell: UITableViewCell {
         
         dealTitleLabel.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         
+        /* fixing margin / padding stuff */
+        dealDescriptionLabel.textContainer.lineFragmentPadding = 0
+        dealDescriptionLabel.textContainerInset = .zero
+        
         
         
         
@@ -36,6 +41,13 @@ class DealDetailsDescriptionCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+    }
+    
+    func configureCell(withDeal deal: Deal) {
+        barTitleLabel.text = deal.pub?.name ?? ""
+        dealTitleLabel.text = deal.title ?? ""
+        dealDescriptionLabel.text = deal.description ?? ""
+        
     }
 
     
