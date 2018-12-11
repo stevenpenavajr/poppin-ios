@@ -53,7 +53,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyF-8e-bLG" customClass="FBSDKLoginButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CyF-8e-bLG">
                                 <rect key="frame" x="37.5" y="511" width="300" height="56"/>
                                 <color key="backgroundColor" red="0.2370062933888889" green="0.32579210072499998" blue="0.57207573786944443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -65,7 +65,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpButton:" destination="gIX-0x-IMf" eventType="touchUpInside" id="gon-b4-1DO"/>
+                                    <action selector="loginButtonTapped:" destination="gIX-0x-IMf" eventType="touchUpInside" id="XZG-E2-VTy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -91,7 +91,7 @@
                     <connections>
                         <outlet property="backgroundGif" destination="Ubu-mO-CXu" id="xlH-f1-rVe"/>
                         <outlet property="beerIcon" destination="aOQ-FH-f0B" id="ygw-xE-hFn"/>
-                        <outlet property="signUpButtonOutlet" destination="CyF-8e-bLG" id="1fz-rP-5O6"/>
+                        <outlet property="loginButton" destination="CyF-8e-bLG" id="nWo-rZ-CDM"/>
                         <segue destination="qVe-bx-Abq" kind="presentation" identifier="LoginSegue" modalTransitionStyle="crossDissolve" id="2Co-M6-fEM"/>
                     </connections>
                 </viewController>
