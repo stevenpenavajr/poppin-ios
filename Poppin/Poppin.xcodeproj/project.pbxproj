@@ -93,6 +93,7 @@
 		0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17D7C13EE0B125F46C7982C9 /* Pods-Poppin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.debug.xcconfig"; sourceTree = "<group>"; };
 		8D83FFC035B1AB6D62D162B4 /* Pods-Poppin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.release.xcconfig"; sourceTree = "<group>"; };
+		A364259421BF2384009B141A /* simulatelocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = simulatelocation.gpx; sourceTree = "<group>"; };
 		AF40CA0F216AE69800E82D17 /* Poppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40CA12216AE69800E82D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40CA19216AE69A00E82D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -279,6 +280,7 @@
 				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
 				0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */,
+				A364259421BF2384009B141A /* simulatelocation.gpx */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

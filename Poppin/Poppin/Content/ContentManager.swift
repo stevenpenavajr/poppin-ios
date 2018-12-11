@@ -20,9 +20,13 @@ class ContentManager {
    
     internal var currentUser = User()
     internal var deals = [Deal]()
+
     internal var dealsMap = [String : Deal]()
     internal var pubs = [Pub]()
     internal var pubsMap = [String : Pub]()
+
+    internal var currentDeals = [Deal]()
+
     
     weak var delegate: ContentManagerDelegate?
     
@@ -79,6 +83,7 @@ class ContentManager {
         return currentDeals
     }
     
+
     func getSortedDeals() -> [Deal] {
         guard let userLocation = currentUser.location else { return deals }
         for deal in deals {
@@ -101,6 +106,38 @@ class ContentManager {
     func getPub(forId id: String?) -> Pub? {
         guard let id = id else { return nil }
         return pubsMap[id]
+
+    }
+    
+    func getCurrentDeals() -> [Deal] {
+        
+        // TODO
+        // // first: order pubs by distance
+        // // probably using euclidian distance formulas
+        // for pub in pubs (sorted) :
+        //      today = realday
+        //      time = realtime
+        //      if time + 24 < pub.close
+        //          today = realyesterday
+        //          time = time + 24
+        //      if pub.today != nil
+        //          for deal in today (happy-hour/
+        //          trivia/music/special/other)
+        //              // if deal not over but started
+        //              if time < deal[3] (end) && time >
+        //              deal[2] (begin)
+        //                  currentDeals.append(deal)
+        //              }
+        //          }
+        //          // now add deals that havent started yet
+        //          for deal in today
+        //              if time < deal[2] (begin)
+        //                  currentDeals.append(deal)
+        // return currentDeals
+        
+        
+        return deals
+        
     }
     
     func getPubs() -> [Pub] {
