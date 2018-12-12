@@ -4,16 +4,18 @@
 // Created By: Steven Penava
 
 import UIKit
+import Kingfisher
 
 class DealDetailsImageCell: UITableViewCell {
-
+    @IBOutlet weak var pubImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
     func configureCell(withDeal deal: Deal) {
-        
+        pubImageView.kf.setImage(with: deal.pub?.imageUrl)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

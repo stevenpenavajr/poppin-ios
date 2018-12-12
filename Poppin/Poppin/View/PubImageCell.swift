@@ -8,12 +8,19 @@ import UIKit
 
 class PubImageCell: UITableViewCell {
     
+    @IBOutlet weak var pubImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         /* make cell not selectable */
         self.selectionStyle = .none
+    }
+    
+    func configureCell(withPub pub: Pub) {
+        pubImageView.kf.setImage(with: pub.imageUrl)
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

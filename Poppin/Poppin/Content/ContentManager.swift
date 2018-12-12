@@ -105,7 +105,7 @@ class ContentManager: NSObject {
     
 
     func getSortedDeals() -> [Deal] {
-        guard let userLocation = currentUser?.location else { return deals }
+        guard let userLocation = currentUser?.location else { print("NIL"); return deals }
         for deal in deals {
             guard let pub = deal.pub else { return deals }
             guard let pubLocation = pub.location else { return deals }
