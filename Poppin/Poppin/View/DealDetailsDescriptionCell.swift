@@ -17,6 +17,8 @@ class DealDetailsDescriptionCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
+        
         dealDescriptionLabel.isEditable = false
         dealDescriptionLabel.isScrollEnabled = false
         dealDescriptionLabel.textColor = .black
