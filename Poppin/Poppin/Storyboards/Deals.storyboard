@@ -259,6 +259,28 @@ More text</string>
                                     <outlet property="dealTitleLabel" destination="gFL-zz-zBG" id="sMe-P3-oBO"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsMapCell" rowHeight="200" id="GGb-EC-xlr" customClass="DealDetailsMapCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GGb-EC-xlr" id="iIF-8N-jTQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1Oa-Ax-aVw">
+                                            <rect key="frame" x="20" y="8" width="335" height="181.5"/>
+                                        </mapView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="1Oa-Ax-aVw" secondAttribute="bottom" constant="10" id="BMv-zi-CGG"/>
+                                        <constraint firstItem="1Oa-Ax-aVw" firstAttribute="leading" secondItem="iIF-8N-jTQ" secondAttribute="leading" constant="20" id="K5I-Gz-3iR"/>
+                                        <constraint firstItem="1Oa-Ax-aVw" firstAttribute="top" secondItem="iIF-8N-jTQ" secondAttribute="top" constant="8" id="R3E-ZM-Quw"/>
+                                        <constraint firstAttribute="trailing" secondItem="1Oa-Ax-aVw" secondAttribute="trailing" constant="20" id="VfP-tM-d4e"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pubMapView" destination="1Oa-Ax-aVw" id="5VQ-T5-TzH"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="RQJ-SQ-7Wt" id="PLL-8C-kVj"/>

@@ -1,20 +1,18 @@
-// File: PubMapCell.swift
+// File: DealDetailsMapCell.swift
 // Purpose: <enter purpose>
-// Date Created: 12/9/18
+// Date Created: 12/11/18
 // Created By: Steven Penava
 
-
-import CoreLocation
-import MapKit
 import UIKit
+import MapKit
 
-class PubMapCell: UITableViewCell, MKMapViewDelegate {
+class DealDetailsMapCell: UITableViewCell, MKMapViewDelegate {
+
+    @IBOutlet weak var pubMapView: MKMapView!
     
     let pubRadius: CLLocationDistance = 200
     
     var annotationImage: UIImage?
-    
-    @IBOutlet weak var pubMapView: MKMapView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,16 +24,6 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
         
-        /*
-        let pubAnnotation = PubAnnotation()
-        
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: 38.048039, longitude: -84.4985)
-        pubAnnotation.title = "Stagger Inn" /* will get from an object eventually */
-        pubAnnotation.subtitle = "Country bar"
-        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-        pubMapView.addAnnotation(pubAnnotationView.annotation!)
-        */
-      
         // Setup map
         pubMapView.isZoomEnabled = false
         pubMapView.isScrollEnabled = false
@@ -43,7 +31,6 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         
         /* make cell not selectable */
         self.selectionStyle = .none
-       
     }
     
     func configureCell(withPub pub: Pub) {
@@ -64,10 +51,6 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
-    }
-    
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: size.width, height: 200)
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -92,6 +75,9 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         
         return annotationView
     }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: size.width, height: 300)
+    }
 
 }
-

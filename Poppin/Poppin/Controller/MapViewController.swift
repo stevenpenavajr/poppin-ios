@@ -56,6 +56,8 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
+        
+        guard let tabBar = self.tabBarController?.tabBar else { return }
     }
     
     /* Function to create Pub Annotations */

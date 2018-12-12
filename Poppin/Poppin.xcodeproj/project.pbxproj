@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0A1360EE21C00C290097ACBB /* PubHoursCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1360ED21C00C290097ACBB /* PubHoursCell.swift */; };
 		0A1360F021C052F90097ACBB /* dollar-symbol.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1360EF21C052F90097ACBB /* dollar-symbol.png */; };
+		0A1360F721C0A02D0097ACBB /* settings-thick-poppin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1360F321C0A02D0097ACBB /* settings-thick-poppin.png */; };
+		0A1360F821C0A02D0097ACBB /* settings-1-poppin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1360F421C0A02D0097ACBB /* settings-1-poppin.png */; };
+		0A1360F921C0A02D0097ACBB /* settings-1-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1360F521C0A02D0097ACBB /* settings-1-gray.png */; };
+		0A1360FA21C0A02D0097ACBB /* settings-thick-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A1360F621C0A02D0097ACBB /* settings-thick-gray.png */; };
+		0A1360FC21C0A3C80097ACBB /* DealDetailsMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1360FB21C0A3C80097ACBB /* DealDetailsMapCell.swift */; };
 		0A31AB6721B320F600C51459 /* UIView+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A31AB6621B320F600C51459 /* UIView+Animations.swift */; };
 		0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A3E6B0121B36CD30099261C /* uber-icon.png */; };
 		0A42FD1C21879CB8000F117B /* beer-pour-blur-new.gif in Resources */ = {isa = PBXBuildFile; fileRef = 0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */; };
@@ -20,7 +25,6 @@
 		0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */; };
 		0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */; };
 		0A6850E721B326A400CC4E17 /* DealDetailsDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */; };
-		0AB77A7E21B9A13A00EBEC07 /* UITabBar+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB77A7D21B9A13A00EBEC07 /* UITabBar+Resize.swift */; };
 		0AB77A8321B9A7BB00EBEC07 /* deals-poppin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A7F21B9A7BA00EBEC07 /* deals-poppin.png */; };
 		0AB77A8421B9A7BB00EBEC07 /* map-gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8021B9A7BB00EBEC07 /* map-gray.png */; };
 		0AB77A8521B9A7BB00EBEC07 /* map-poppin.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AB77A8121B9A7BB00EBEC07 /* map-poppin.png */; };
@@ -84,6 +88,11 @@
 /* Begin PBXFileReference section */
 		0A1360ED21C00C290097ACBB /* PubHoursCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubHoursCell.swift; sourceTree = "<group>"; };
 		0A1360EF21C052F90097ACBB /* dollar-symbol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dollar-symbol.png"; sourceTree = "<group>"; };
+		0A1360F321C0A02D0097ACBB /* settings-thick-poppin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-thick-poppin.png"; sourceTree = "<group>"; };
+		0A1360F421C0A02D0097ACBB /* settings-1-poppin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-1-poppin.png"; sourceTree = "<group>"; };
+		0A1360F521C0A02D0097ACBB /* settings-1-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-1-gray.png"; sourceTree = "<group>"; };
+		0A1360F621C0A02D0097ACBB /* settings-thick-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settings-thick-gray.png"; sourceTree = "<group>"; };
+		0A1360FB21C0A3C80097ACBB /* DealDetailsMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsMapCell.swift; sourceTree = "<group>"; };
 		0A31AB6621B320F600C51459 /* UIView+Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Animations.swift"; sourceTree = "<group>"; };
 		0A3E6B0121B36CD30099261C /* uber-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "uber-icon.png"; sourceTree = "<group>"; };
 		0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "beer-pour-blur-new.gif"; sourceTree = "<group>"; };
@@ -95,7 +104,6 @@
 		0A43EEFC21B1BF160041954C /* DealDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsTableViewController.swift; sourceTree = "<group>"; };
 		0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsImageCell.swift; sourceTree = "<group>"; };
 		0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealDetailsDescriptionCell.swift; sourceTree = "<group>"; };
-		0AB77A7D21B9A13A00EBEC07 /* UITabBar+Resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Resize.swift"; sourceTree = "<group>"; };
 		0AB77A7F21B9A7BA00EBEC07 /* deals-poppin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deals-poppin.png"; sourceTree = "<group>"; };
 		0AB77A8021B9A7BB00EBEC07 /* map-gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-gray.png"; sourceTree = "<group>"; };
 		0AB77A8121B9A7BB00EBEC07 /* map-poppin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map-poppin.png"; sourceTree = "<group>"; };
@@ -179,7 +187,6 @@
 				CB7E645A21BDED2300F931EE /* DateHelper.swift */,
 				CBB7192521B333F10054EC77 /* Theme.swift */,
 				0ADDE29021B605D90089F766 /* UIImage+Resize.swift */,
-				0AB77A7D21B9A13A00EBEC07 /* UITabBar+Resize.swift */,
 				0A31AB6621B320F600C51459 /* UIView+Animations.swift */,
 			);
 			path = Util;
@@ -188,6 +195,10 @@
 		0A42FD1A21879CA9000F117B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0A1360F521C0A02D0097ACBB /* settings-1-gray.png */,
+				0A1360F421C0A02D0097ACBB /* settings-1-poppin.png */,
+				0A1360F621C0A02D0097ACBB /* settings-thick-gray.png */,
+				0A1360F321C0A02D0097ACBB /* settings-thick-poppin.png */,
 				0A1360EF21C052F90097ACBB /* dollar-symbol.png */,
 				CB7E646A21C04CDD00F931EE /* profile-avatar.png */,
 				0AB9DF0821BDDCFE00117B8E /* globe.png */,
@@ -221,6 +232,7 @@
 				0ABD352621767D4D00CAD417 /* DealCell.swift */,
 				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
+				0A1360FB21C0A3C80097ACBB /* DealDetailsMapCell.swift */,
 				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
 				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
 				0A1360ED21C00C290097ACBB /* PubHoursCell.swift */,
@@ -435,6 +447,7 @@
 				0AB77A8621B9A7BB00EBEC07 /* deals-gray.png in Resources */,
 				CB64D4C421ADE3F1000FDEE3 /* GoogleService-Info.plist in Resources */,
 				0A1360F021C052F90097ACBB /* dollar-symbol.png in Resources */,
+				0A1360FA21C0A02D0097ACBB /* settings-thick-gray.png in Resources */,
 				0AB9DF0B21BDDD0000117B8E /* navigation.png in Resources */,
 				0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */,
 				A31FB8C821C0BB5300318709 /* beer-2.png in Resources */,
@@ -445,6 +458,7 @@
 				0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */,
 				0A42FD242187A899000F117B /* temp-logo.png in Resources */,
 				0AF36D3A21878C1E00FCEDEB /* Login.storyboard in Resources */,
+				0A1360F721C0A02D0097ACBB /* settings-thick-poppin.png in Resources */,
 				CB7E645F21BF26F700F931EE /* Settings.storyboard in Resources */,
 				AF40CA2D216AE91C00E82D17 /* Deals.storyboard in Resources */,
 				0A42FD202187A484000F117B /* barrel.png in Resources */,
@@ -453,10 +467,12 @@
 				AF40CA2F216AE92400E82D17 /* Map.storyboard in Resources */,
 				0AB9DF0D21BDDD0000117B8E /* phone.png in Resources */,
 				0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */,
+				0A1360F921C0A02D0097ACBB /* settings-1-gray.png in Resources */,
 				0AB77A8321B9A7BB00EBEC07 /* deals-poppin.png in Resources */,
 				A31FB8C621C0BB3300318709 /* cocktail.png in Resources */,
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
 				AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */,
+				0A1360F821C0A02D0097ACBB /* settings-1-poppin.png in Resources */,
 				0ABD352B217680BE00CAD417 /* Ubuntu in Resources */,
 				0ADDE28F21B6052F0089F766 /* annotation.png in Resources */,
 				0ACD1C7B21B1DC6C0097B016 /* tin_roof.jpg in Resources */,
@@ -564,10 +580,10 @@
 				CB2DF2EF21B1E2B4000C6A9F /* LoginViewController+Facebook.swift in Sources */,
 				0A43EEFD21B1BF160041954C /* DealDetailsTableViewController.swift in Sources */,
 				CB7E646121BF2BC100F931EE /* SettingsProfileTableViewCell.swift in Sources */,
+				0A1360FC21C0A3C80097ACBB /* DealDetailsMapCell.swift in Sources */,
 				CB1BCD9321B5EAA30029689F /* ContentManager.swift in Sources */,
 				CBC8A27E21B709B8009E7B47 /* User.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
-				0AB77A7E21B9A13A00EBEC07 /* UITabBar+Resize.swift in Sources */,
 				A31FB87C21C052A100318709 /* PubClusterView.swift in Sources */,
 				CB7E646321BF2BCB00F931EE /* SettingsTableViewCell.swift in Sources */,
 				CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */,
