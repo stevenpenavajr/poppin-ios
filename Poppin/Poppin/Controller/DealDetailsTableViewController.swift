@@ -1,77 +1,40 @@
-// File: SpecificDealTableViewController.swift
+// File: DealDetailsTableViewController.swift
 // Purpose: <enter purpose>
 // Date Created: 11/30/18
 // Created By: Steven Penava
 
-import UIKit
-import UberRides
 import CoreLocation
+import UberRides
+import UIKit
 
 class DealDetailsTableViewController: UITableViewController {
     
     static let segueIdentifier = "DealDetails"
     
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 3)
+    internal var uberRidesButton: RideRequestButton?
     
-    var rowSelection = 0
-    
-    /* This deal object's pub property will be passed to the PubTVC */
     var deal: Deal?
+
+    // MARK: - Initialization
     
-
     override func viewDidLoad() {
-        /* Creating Uber button (just Tin Roof for now) */
-        let builder = RideParametersBuilder()
-        
-        guard let deal = deal else { return }
-        
-        let pickupLocation = CLLocation(latitude: 38.0381, longitude: -84.5038)
-        
-        let dropoffLocation = deal.pub?.location
-        
-        builder.pickupLocation = pickupLocation
-        builder.dropoffLocation = dropoffLocation
-        builder.dropoffNickname = "Tin Roof"
-        builder.dropoffAddress = "303 S. Limestone"
-        let rideParameters = builder.build()
-        
-        /* Instantiating the UberRides button */
-        let uberRidesButton = RideRequestButton(rideParameters: rideParameters)
-        
         super.viewDidLoad()
-        
         setTabBarHidden(true)
-        
         tableView.separatorStyle = .none
+        tableView.contentInset = .init(top: 0, left: 0, bottom: 50.0, right: 0)
+        tableView.scrollIndicatorInsets = .init(top: 0, left: 0, bottom: 20, right: 0)
+        setupUberButton()
         
-        view.addSubview(uberRidesButton)
-        
-        var layoutGuide = view.layoutMarginsGuide
-        if #available(iOS 11, *) { layoutGuide = view.safeAreaLayoutGuide }
-        
-        uberRidesButton.translatesAutoresizingMaskIntoConstraints = false
-        uberRidesButton.backgroundColor = UIColor.black
-        uberRidesButton.heightAnchor.constraint(equalToConstant: 56).isActive = true
-        uberRidesButton.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 20).isActive = true
-        uberRidesButton.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: -20).isActive = true
-        uberRidesButton.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 40).isActive = true
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
 
@@ -83,22 +46,20 @@ class DealDetailsTableViewController: UITableViewController {
         switch (indexPath.row) {
             case 0:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsImageCell", for: indexPath) as? DealDetailsImageCell {
-                    
                     guard let deal = deal else { return UITableViewCell() }
                     cell.configureCell(withDeal: deal)
-                    
                     
                     if cellHeights[indexPath.row] == 0.0 {
                         cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                     }
-                    
                     return cell
                 }
+            
             case 1:
                 if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsDescriptionCell", for: indexPath) as? DealDetailsDescriptionCell {
-                    
                     guard let deal = deal else { return UITableViewCell() }
                     cell.configureCell(withDeal: deal)
+                    
                     if cellHeights[indexPath.row] == 0.0 {
                         cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                     }
@@ -106,11 +67,8 @@ class DealDetailsTableViewController: UITableViewController {
                 }
         case 2:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsMapCell", for: indexPath) as? DealDetailsMapCell {
-                
                 guard let deal = deal else { return UITableViewCell() }
-                
                 guard let pub = deal.pub else { return UITableViewCell() }
-                
                 cell.configureCell(withPub: pub)
                 
                 if cellHeights[indexPath.row] == 0.0 {
@@ -126,19 +84,18 @@ class DealDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        // when a user clicks on the description cell...
         if indexPath.row == 1 {
             performSegue(withIdentifier: "PubSegue", sender: self)
         }
     }
     
+    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let pubVC = segue.destination as? PubTableViewController {
             pubVC.pub = deal?.pub
         }
     }
+    
 
 }

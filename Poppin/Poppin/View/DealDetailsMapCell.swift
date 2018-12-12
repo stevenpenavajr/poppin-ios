@@ -34,10 +34,9 @@ class DealDetailsMapCell: UITableViewCell, MKMapViewDelegate {
     }
     
     func configureCell(withPub pub: Pub) {
-        let pubAnnotation = PubAnnotation()
-        
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: pub.lat ?? 0, longitude: pub.long ?? 0)
-        pubAnnotation.title = pub.name ?? ""
+        let coordinate = CLLocationCoordinate2D(latitude: pub.lat ?? 0, longitude: pub.long ?? 0)
+        let title = pub.name ?? ""
+        let pubAnnotation = PubAnnotation(coordinate: coordinate, name: title)
         let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
         pubMapView.addAnnotation(pubAnnotationView.annotation!)
         
