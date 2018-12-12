@@ -12,6 +12,10 @@ import FirebaseAuth
 
 protocol ContentManagerDelegate: class {
     func contentManagerDidUpdate(_ contentManager: ContentManager)
+    
+    // ADDED
+    func allPubs(completion: ([PubAnnotation], Error?) -> ())
+    // END ADDED
 }
 
 class ContentManager: NSObject {
@@ -128,5 +132,25 @@ class ContentManager: NSObject {
     func getPubs() -> [Pub] {
         return pubs
     }
+    
+    // ADDED
+    func getPubAnnotations(pubs: [Pub]) -> [PubAnnotation] {
+        
+        var pubPins: [PubAnnotation] = []
+        
+        for pub in pubs {
+            /* Create Annotations */
+            if (pub.locationGP != nil) {
+                let coordinate = CLLocationCoordinate2D(latitude: pub.locationGP!.latitude, longitude: pub.locationGP!.longitude)
+                let title: String? = pub.name
+            
+                let pubAnnotation = PubAnnotation(coordinate: coordinate, name: title)
+            
+                pubPins.append(pubAnnotation)
+            }
+        }
+        return pubPins // return array
+    }
+    // END ADDED
 
 }
