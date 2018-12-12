@@ -41,6 +41,9 @@ class PubTableViewController: UITableViewController {
         case 0:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PubImageCell", for: indexPath) as? PubImageCell {
                 
+                guard let pub = pub else { return UITableViewCell() }
+                cell.configureCell(withPub: pub)
+                
                 if cellHeights[indexPath.row] == 0.0 {
                     cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                 }

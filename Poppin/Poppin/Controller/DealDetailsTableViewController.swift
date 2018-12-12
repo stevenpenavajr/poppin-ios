@@ -15,16 +15,40 @@ class DealDetailsTableViewController: UITableViewController {
     internal var uberRidesButton: RideRequestButton?
     
     var deal: Deal?
+    
+    let whiteView = UIView()
+    
+    
 
     // MARK: - Initialization
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setTabBarHidden(true)
+        
         tableView.separatorStyle = .none
         tableView.contentInset = .init(top: 0, left: 0, bottom: 50.0, right: 0)
         tableView.scrollIndicatorInsets = .init(top: 0, left: 0, bottom: 20, right: 0)
+        
+        self.view.addSubview(whiteView)
+        
+        setupWhiteView()
+        
         setupUberButton()
+    }
+    
+    func setupWhiteView() {
+        whiteView.backgroundColor = .white
+        
+        var layoutGuide = view.layoutMarginsGuide
+        if #available(iOS 11, *) { layoutGuide = view.safeAreaLayoutGuide }
+        
+        whiteView.translatesAutoresizingMaskIntoConstraints = false
+        whiteView.heightAnchor.constraint(equalToConstant: 180).isActive = true
+        whiteView.leadingAnchor.constraint(equalTo: layoutGuide.leadingAnchor, constant: 0).isActive = true
+        whiteView.trailingAnchor.constraint(equalTo: layoutGuide.trailingAnchor, constant: 0).isActive = true
+        whiteView.bottomAnchor.constraint(equalTo: layoutGuide.bottomAnchor, constant: 150).isActive = true
         
     }
     

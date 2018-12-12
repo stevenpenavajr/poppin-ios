@@ -94,7 +94,6 @@ class SettingsTableViewController: UITableViewController {
                 cell.configureCell(withSetting: SettingsData.settingsSections[indexPath.row])
                 return cell
             }
-
         }
         return UITableViewCell()
     }

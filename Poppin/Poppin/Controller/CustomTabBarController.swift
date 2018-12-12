@@ -26,7 +26,6 @@ class CustomTabBarController: UITabBarController {
     }
     
     func styleTabBar(_ poppinTabBar: UITabBar) {
-        self.tabBar.isUserInteractionEnabled = false
         
         let icons = [[dealsIconGray, dealsIconPoppin], [mapIconGray, mapIconPoppin], [settingsIconGray, settingsIconPoppin]]
         
