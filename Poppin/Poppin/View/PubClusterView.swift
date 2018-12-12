@@ -14,10 +14,10 @@ internal final class PubClusterView: MKAnnotationView {
     
     var annotationImage: UIImage? // Declare Annotation Image
     
-    /* Properties */
     internal override var annotation: MKAnnotation? { willSet { newValue.flatMap(configure(with:)) } }
     
-    /* Initialization */
+    // MARK: - Initialization
+    
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         displayPriority = .defaultHigh

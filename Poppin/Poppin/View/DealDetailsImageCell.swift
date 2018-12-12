@@ -3,26 +3,28 @@
 // Date Created: 11/30/18
 // Created By: Steven Penava
 
+import Kingfisher
 import UIKit
 import Kingfisher
 
 class DealDetailsImageCell: UITableViewCell {
-    @IBOutlet weak var pubImageView: UIImageView!
+
+    @IBOutlet weak var dealImageView: UIImageView!
+    
+    // MARK: - Initialization
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        dealImageView.contentMode = .scaleToFill
+        selectionStyle = .none
     }
     
     func configureCell(withDeal deal: Deal) {
-        pubImageView.kf.setImage(with: deal.pub?.imageUrl)
+        guard let imageUrl = deal.pub?.imageUrl else { return }
+        dealImageView.kf.setImage(with: imageUrl)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    // MARK: - Layout
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: size.width, height: 290.0)

@@ -43,25 +43,14 @@ class DealCell: UITableViewCell {
     var deal: Deal?
     private var timeRemainingTimer: Timer?
     
+    // MARK: - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none
         styleSubviews()
         startTimer()
     }
-    
-    // MARK: - Layout
-    
-    override func layoutSubviews() {
-        barHeaderImageGradient.frame = barHeaderImageView.layer.frame
-    }
-    
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let height: CGFloat = 10.0 + 58.0 + 160.0 + 24.0 + dealTitleLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + dealDescriptionLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + 16.0 + 28.0 + 20.0
-        return CGSize(width: size.width, height: height)
-    }
-    
-    // MARK: - Initialization
     
     func startTimer() {
         timeRemainingTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTimeRemaining), userInfo: nil, repeats: true)
@@ -86,6 +75,17 @@ class DealCell: UITableViewCell {
         distanceFromUserLabel.text = String(pub.distFromUser ?? 0.0) + " mi"
         timeRemainingLabel.text = ""
         startTimer()
+    }
+    
+    // MARK: - Layout
+    
+    override func layoutSubviews() {
+        barHeaderImageGradient.frame = barHeaderImageView.layer.frame
+    }
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let height: CGFloat = 10.0 + 58.0 + 160.0 + 24.0 + dealTitleLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + dealDescriptionLabel.sizeThatFits(CGSize(width: size.width - 56, height: size.height)).height + 16.0 + 28.0 + 20.0
+        return CGSize(width: size.width, height: height)
     }
     
     // MARK: - Actions

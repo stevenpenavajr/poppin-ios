@@ -133,14 +133,13 @@ class ContentManager: NSObject {
         return pubs
     }
     
-    // ADDED
     func getPubAnnotations(pubs: [Pub]) -> [PubAnnotation] {
         
         var pubPins: [PubAnnotation] = []
         
         for pub in pubs {
             /* Create Annotations */
-            if (pub.locationGP != nil) {
+            if pub.locationGP != nil {
                 let coordinate = CLLocationCoordinate2D(latitude: pub.locationGP!.latitude, longitude: pub.locationGP!.longitude)
                 let title: String? = pub.name
             
@@ -149,8 +148,7 @@ class ContentManager: NSObject {
                 pubPins.append(pubAnnotation)
             }
         }
-        return pubPins // return array
+        return pubPins
     }
-    // END ADDED
 
 }

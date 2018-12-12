@@ -31,7 +31,7 @@ class SettingsTableViewController: UITableViewController {
     
     struct SettingsData {
         
-        let settingsSections: [Settings] = [
+        static let settingsSections: [Settings] = [
             .pubs,
             .location,
             .signOut
@@ -74,21 +74,20 @@ class SettingsTableViewController: UITableViewController {
             cell.configureCell()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell
             
             switch indexPath.row {
             case 0:
-                break
+                cell?.configureCell(withSetting: SettingsData.settingsSections[indexPath.row])
                 
             case 1:
-                cell.textLabel?.text = "Sign Out"
-                cell.accessoryType = .disclosureIndicator
+                break
                 
             default:
                 break
             
             }
-            return cell
+            return cell ?? UITableViewCell()
             
         }
         return UITableViewCell()

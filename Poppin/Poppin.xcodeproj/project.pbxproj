@@ -363,13 +363,13 @@
 		AF40CA27216AE83F00E82D17 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				AF40CA1B216AE69A00E82D17 /* LaunchScreen.storyboard */,
-				AF40CA28216AE88900E82D17 /* TabBar.storyboard */,
 				AF40CA2C216AE91C00E82D17 /* Deals.storyboard */,
-				AF40CA2E216AE92400E82D17 /* Map.storyboard */,
+				AF40CA1B216AE69A00E82D17 /* LaunchScreen.storyboard */,
 				0AF36D3921878C1E00FCEDEB /* Login.storyboard */,
+				AF40CA2E216AE92400E82D17 /* Map.storyboard */,
 				0AB9DEFB21BDBF7600117B8E /* Pub.storyboard */,
 				CB7E645E21BF26F700F931EE /* Settings.storyboard */,
+				AF40CA28216AE88900E82D17 /* TabBar.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

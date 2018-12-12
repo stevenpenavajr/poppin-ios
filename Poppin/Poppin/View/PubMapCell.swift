@@ -16,32 +16,19 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
     
     @IBOutlet weak var pubMapView: MKMapView!
     
+    // MARK: - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        pubMapView.delegate = self
-        
-        /* THIS PUB ANNOTATION STUFF NEEDS TO HAPPEN ELSEWHERE... */
         guard let pubImage = UIImage(named: "annotation.png") else { return }
-        
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
         
-        /*
-        let pubAnnotation = PubAnnotation()
-        
-        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: 38.048039, longitude: -84.4985)
-        pubAnnotation.title = "Stagger Inn" /* will get from an object eventually */
-        pubAnnotation.subtitle = "Country bar"
-        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-        pubMapView.addAnnotation(pubAnnotationView.annotation!)
-        */
-      
         // Setup map
+        pubMapView.delegate = self
         pubMapView.isZoomEnabled = false
         pubMapView.isScrollEnabled = false
         pubMapView.isUserInteractionEnabled = false
         
-        /* make cell not selectable */
         self.selectionStyle = .none
        
     }
@@ -58,23 +45,16 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         centerMapOnLocation(location: pubLocation)
         
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
+    
+    // MARK: - Layout
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: size.width, height: 200)
     }
     
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: pubRadius, longitudinalMeters: pubRadius)
-        pubMapView.setRegion(coordinateRegion, animated: true)
-    }
     
-    // MARK: - MapView delegate methods
+    // MARK: - Mapview
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let reuseIdentifier = "pubAnnotationView"
@@ -92,5 +72,10 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         return annotationView
     }
 
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: pubRadius, longitudinalMeters: pubRadius)
+        pubMapView.setRegion(coordinateRegion, animated: true)
+    }
+    
 }
 
