@@ -11,19 +11,20 @@ class PubTableViewController: UITableViewController {
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 5)
     var pub: Pub?
     
+    // MARK: - Initialization
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.separatorStyle = .none
-        print(pub)
     }
     
+    // MARK: - Tableview
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 5
     }
     

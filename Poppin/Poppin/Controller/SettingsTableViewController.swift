@@ -7,6 +7,7 @@
 //
 
 import CoreLocation
+import FirebaseAuth
 import UIKit
 
 enum Settings {
@@ -24,6 +25,23 @@ enum Settings {
             return "Sign Out"
         }
     }
+    
+    func action(fromController controller: SettingsTableViewController) {
+        switch self {
+        case .pubs:
+            controller.performSegue(withIdentifier: "PubsListSegue", sender: controller)
+        case .location:
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        case .signOut:
+            do {
+                try Auth.auth().signOut()
+            } catch let err {
+                print(err)
+            }
+        }
+    }
 }
 
 
@@ -36,7 +54,6 @@ class SettingsTableViewController: UITableViewController {
             .location,
             .signOut
         ]
-        
         // TODO: More settings data in future
     }
     
@@ -47,7 +64,6 @@ class SettingsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
-        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,7 +80,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 1 : 2
+        return section == 0 ? 1 : SettingsData.settingsSections.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,46 +90,17 @@ class SettingsTableViewController: UITableViewController {
             cell.configureCell()
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell
-            
-            switch indexPath.row {
-            case 0:
-                cell?.configureCell(withSetting: SettingsData.settingsSections[indexPath.row])
-                
-            case 1:
-                break
-                
-            default:
-                break
-            
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell {
+                cell.configureCell(withSetting: SettingsData.settingsSections[indexPath.row])
+                return cell
             }
-            return cell ?? UITableViewCell()
-            
         }
         return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 1 {
-            if indexPath.row == 0 {
-                switchToggled()
-            } else {
-                
-            }
-        }
-    }
-    
-    func switchToggled() {
-        if !CLLocationManager.locationServicesEnabled() {
-            if let url = URL(string: "App-Prefs:root=Privacy&path=LOCATION") {
-                // If general location settings are disabled then open general location settings
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
-        } else {
-            if let url = URL(string: UIApplication.openSettingsURLString) {
-                // If general location settings are enabled then open location settings for the app
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            }
+            SettingsData.settingsSections[indexPath.row].action(fromController: self)
         }
     }
     

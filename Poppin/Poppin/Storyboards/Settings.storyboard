@@ -50,11 +50,11 @@
                                     <outlet property="profileImageView" destination="GoR-ep-MPt" id="rQM-cY-foG"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="206" id="lGI-S9-uEt">
-                                <rect key="frame" x="0.0" y="213" width="375" height="206"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingsCell" rowHeight="69" id="lGI-S9-uEt" customClass="SettingsTableViewCell" customModule="Poppin" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="213" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lGI-S9-uEt" id="qdz-Vw-ZE9">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="205.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -65,10 +65,52 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Csu-Ba-tSU"/>
+                    <connections>
+                        <segue destination="gp2-7c-asy" kind="show" identifier="PubsListSegue" id="9ST-il-sJk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mM-s8-9m2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="82.3088455772114"/>
+        </scene>
+        <!--Pubs List Table View Controller-->
+        <scene sceneID="h4H-t8-LMp">
+            <objects>
+                <tableViewController id="gp2-7c-asy" customClass="PubsListTableViewController" customModule="Poppin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tNv-j7-uQg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubsListCell" rowHeight="80" id="Tz0-aW-Tdm">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tz0-aW-Tdm" id="7bo-k8-0ht">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="gp2-7c-asy" id="HSw-FS-dVu"/>
+                            <outlet property="delegate" destination="gp2-7c-asy" id="0y7-nZ-Pch"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="4dc-SP-D4w" kind="show" identifier="PubSegue" id="gNr-1R-Njr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K8q-yg-Hd9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1888.8" y="81.409295352323838"/>
+        </scene>
+        <!--Pub-->
+        <scene sceneID="kdu-8N-1Bl">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Pub" id="4dc-SP-D4w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cvs-KV-f4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2590" y="81"/>
         </scene>
         <!--Custom Navigation Bar Controller-->
         <scene sceneID="Ssz-L7-88O">
@@ -86,7 +128,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Xh-3D-5s4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="82.3088455772114"/>
+            <point key="canvasLocation" x="263" y="81"/>
         </scene>
     </scenes>
     <resources>

@@ -7,35 +7,26 @@
 //
 
 import CoreLocation
+import FirebaseAuth
 import UIKit
 
 class SettingsTableViewCell: UITableViewCell {
 
     static let identifier = "SettingsCell"
-    
     var setting: Settings?
+    
+    // MARK: - Initialization
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
     func configureCell(withSetting setting: Settings?) {
         guard let setting = setting else { return }
-        switch setting {
-        case .pubs:
-            let switchView = UISwitch(frame: .zero)
-            let authorizationStatus = CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse
-            textLabel?.text = setting.title
-            selectionStyle = .none
-            switchView.isUserInteractionEnabled = false
-            switchView.setOn(authorizationStatus, animated: true)
-            accessoryView = switchView
-        case .location:
-            textLabel?.text = setting.title
-            accessoryType = .disclosureIndicator
-        case .signOut:
-            break
-        }
+        
+        textLabel?.text = setting.title
+        accessoryType = .disclosureIndicator
     }
+    
 }
