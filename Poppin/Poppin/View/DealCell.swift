@@ -5,7 +5,14 @@
 
 import CoreLocation
 import Kingfisher
+import MessageUI
 import UIKit
+
+protocol DealCellDelegate: class {
+    
+    func dealCell(_ dealCell: DealCell, didShareDeal: Deal)
+    
+}
 
 class DealCell: UITableViewCell {
 
@@ -30,6 +37,8 @@ class DealCell: UITableViewCell {
     @IBOutlet weak var containerViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
+    
+    weak var delegate: DealCellDelegate?
     
     var deal: Deal?
     private var timeRemainingTimer: Timer?
@@ -79,6 +88,13 @@ class DealCell: UITableViewCell {
         startTimer()
     }
     
+    // MARK: - Actions
+    
+    @IBAction func didTapShare(_ sender: Any) {
+        guard let deal = deal else { return }
+        delegate?.dealCell(self, didShareDeal: deal)
+    }
+    
     // MARK: - Styling
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
@@ -91,7 +107,6 @@ class DealCell: UITableViewCell {
     }
     
     func styleSubviews() {
-        
         // Container View
         containerView.layer.cornerRadius = 10.0
         containerView.clipsToBounds = true
@@ -132,6 +147,11 @@ class DealCell: UITableViewCell {
         dealDescriptionLabel.textColor = Theme.Color.textOffColor
         dealDescriptionLabel.numberOfLines = 0
         
+        // Share Button
+        shareButton.setTitle("Share Deal", for: .normal)
+        shareButton.tintColor = Theme.Color.primaryBlue
+        shareButton.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        
         // Time Remaining Label
         timeRemainingLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
         timeRemainingLabel.textColor = Theme.Color.textOffColor
@@ -143,7 +163,6 @@ class DealCell: UITableViewCell {
         viewDealLabel.textAlignment = .center
         viewDealLabel.clipsToBounds = true
         viewDealLabel.layer.cornerRadius = viewDealLabel.frame.height / 2
-        
     }
 
 }

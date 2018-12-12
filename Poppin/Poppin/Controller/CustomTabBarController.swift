@@ -27,20 +27,15 @@ class CustomTabBarController: UITabBarController {
     
     func styleTabBar(_ poppinTabBar: UITabBar) {
         self.tabBar.isUserInteractionEnabled = false
-        self.tabBar.items?[0].image = dealsIconGray.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[0].selectedImage = dealsIconPoppin.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[0].title = nil
-        self.tabBar.items?[0].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
         
-        self.tabBar.items?[1].image = mapIconGray.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[1].selectedImage = mapIconPoppin.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[1].title = nil
-        self.tabBar.items?[1].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        let icons = [[dealsIconGray, dealsIconPoppin], [mapIconGray, mapIconPoppin], [settingsIconGray, settingsIconPoppin]]
         
-        self.tabBar.items?[2].image = settingsIconGray.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[2].selectedImage = settingsIconPoppin.withRenderingMode(.alwaysOriginal)
-        self.tabBar.items?[2].title = nil
-        self.tabBar.items?[2].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        for i in 0..<icons.count {
+            self.tabBar.items?[i].image = icons[i][0].withRenderingMode(.alwaysOriginal)
+            self.tabBar.items?[i].selectedImage = icons[i][1].withRenderingMode(.alwaysOriginal)
+            self.tabBar.items?[i].title = nil
+            self.tabBar.items?[i].imageInsets = UIEdgeInsets(top: 8, left: 0, bottom: -8, right: 0)
+        }
     }
 }
 
