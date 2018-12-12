@@ -35,6 +35,9 @@
                                         <constraint firstItem="46d-Jl-vRA" firstAttribute="leading" secondItem="SBH-Bh-MHg" secondAttribute="leading" id="xJm-ZK-Q6N"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pubImageView" destination="46d-Jl-vRA" id="7R4-bf-5Ih"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubDescriptionCell" rowHeight="175" id="RQg-la-0Oz" customClass="PubDescriptionCell" customModule="Poppin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="186" width="375" height="175"/>

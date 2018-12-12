@@ -3,24 +3,28 @@
 // Date Created: 12/9/18
 // Created By: Steven Penava
 
-import Foundation
+import Kingfisher
 import UIKit
 
 class PubImageCell: UITableViewCell {
     
+    // MARK - Initialization
+    
+    @IBOutlet weak var pubImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
-        /* make cell not selectable */
         self.selectionStyle = .none
+        pubImageView.contentMode = .scaleToFill
+        
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
+    func configureCell(withPub pub: Pub?) {
+        guard let imageUrl = pub?.imageUrl else { return }
+        pubImageView.kf.setImage(with: imageUrl)
     }
+    
+    // MARK: - Layout
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         return CGSize(width: size.width, height: 290.0)

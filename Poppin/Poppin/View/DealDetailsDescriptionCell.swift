@@ -9,10 +9,11 @@ class DealDetailsDescriptionCell: UITableViewCell {
     
     static let height: CGFloat = 600.0
     
-    /* deal descr label is actually a text view */
     @IBOutlet weak var dealDescriptionLabel: UITextView!
     @IBOutlet weak var barTitleLabel: UILabel!
     @IBOutlet weak var dealTitleLabel: UILabel!
+    
+    // MARK: - Initializaation
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,20 +28,8 @@ class DealDetailsDescriptionCell: UITableViewCell {
         
         dealTitleLabel.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         
-        /* fixing margin / padding stuff */
         dealDescriptionLabel.textContainer.lineFragmentPadding = 0
         dealDescriptionLabel.textContainerInset = .zero
-        
-        
-        
-        
-        // Initialization code
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func configureCell(withDeal deal: Deal) {
@@ -50,6 +39,7 @@ class DealDetailsDescriptionCell: UITableViewCell {
         
     }
 
+    // MARK: - Layout
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         let dealDescriptionLabelHeight = dealDescriptionLabel.sizeThatFits(CGSize(width: size.width - 40.0, height: size.height)).height

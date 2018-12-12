@@ -26,13 +26,14 @@ class SettingsTableViewCell: UITableViewCell {
         case .pubs:
             let switchView = UISwitch(frame: .zero)
             let authorizationStatus = CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse
-            textLabel?.text = "Location Services"
+            textLabel?.text = setting.title
             selectionStyle = .none
             switchView.isUserInteractionEnabled = false
             switchView.setOn(authorizationStatus, animated: true)
             accessoryView = switchView
         case .location:
-            break
+            textLabel?.text = setting.title
+            accessoryType = .disclosureIndicator
         case .signOut:
             break
         }
