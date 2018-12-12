@@ -15,6 +15,8 @@ class PubDescriptionCell: UITableViewCell {
     @IBOutlet weak var barDescriptionLabel: UITextView!
     @IBOutlet weak var barDescriptionHeadingLabel: UILabel!
     
+    // MARK - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -49,14 +51,9 @@ class PubDescriptionCell: UITableViewCell {
         barDescriptionLabel.text = pubDescription
         barTitleLabel.text = pubName
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
-    // resize based on other things in storyboard
+    // MARK: - Layout
+    
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         let barDescriptionLabelHeight = barDescriptionLabel.sizeThatFits(CGSize(width: size.width - 40.0, height: size.height)).height
         let barTitleLabelHeight = barTitleLabel.sizeThatFits(CGSize(width: size.width - 40.0, height: size.height)).height

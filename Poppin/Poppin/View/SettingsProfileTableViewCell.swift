@@ -16,6 +16,8 @@ class SettingsProfileTableViewCell: UITableViewCell {
     
     static let identifier = "SettingsProfileCell"
     
+    // MARK: - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
@@ -27,7 +29,6 @@ class SettingsProfileTableViewCell: UITableViewCell {
     
     func configureCell() {
         let user = ContentManager.shared.getCurrentUser()
-        print(user?.name, user?.email)
         nameLabel.text = "Hi, \(user?.name ?? "User")"
         guard   let image = user?.imageUrl,
                 let imageUrl = URL(string: image) else { return }

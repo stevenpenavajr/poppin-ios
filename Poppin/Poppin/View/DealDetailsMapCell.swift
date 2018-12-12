@@ -14,42 +14,29 @@ class DealDetailsMapCell: UITableViewCell, MKMapViewDelegate {
     
     var annotationImage: UIImage?
     
+    // MARK: - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        pubMapView.delegate = self
-        
-        /* THIS PUB ANNOTATION STUFF NEEDS TO HAPPEN ELSEWHERE... */
         guard let pubImage = UIImage(named: "annotation.png") else { return }
-        
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
-        
-        // Setup map
+        pubMapView.delegate = self
         pubMapView.isZoomEnabled = false
         pubMapView.isScrollEnabled = false
         pubMapView.isUserInteractionEnabled = false
-        
-        /* make cell not selectable */
-        self.selectionStyle = .none
+        selectionStyle = .none
     }
     
     func configureCell(withPub pub: Pub) {
+        guard let pubLocation = pub.location else { return }
         let coordinate = CLLocationCoordinate2D(latitude: pub.lat ?? 0, longitude: pub.long ?? 0)
         let title = pub.name ?? ""
         let pubAnnotation = PubAnnotation(coordinate: coordinate, name: title)
         let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
+        
         pubMapView.addAnnotation(pubAnnotationView.annotation!)
-        
-        guard let pubLocation = pub.location else { return }
-        
         centerMapOnLocation(location: pubLocation)
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -57,9 +44,15 @@ class DealDetailsMapCell: UITableViewCell, MKMapViewDelegate {
         pubMapView.setRegion(coordinateRegion, animated: true)
     }
     
-    // MARK: - MapView delegate methods
+    // MARK: - Layout
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        return CGSize(width: size.width, height: 300)
+    }
+    
+    // MARK: - MapView
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
         let reuseIdentifier = "pubAnnotationView"
         
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
@@ -73,10 +66,6 @@ class DealDetailsMapCell: UITableViewCell, MKMapViewDelegate {
         annotationView?.image = annotationImage
         
         return annotationView
-    }
-    
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        return CGSize(width: size.width, height: 300)
     }
 
 }

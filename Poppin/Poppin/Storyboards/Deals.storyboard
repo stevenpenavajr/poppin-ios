@@ -209,6 +209,9 @@
                                         <constraint firstAttribute="trailing" secondItem="etO-QJ-b9D" secondAttribute="trailing" id="s1P-HZ-Eg1"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dealImageView" destination="etO-QJ-b9D" id="Ic2-h9-K2h"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsDescriptionCell" rowHeight="281" id="A1E-eW-aGM" customClass="DealDetailsDescriptionCell" customModule="Poppin" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="186" width="375" height="281"/>

@@ -20,6 +20,8 @@ class PubHoursCell: UITableViewCell {
         "7": "Saturday"
     ]
     
+    // MARK: - Initialization
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,15 +46,8 @@ class PubHoursCell: UITableViewCell {
 
 
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
     
     func configureHours(withPub pub: Pub) {
-        
         var hoursText = ""
         
         let dateFormatter = DateFormatter()
@@ -75,6 +70,8 @@ class PubHoursCell: UITableViewCell {
         
         hoursTextView.text = hoursText
     }
+    
+    // MARK: - Layout
     
     override func sizeThatFits(_ size: CGSize) -> CGSize {
         let hoursTitleLabelHeight = hoursTitleLabel.sizeThatFits(CGSize(width: size.width - 40.0, height: size.height)).height
