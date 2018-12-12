@@ -237,13 +237,13 @@
 				0A6850E621B326A400CC4E17 /* DealDetailsDescriptionCell.swift */,
 				0A43EEFE21B1BF960041954C /* DealDetailsImageCell.swift */,
 				0A1360FB21C0A3C80097ACBB /* DealDetailsMapCell.swift */,
-				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
 				0AB9DF0121BDD10100117B8E /* PubDescriptionCell.swift */,
 				0A1360ED21C00C290097ACBB /* PubHoursCell.swift */,
 				0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */,
 				0AB9DF0521BDDA9300117B8E /* PubMapCell.swift */,
-				A31FB87B21C052A100318709 /* PubClusterView.swift */,
 				A31FB87D21C0559400318709 /* PubAnnotationView.swift */,
+				0AB9DF0321BDD89500117B8E /* PubButtonsCell.swift */,
+				A31FB87B21C052A100318709 /* PubClusterView.swift */,
 				CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */,
 				CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */,
 			);
@@ -751,7 +751,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -770,7 +770,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = AJ7H86ML8P;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

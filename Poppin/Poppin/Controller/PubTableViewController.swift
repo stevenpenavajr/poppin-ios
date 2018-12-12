@@ -9,7 +9,11 @@ import UIKit
 class PubTableViewController: UITableViewController {
     
     private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 5)
-    var pub: Pub?
+    var pub: Pub? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: - Initialization
     
