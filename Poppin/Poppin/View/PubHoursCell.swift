@@ -49,7 +49,6 @@ class PubHoursCell: UITableViewCell {
     
     func configureHours(withPub pub: Pub) {
         var hoursText = ""
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .none
         dateFormatter.timeStyle = .short
@@ -65,9 +64,8 @@ class PubHoursCell: UITableViewCell {
             } else {
                 hoursText += "\(day ?? "Day"): \t\t\(startTime) - \(endTime)\n\n"
             }
-            
         }
-        
+
         hoursTextView.text = hoursText
     }
     

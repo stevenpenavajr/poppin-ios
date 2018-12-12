@@ -19,6 +19,7 @@ class PubImageCell: UITableViewCell {
         
     }
     
+
     func configureCell(withPub pub: Pub?) {
         guard let imageUrl = pub?.imageUrl else { return }
         pubImageView.kf.setImage(with: imageUrl)

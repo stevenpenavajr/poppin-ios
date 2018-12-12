@@ -81,13 +81,13 @@ class SettingsTableViewController: UITableViewController {
                 cell?.configureCell(withSetting: SettingsData.settingsSections[indexPath.row])
                 
             case 1:
-
+                break
                 
             default:
                 break
             
             }
-            return cell
+            return cell ?? UITableViewCell()
             
         }
         return UITableViewCell()

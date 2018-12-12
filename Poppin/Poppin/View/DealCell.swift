@@ -121,6 +121,7 @@ class DealCell: UITableViewCell {
         // Bar Logo ImageView
         barLogoImageView.clipsToBounds = true
         barLogoImageView.contentMode = .scaleAspectFit
+        
         // Bar Name Label
         barNameLabel.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
         barNameLabel.textColor = Theme.Color.textColor

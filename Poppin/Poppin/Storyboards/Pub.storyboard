@@ -36,7 +36,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="pubImageView" destination="46d-Jl-vRA" id="7R4-bf-5Ih"/>
+                                    <outlet property="pubImageView" destination="46d-Jl-vRA" id="zf6-JP-tT4"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PubDescriptionCell" rowHeight="175" id="RQg-la-0Oz" customClass="PubDescriptionCell" customModule="Poppin" customModuleProvider="target">

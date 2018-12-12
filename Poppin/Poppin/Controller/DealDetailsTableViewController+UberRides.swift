@@ -21,8 +21,8 @@ extension DealDetailsTableViewController {
         
         builder.pickupLocation = pickupLocation
         builder.dropoffLocation = dropoffLocation
-        builder.dropoffNickname = "Tin Roof"
-        builder.dropoffAddress = "303 S. Limestone"
+        builder.dropoffNickname = deal.pub?.name
+        builder.dropoffAddress = deal.pub?.address
         let rideParameters = builder.build()
         
         uberRidesButton = RideRequestButton(rideParameters: rideParameters)

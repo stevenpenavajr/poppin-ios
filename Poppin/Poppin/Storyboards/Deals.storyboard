@@ -298,6 +298,58 @@ More text</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sdG-1Q-sz8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailsDescriptionCell" rowHeight="281" id="6RX-Wg-rzO" customClass="DealDetailsDescriptionCell" customModule="Poppin" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="281"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6RX-Wg-rzO" id="5Pv-VT-gb5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="280.5"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin Roof of Lexington" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAg-5l-cEL">
+                                <rect key="frame" x="20" y="20" width="335" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nfb-Qr-v62">
+                                <rect key="frame" x="20" y="123.5" width="335" height="147"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Details: get hella margaritas!
+
+Several flavors
+
+Tap "USE DEAL" to use!</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSs-6F-f6Y">
+                                <rect key="frame" x="20" y="51" width="335" height="64.5"/>
+                                <string key="text">$5 Pitchers All Night
+More text</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="OAg-5l-cEL" firstAttribute="leading" secondItem="5Pv-VT-gb5" secondAttribute="leading" constant="20" id="1q3-3g-Qhx"/>
+                            <constraint firstItem="Nfb-Qr-v62" firstAttribute="top" secondItem="BSs-6F-f6Y" secondAttribute="bottom" constant="8" id="HqR-Dt-Cyn"/>
+                            <constraint firstAttribute="trailing" secondItem="BSs-6F-f6Y" secondAttribute="trailing" constant="20" id="KgC-yo-8iK"/>
+                            <constraint firstAttribute="trailing" secondItem="Nfb-Qr-v62" secondAttribute="trailing" constant="20" id="Lfx-AU-w1f"/>
+                            <constraint firstItem="OAg-5l-cEL" firstAttribute="top" secondItem="5Pv-VT-gb5" secondAttribute="top" constant="20" id="ZTP-Ga-EAY"/>
+                            <constraint firstItem="BSs-6F-f6Y" firstAttribute="top" secondItem="OAg-5l-cEL" secondAttribute="bottom" constant="8" id="btq-uE-HSY"/>
+                            <constraint firstAttribute="bottom" secondItem="Nfb-Qr-v62" secondAttribute="bottom" constant="10" id="c6k-nE-TIW"/>
+                            <constraint firstAttribute="trailing" secondItem="OAg-5l-cEL" secondAttribute="trailing" constant="20" id="diz-Z6-1gb"/>
+                            <constraint firstItem="BSs-6F-f6Y" firstAttribute="leading" secondItem="5Pv-VT-gb5" secondAttribute="leading" constant="20" id="fX4-ju-1Do"/>
+                            <constraint firstItem="Nfb-Qr-v62" firstAttribute="leading" secondItem="5Pv-VT-gb5" secondAttribute="leading" constant="20" id="hKG-wB-6qE"/>
+                        </constraints>
+                    </tableViewCellContentView>
+                    <connections>
+                        <outlet property="barTitleLabel" destination="OAg-5l-cEL" id="ebG-Zd-7qA"/>
+                        <outlet property="dealDescriptionLabel" destination="Nfb-Qr-v62" id="t22-vi-tQV"/>
+                        <outlet property="dealTitleLabel" destination="BSs-6F-f6Y" id="RPf-Hp-JtN"/>
+                    </connections>
+                </tableViewCell>
             </objects>
             <point key="canvasLocation" x="1872.8" y="47.226386806596707"/>
         </scene>

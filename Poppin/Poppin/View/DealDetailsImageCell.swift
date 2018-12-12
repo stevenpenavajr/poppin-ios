@@ -5,6 +5,7 @@
 
 import Kingfisher
 import UIKit
+import Kingfisher
 
 class DealDetailsImageCell: UITableViewCell {
 

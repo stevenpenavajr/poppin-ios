@@ -136,7 +136,6 @@
 		8D83FFC035B1AB6D62D162B4 /* Pods-Poppin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.release.xcconfig"; sourceTree = "<group>"; };
 		A31FB87B21C052A100318709 /* PubClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubClusterView.swift; sourceTree = "<group>"; };
 		A31FB87D21C0559400318709 /* PubAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubAnnotationView.swift; sourceTree = "<group>"; };
-		A364259421BF2384009B141A /* simulatelocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = simulatelocation.gpx; path = ../Controller/simulatelocation.gpx; sourceTree = "<group>"; };
 		AF40CA0F216AE69800E82D17 /* Poppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40CA12216AE69800E82D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40CA19216AE69A00E82D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -379,7 +378,6 @@
 			isa = PBXGroup;
 			children = (
 				AF40CA19216AE69A00E82D17 /* Assets.xcassets */,
-				A364259421BF2384009B141A /* simulatelocation.gpx */,
 				0ABD3529217680A200CAD417 /* Fonts */,
 				0A42FD1A21879CA9000F117B /* Images */,
 			);
@@ -749,13 +747,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AJ7H86ML8P;
+				DEVELOPMENT_TEAM = GG5S3A62X8;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.PoppinJen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.Poppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -768,13 +766,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AJ7H86ML8P;
+				DEVELOPMENT_TEAM = GG5S3A62X8;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.PoppinJen;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.Poppin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
