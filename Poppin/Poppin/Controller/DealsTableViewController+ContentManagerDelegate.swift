@@ -9,6 +9,12 @@
 import Foundation
 
 extension DealsTableViewController: ContentManagerDelegate {
+    // ADDED
+    func allPubs(completion: ([PubAnnotation], Error?) -> ()) {
+        // PLACEHOLDER
+        return
+    }
+    // END ADDED
     
     func contentManagerDidUpdate(_ contentManager: ContentManager) {
         reloadData()

@@ -15,93 +15,99 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     /* Map view */
     @IBOutlet weak var mapView: MKMapView!
     
-    let mapIconPoppin = UIImage(named: "map-poppin")!.resizeImage(size: CGSize(width: 30, height: 30))
-
+    /* An array to hold array of pubs */
+    var pubs: [Pub] = []
     
-    /* list of Pub objects from Firebase NEED TO REORGANIZE?? */
-//    var deals: [Deal] = []
+    /* Array of pub Annotations */
+    var pubAnnotations: [PubAnnotation] = []
     
-    /* Custom annotation for bar */
-    var pubAnnotation:PubAnnotation!
-    var annotationImage: UIImage?
+    /* Variable for the selected annotation */
+    var selectedAnnotation: PubAnnotation?
+    //print(mapView.selectedAnnotations)
     
-    /* An array to hold the annotation objects from Firebase */
-    var pubAnnotations: [MKPointAnnotation] = []
-    
-    let regionRadius: CLLocationDistance = 2000
-    
-    /* Check location permissions upon view */
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
+    /* Variables to track users location */
+    private var locationManager: CLLocationManager!
+    private var currentLocation: [CLLocation] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let pubImage = UIImage(named: "annotation.png") else { return }
-        annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
-        
-        /* Zoom into Lexington, KY on startup */
-        centerMapOnLocation(location: CLLocation(latitude: 38.0406, longitude: -84.5037))
-        
         /* Setting MapViewController as the delegate of the map view */
         mapView.delegate = self
+        mapView.showsUserLocation = true;
+        
+        /* Set initial location to be users current location */
+        setLocation()
+        
+        /* Add location tracking button */
+        let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
+        self.navigationItem.rightBarButtonItem = buttonItem
+        
+        /* Add annotations to mapView */
+        createAnnotations()
+        
+        /* Register annotation view and cluster view */
+        mapView.register(PubAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+        mapView.register(PubClusterView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultClusterAnnotationViewReuseIdentifier)
+        
+    }
     
-        /* load pub locations into array of MKPointAnnotation, add to MV */
-//        createAnnotations()
-        
-    } // End of viewDidLoad()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("APPEAR")
-        
+    /* Check location permissions upon view */
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
         
         guard let tabBar = self.tabBarController?.tabBar else { return }
     }
     
-    /* Center location on map */
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
+    /* Function to create Pub Annotations */
+    private func createAnnotations() {
+        pubs = ContentManager.shared.getPubs() // Get array of all pubs
+        pubAnnotations = ContentManager.shared.getPubAnnotations(pubs: pubs) // Create array of custom annotations
+        mapView.addAnnotations(pubAnnotations) // Add Annotations to Map
     }
     
-    /* Loading Firebase data */
-//    func createAnnotations() {
-//        print("Nothing right now.")
-//        deals = ContentManager.shared.getDeals()
-        
-//        for deal in deals {
-//            let pubAnnotation = PubAnnotation()
-//            if (deal.locationGP != nil) {
-//                pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: deal.locationGP!.latitude, longitude: deal.locationGP!.longitude)
-//                pubAnnotation.title = deal.name
-//                pubAnnotation.subtitle = deal.description
-//                let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
-//                mapView.addAnnotation(pubAnnotationView.annotation!)
-//            }
-//        }
-//    }
-    
-    // MARK: - MapView delegate methods
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        
-        let reuseIdentifier = "pubAnnotationView"
-        
-        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
-            annotationView?.canShowCallout = true
-        } else {
-            annotationView?.annotation = annotation
-        }
+    /* Sets current location to updated location */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
 
-        annotationView?.image = annotationImage
+        let location = mapView.userLocation
+        let regionRadius: CLLocationDistance = 2000
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
         
-        return annotationView
+        mapView.setRegion(region, animated: true)
+        
+        locationManager.stopUpdatingLocation()
     }
+    
+    // Function to set up initial location
+    func setLocation() {
+        // Declare location manager
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // Check for Location Services
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.requestWhenInUseAuthorization() // Request access
+            locationManager.startUpdatingLocation() // start updating location
+        }
+        
+    }
+    
+    /*
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: PubClusterView) {
+        self.selectedAnnotation = view.annotation as? PubAnnotation
+        print("Selected a Cluster")
+    } */
+    
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: PubAnnotationView) {
+        print("Selected an Annotation")
+        self.selectedAnnotation = view.annotation as? PubAnnotation
+    }
+    
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,3 +119,7 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         let targetController = destinationNavigationController.topViewController
     }
 }
+
+
+
+

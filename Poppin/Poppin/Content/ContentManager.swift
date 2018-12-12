@@ -12,6 +12,10 @@ import FirebaseAuth
 
 protocol ContentManagerDelegate: class {
     func contentManagerDidUpdate(_ contentManager: ContentManager)
+    
+    // ADDED
+    func allPubs(completion: ([PubAnnotation], Error?) -> ())
+    // END ADDED
 }
 
 class ContentManager: NSObject {
@@ -31,9 +35,13 @@ class ContentManager: NSObject {
     }
     
     internal var deals = [Deal]()
+
     internal var dealsMap = [String : Deal]()
     internal var pubs = [Pub]()
     internal var pubsMap = [String : Pub]()
+
+    internal var currentDeals = [Deal]()
+
     
     let locationManager = CLLocationManager()
     
@@ -95,6 +103,7 @@ class ContentManager: NSObject {
         return currentDeals
     }
     
+
     func getSortedDeals() -> [Deal] {
         guard let userLocation = currentUser?.location else { return deals }
         for deal in deals {
@@ -117,10 +126,31 @@ class ContentManager: NSObject {
     func getPub(forId id: String?) -> Pub? {
         guard let id = id else { return nil }
         return pubsMap[id]
+
     }
     
     func getPubs() -> [Pub] {
         return pubs
     }
+    
+    // ADDED
+    func getPubAnnotations(pubs: [Pub]) -> [PubAnnotation] {
+        
+        var pubPins: [PubAnnotation] = []
+        
+        for pub in pubs {
+            /* Create Annotations */
+            if (pub.locationGP != nil) {
+                let coordinate = CLLocationCoordinate2D(latitude: pub.locationGP!.latitude, longitude: pub.locationGP!.longitude)
+                let title: String? = pub.name
+            
+                let pubAnnotation = PubAnnotation(coordinate: coordinate, name: title)
+            
+                pubPins.append(pubAnnotation)
+            }
+        }
+        return pubPins // return array
+    }
+    // END ADDED
 
 }
