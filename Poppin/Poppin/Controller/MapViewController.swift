@@ -54,7 +54,12 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        print("APPEAR")
+        
         (self.navigationController as? CustomNavigationBarController)?.updateNavigationTitle(to: "poppin.")
+        
+        guard let tabBar = self.tabBarController?.tabBar else { return }
     }
     
     /* Center location on map */

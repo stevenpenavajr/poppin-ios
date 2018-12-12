@@ -11,7 +11,7 @@ class DealDetailsTableViewController: UITableViewController {
     
     static let segueIdentifier = "DealDetails"
     
-    private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 2)
+    private var cellHeights: [CGFloat] = [CGFloat].init(repeating: 0.0, count: 3)
     
     var rowSelection = 0
     
@@ -72,7 +72,7 @@ class DealDetailsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -104,10 +104,23 @@ class DealDetailsTableViewController: UITableViewController {
                     }
                     return cell
                 }
-            
-            default:
-                return UITableViewCell()
+        case 2:
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsMapCell", for: indexPath) as? DealDetailsMapCell {
+                
+                guard let deal = deal else { return UITableViewCell() }
+                
+                guard let pub = deal.pub else { return UITableViewCell() }
+                
+                cell.configureCell(withPub: pub)
+                
+                if cellHeights[indexPath.row] == 0.0 {
+                    cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
+                }
+                return cell
             }
+        default:
+            return UITableViewCell()
+        }
         
         return UITableViewCell()
     }

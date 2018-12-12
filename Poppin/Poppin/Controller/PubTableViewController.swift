@@ -84,6 +84,9 @@ class PubTableViewController: UITableViewController {
         case 4:
             if let cell = tableView.dequeueReusableCell(withIdentifier: "PubMapCell", for: indexPath) as? PubMapCell {
                 
+                guard let pub = pub else { return UITableViewCell() }
+                cell.configureCell(withPub: pub)
+                
                 if cellHeights[indexPath.row] == 0.0 {
                     cellHeights[indexPath.row] = cell.sizeThatFits(CGSize(width: cell.bounds.width, height: .greatestFiniteMagnitude)).height
                 }
