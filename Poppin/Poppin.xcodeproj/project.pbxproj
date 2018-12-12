@@ -79,6 +79,7 @@
 		CB7E646F21C1735500F931EE /* DealsTableViewController+MFMessageComposeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E646E21C1735500F931EE /* DealsTableViewController+MFMessageComposeViewControllerDelegate.swift */; };
 		CB7E647121C17C8800F931EE /* DealDetailsTableViewController+UberRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E647021C17C8800F931EE /* DealDetailsTableViewController+UberRides.swift */; };
 		CB7E647321C1802500F931EE /* beer-2.png in Resources */ = {isa = PBXBuildFile; fileRef = CB7E647221C1802500F931EE /* beer-2.png */; };
+		CB7E647521C1953B00F931EE /* PubsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E647421C1953B00F931EE /* PubsListTableViewController.swift */; };
 		CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */; };
 		CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7191D21B1EE4E0054EC77 /* Pub.swift */; };
 		CBB7192421B3048D0054EC77 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB7192321B3048D0054EC77 /* Deal.swift */; };
@@ -164,6 +165,7 @@
 		CB7E646E21C1735500F931EE /* DealsTableViewController+MFMessageComposeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealsTableViewController+MFMessageComposeViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		CB7E647021C17C8800F931EE /* DealDetailsTableViewController+UberRides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DealDetailsTableViewController+UberRides.swift"; sourceTree = "<group>"; };
 		CB7E647221C1802500F931EE /* beer-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "beer-2.png"; sourceTree = "<group>"; };
+		CB7E647421C1953B00F931EE /* PubsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubsListTableViewController.swift; sourceTree = "<group>"; };
 		CBB7191921B1ED590054EC77 /* FirebaseSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSubscription.swift; sourceTree = "<group>"; };
 		CBB7191D21B1EE4E0054EC77 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		CBB7192321B3048D0054EC77 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */,
 				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
+				CB7E647421C1953B00F931EE /* PubsListTableViewController.swift */,
 				0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */,
 				CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */,
 			);
@@ -606,6 +609,7 @@
 				CB7E645B21BDED2300F931EE /* DateHelper.swift in Sources */,
 				CBB7192621B333F10054EC77 /* Theme.swift in Sources */,
 				CB1BCD9521B5EAD20029689F /* ContentManager+FirebaseSubscription.swift in Sources */,
+				CB7E647521C1953B00F931EE /* PubsListTableViewController.swift in Sources */,
 				0AB9DEFE21BDCDE500117B8E /* PubImageCell.swift in Sources */,
 				CB1BCD9921B5FE540029689F /* DealsTableViewController+ContentManagerDelegate.swift in Sources */,
 				0AB9DF0621BDDA9300117B8E /* PubMapCell.swift in Sources */,
