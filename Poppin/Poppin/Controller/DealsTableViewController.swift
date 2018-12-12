@@ -72,6 +72,7 @@ class DealsTableViewController: UITableViewController, UITabBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let dealCell = tableView.dequeueReusableCell(withIdentifier: DealCell.identifier, for: indexPath) as? DealCell {
             dealCell.configureCell(withDeal: deals[indexPath.row])
+            dealCell.delegate = self
             if cellHeights[indexPath.row] == 0 {
                 cellHeights[indexPath.row] = dealCell.sizeThatFits(CGSize(width: dealCell.bounds.width, height: .greatestFiniteMagnitude)).height
             }

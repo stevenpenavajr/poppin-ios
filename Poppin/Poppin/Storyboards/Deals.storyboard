@@ -81,6 +81,9 @@
                                                         <constraint firstAttribute="height" constant="28" id="B0K-KQ-VVP"/>
                                                     </constraints>
                                                     <state key="normal" title="Share"/>
+                                                    <connections>
+                                                        <action selector="didTapShare:" destination="Vp0-qP-GZl" eventType="touchUpInside" id="62V-oE-lme"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAn-2q-8l3">
                                                     <rect key="frame" x="117.5" y="142" width="100" height="36"/>

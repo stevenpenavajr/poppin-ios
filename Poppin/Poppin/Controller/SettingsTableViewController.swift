@@ -9,8 +9,36 @@
 import CoreLocation
 import UIKit
 
+enum Settings {
+    case pubs
+    case location
+    case signOut
+    
+    var title: String {
+        switch self {
+        case .pubs:
+            return "Pubs List"
+        case .location:
+            return "Location Services"
+        case .signOut:
+            return "Sign Out"
+        }
+    }
+}
+
+
 class SettingsTableViewController: UITableViewController {
     
+    struct SettingsData {
+        
+        let settingsSections: [Settings] = [
+            .pubs,
+            .location,
+            .signOut
+        ]
+        
+        // TODO: More settings data in future
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +78,7 @@ class SettingsTableViewController: UITableViewController {
             
             switch indexPath.row {
             case 0:
-                cell.textLabel?.text = "Location Services"
-                cell.selectionStyle = .none
-                let switchView = UISwitch(frame: .zero)
-                switchView.isUserInteractionEnabled = false
-                switchView.setOn(CLLocationManager.locationServicesEnabled(), animated: true)
-                cell.accessoryView = switchView
+                break
                 
             case 1:
                 cell.textLabel?.text = "Sign Out"
