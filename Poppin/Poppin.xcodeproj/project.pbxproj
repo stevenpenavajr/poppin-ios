@@ -51,6 +51,10 @@
 		0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */; };
 		0AF36D41218792B000FCEDEB /* Touche.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3D21878DD300FCEDEB /* Touche.otf */; };
 		0AF36D42218792B000FCEDEB /* ToucheBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AF36D3E21878DD300FCEDEB /* ToucheBold.otf */; };
+		A31FB87C21C052A100318709 /* PubClusterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31FB87B21C052A100318709 /* PubClusterView.swift */; };
+		A31FB87E21C0559400318709 /* PubAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A31FB87D21C0559400318709 /* PubAnnotationView.swift */; };
+		A31FB8C621C0BB3300318709 /* cocktail.png in Resources */ = {isa = PBXBuildFile; fileRef = A31FB8C521C0BB3300318709 /* cocktail.png */; };
+		A31FB8C821C0BB5300318709 /* beer-2.png in Resources */ = {isa = PBXBuildFile; fileRef = A31FB8C721C0BB5300318709 /* beer-2.png */; };
 		AF40CA13216AE69800E82D17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF40CA12216AE69800E82D17 /* AppDelegate.swift */; };
 		AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA19216AE69A00E82D17 /* Assets.xcassets */; };
 		AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF40CA1B216AE69A00E82D17 /* LaunchScreen.storyboard */; };
@@ -128,6 +132,11 @@
 		0AF36D3F218791BD00FCEDEB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		17D7C13EE0B125F46C7982C9 /* Pods-Poppin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.debug.xcconfig"; sourceTree = "<group>"; };
 		8D83FFC035B1AB6D62D162B4 /* Pods-Poppin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Poppin.release.xcconfig"; path = "Pods/Target Support Files/Pods-Poppin/Pods-Poppin.release.xcconfig"; sourceTree = "<group>"; };
+		A31FB87B21C052A100318709 /* PubClusterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubClusterView.swift; sourceTree = "<group>"; };
+		A31FB87D21C0559400318709 /* PubAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PubAnnotationView.swift; sourceTree = "<group>"; };
+		A31FB8C521C0BB3300318709 /* cocktail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cocktail.png; path = ../../../../../cocktail.png; sourceTree = "<group>"; };
+		A31FB8C721C0BB5300318709 /* beer-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "beer-2.png"; path = "../../../../../../../../var/folders/d2/5sv3kfd90c9_7b55twxp0hnc0000gn/T/com.apple.iChat/Messages/Transfers/beer-2.png"; sourceTree = "<group>"; };
+		A364259421BF2384009B141A /* simulatelocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = simulatelocation.gpx; sourceTree = "<group>"; };
 		AF40CA0F216AE69800E82D17 /* Poppin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poppin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF40CA12216AE69800E82D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF40CA19216AE69A00E82D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,9 +213,11 @@
 				0ACB278D21B8D837008131AE /* map.png */,
 				0ADDE28E21B6052F0089F766 /* annotation.png */,
 				0A3E6B0121B36CD30099261C /* uber-icon.png */,
+				A31FB8C521C0BB3300318709 /* cocktail.png */,
 				0ACD1C7A21B1DC6C0097B016 /* tin_roof.jpg */,
 				0A43EEFA21B1AE9E0041954C /* launch_bg.png */,
 				0A42FD232187A898000F117B /* temp-logo.png */,
+				A31FB8C721C0BB5300318709 /* beer-2.png */,
 				0A42FD1F2187A484000F117B /* barrel.png */,
 				0A42FD1B21879CB8000F117B /* beer-pour-blur-new.gif */,
 				0A42FD1D21879FAD000F117B /* beer.png */,
@@ -227,6 +238,8 @@
 				0A1360ED21C00C290097ACBB /* PubHoursCell.swift */,
 				0AB9DEFD21BDCDE500117B8E /* PubImageCell.swift */,
 				0AB9DF0521BDDA9300117B8E /* PubMapCell.swift */,
+				A31FB87B21C052A100318709 /* PubClusterView.swift */,
+				A31FB87D21C0559400318709 /* PubAnnotationView.swift */,
 				CB7E646021BF2BC100F931EE /* SettingsProfileTableViewCell.swift */,
 				CB7E646221BF2BCB00F931EE /* SettingsTableViewCell.swift */,
 			);
@@ -337,6 +350,7 @@
 				CB2DF2EE21B1E2B4000C6A9F /* LoginViewController+Facebook.swift */,
 				AF40CA32216AE94E00E82D17 /* MapViewController.swift */,
 				0AB9DEF921BDBF5A00117B8E /* PubTableViewController.swift */,
+				A364259421BF2384009B141A /* simulatelocation.gpx */,
 				CB7E645C21BF248000F931EE /* SettingsTableViewController.swift */,
 			);
 			path = Controller;
@@ -436,6 +450,7 @@
 				0A1360FA21C0A02D0097ACBB /* settings-thick-gray.png in Resources */,
 				0AB9DF0B21BDDD0000117B8E /* navigation.png in Resources */,
 				0A43EEFB21B1AE9E0041954C /* launch_bg.png in Resources */,
+				A31FB8C821C0BB5300318709 /* beer-2.png in Resources */,
 				0AB9DF0E21BDDD0000117B8E /* share.png in Resources */,
 				0ACB278E21B8D837008131AE /* map.png in Resources */,
 				0AF36D41218792B000FCEDEB /* Touche.otf in Resources */,
@@ -454,6 +469,7 @@
 				0A3E6B0221B36CD30099261C /* uber-icon.png in Resources */,
 				0A1360F921C0A02D0097ACBB /* settings-1-gray.png in Resources */,
 				0AB77A8321B9A7BB00EBEC07 /* deals-poppin.png in Resources */,
+				A31FB8C621C0BB3300318709 /* cocktail.png in Resources */,
 				AF40CA1D216AE69A00E82D17 /* LaunchScreen.storyboard in Resources */,
 				AF40CA1A216AE69A00E82D17 /* Assets.xcassets in Resources */,
 				0A1360F821C0A02D0097ACBB /* settings-1-poppin.png in Resources */,
@@ -550,6 +566,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A31FB87E21C0559400318709 /* PubAnnotationView.swift in Sources */,
 				0AF36D40218791BD00FCEDEB /* LoginViewController.swift in Sources */,
 				0AB9DF0421BDD89500117B8E /* PubButtonsCell.swift in Sources */,
 				0AB9DF0221BDD10100117B8E /* PubDescriptionCell.swift in Sources */,
@@ -567,6 +584,7 @@
 				CB1BCD9321B5EAA30029689F /* ContentManager.swift in Sources */,
 				CBC8A27E21B709B8009E7B47 /* User.swift in Sources */,
 				0A43EEFF21B1BF960041954C /* DealDetailsImageCell.swift in Sources */,
+				A31FB87C21C052A100318709 /* PubClusterView.swift in Sources */,
 				CB7E646321BF2BCB00F931EE /* SettingsTableViewCell.swift in Sources */,
 				CBB7191A21B1ED590054EC77 /* FirebaseSubscription.swift in Sources */,
 				CBB7191E21B1EE4E0054EC77 /* Pub.swift in Sources */,
@@ -723,13 +741,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = JYF4QLD5L8;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.Poppin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.PoppinJen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -742,13 +760,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GG5S3A62X8;
+				DEVELOPMENT_TEAM = JYF4QLD5L8;
 				INFOPLIST_FILE = Poppin/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.Poppin;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MoBamba.PoppinJen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

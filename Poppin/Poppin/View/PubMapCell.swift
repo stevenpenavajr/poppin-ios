@@ -3,6 +3,7 @@
 // Date Created: 12/9/18
 // Created By: Steven Penava
 
+
 import CoreLocation
 import MapKit
 import UIKit
@@ -25,6 +26,16 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
         
         annotationImage = pubImage.resizeImage(size: CGSize(width: 50, height: 50))
         
+        /*
+        let pubAnnotation = PubAnnotation()
+        
+        pubAnnotation.coordinate = CLLocationCoordinate2D(latitude: 38.048039, longitude: -84.4985)
+        pubAnnotation.title = "Stagger Inn" /* will get from an object eventually */
+        pubAnnotation.subtitle = "Country bar"
+        let pubAnnotationView = MKPinAnnotationView(annotation: pubAnnotation, reuseIdentifier: nil)
+        pubMapView.addAnnotation(pubAnnotationView.annotation!)
+        */
+      
         // Setup map
         pubMapView.isZoomEnabled = false
         pubMapView.isScrollEnabled = false
@@ -83,3 +94,4 @@ class PubMapCell: UITableViewCell, MKMapViewDelegate {
     }
 
 }
+
