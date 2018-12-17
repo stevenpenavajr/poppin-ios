@@ -21,6 +21,7 @@ class User: NSObject, NSCoding {
         self.name = name
         self.email = email
         self.imageUrl = imageUrl
+        self.location = location
     }
     
     func encode(with aCoder: NSCoder) {
