@@ -23,7 +23,6 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     
     /* Variable for the selected annotation */
     var selectedAnnotation: PubAnnotation?
-    //print(mapView.selectedAnnotations)
     
     /* Variables to track users location */
     private var locationManager: CLLocationManager!
@@ -35,9 +34,9 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
         /* Setting MapViewController as the delegate of the map view */
         mapView.delegate = self
         mapView.showsUserLocation = true;
-        
+                
         /* Set initial location to be users current location */
-        setLocation()
+        centerMapOnCurrentLocation()
         
         /* Add location tracking button */
         let buttonItem = MKUserTrackingBarButtonItem(mapView: mapView)
@@ -82,25 +81,11 @@ class MapViewController: UIViewController, MKMapViewDelegate,UITextFieldDelegate
     }
     
     // Function to set up initial location
-    func setLocation() {
-        // Declare location manager
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
-        // Check for Location Services
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.requestWhenInUseAuthorization() // Request access
-            locationManager.startUpdatingLocation() // start updating location
-        }
-        
+    func centerMapOnCurrentLocation() {
+        guard let userLocation = ContentManager.shared.currentUser?.location?.coordinate else { return }
+        let coordinateRegion = MKCoordinateRegion(center: userLocation, latitudinalMeters: 2000, longitudinalMeters: 2000)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
-    
-    /*
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: PubClusterView) {
-        self.selectedAnnotation = view.annotation as? PubAnnotation
-        print("Selected a Cluster")
-    } */
     
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: PubAnnotationView) {
